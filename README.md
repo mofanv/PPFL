@@ -49,7 +49,7 @@ make build
 make run
 ```
 
-### Step3:
+### Step 3:
 
 set `IP_CLIENT_1`, `PASSWORD_CLIENT1`, `NUM_ROUNDS`. `NUM_CLIENTS`, `PP_START`, `PP_END`, `DATASET`, `MODEL`, etc in `fl_script/fl_tee*.sh` file. where,
 
@@ -61,7 +61,7 @@ set `IP_CLIENT_1`, `PASSWORD_CLIENT1`, `NUM_ROUNDS`. `NUM_CLIENTS`, `PP_START`, 
 - `DATASET` and `MODEL` refer to the dataset and model being used
 
 
-### step4:
+### Step 4:
 
 run `fl_tee*.sh` for FL with TEE protection on training at both server and client-side. For example,
 
