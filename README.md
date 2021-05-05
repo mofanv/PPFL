@@ -32,7 +32,7 @@ When everything is ready, you will see output showing that it starts training th
 ## (2) Set up Server Side
 
 
-### Step 1: 
+### Step 1:
 
 You will need *Ubuntu 18.04* PC and first install Open Enclave SDK for supporting use of SGX. Follow [this instruction](https://github.com/openenclave/openenclave/blob/master/docs/GettingStartedDocs/install_oe_sdk-Ubuntu_18.04.md) to do so.
 
@@ -49,7 +49,7 @@ make build
 make run
 ```
 
-### Step3: 
+### Step3:
 
 set `IP_CLIENT_1`, `PASSWORD_CLIENT1`, `NUM_ROUNDS`. `NUM_CLIENTS`, `PP_START`, `PP_END`, `DATASET`, `MODEL`, etc in `fl_script/fl_tee*.sh` file. where,
 
@@ -61,7 +61,7 @@ set `IP_CLIENT_1`, `PASSWORD_CLIENT1`, `NUM_ROUNDS`. `NUM_CLIENTS`, `PP_START`, 
 - `DATASET` and `MODEL` refer to the dataset and model being used
 
 
-### step4: 
+### step4:
 
 run `fl_tee*.sh` for FL with TEE protection on training at both server and client side. For example,
 
