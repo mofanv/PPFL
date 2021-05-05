@@ -1,0 +1,30 @@
+// Copyright (c) Open Enclave SDK contributors.
+// Licensed under the MIT License.
+
+enclave {
+    from "openenclave/edl/syscall.edl" import *;
+    from "platform.edl" import *;
+
+    trusted {
+        public void enclave_initialize(
+        [in, count=buf_size] float* input_buf,
+        size_t buf_size);
+
+        public void enclave_secure_aggregation(bool last_one,
+        [in, count=buf_size] float* input_buf,
+        [out, count=buf_size] float* output_buf,
+        size_t buf_size);
+
+        public void enclave_weights_decryption(
+        [in, out, count=buf_size] float* input_buf,
+        size_t buf_size);
+
+        public void enclave_weights_encryption(
+        [in, out, count=buf_size] float* input_buf,
+        size_t buf_size);
+    };
+
+    untrusted {
+        void host_secure_aggregation();
+    };
+};

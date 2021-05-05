@@ -1,0 +1,8 @@
+classes=10
+train  = ../../../Github/darknet/data/mnist/mnist.train.list
+valid  = ../../../Github/darknet/data/mnist/mnist.valid.list
+test  = ../../../Github/darknet/data/mnist/mnist.test.list
+backup = results/
+labels = ../../../Github/darknet/data/mnist/mnist.labels.list
+names  = ../../../Github/darknet/data/mnist/mnist.names.list
+top = 5

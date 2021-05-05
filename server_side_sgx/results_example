@@ -1,0 +1,3821 @@
+============= initialization =============
+============= round 1 =============
+============= copy weights server -> client 1 =============
+
+real	0m0.838s
+user	0m0.018s
+sys	0m0.005s
+ree weights: 147068 Bytes
+
+real	0m0.389s
+user	0m0.012s
+sys	0m0.006s
+tee weights: 44076 Bytes
+============= ssh to the client and local training =============
+layer     filters    size              input                output
+    0 conv      6  5 x 5 / 1    28 x  28 x   3   ->    28 x  28 x   6  0.001 BFLOPs
+    1 max          2 x 2 / 2    28 x  28 x   6   ->    14 x  14 x   6
+    2 conv      6  5 x 5 / 1    14 x  14 x   6   ->    14 x  14 x   6  0.000 BFLOPs
+    3 max          2 x 2 / 2    14 x  14 x   6   ->     7 x   7 x   6
+    4 connected                             294  ->   120
+    5 dropout       p = 0.20                120  ->   120
+    6 connected_TA                          120  ->    84
+    7 dropout_TA    p = 0.20                 84  ->    84
+    8 connected_TA                           84  ->    10
+Prepare session with the TA
+Begin darknet
+mnist_lenet
+1
+workspace_size=235200
+    9 softmax                                          10
+   10 cost                                             10
+Separately loading weights from /root/models/mnist/mnist_lenet_global.weights...Done!
+Learning Rate: 0.01, Momentum: 0.9, Decay: 5e-05
+3000
+28 28
+output file: /media/results/train_mnist_lenet_pps6_ppe8.txt
+current_batch=10 
+Loaded: 0.005757 seconds
+11, 0.183: 1.606181, 1.606181 avg, 0.007374 rate, 0.231997 seconds, 550 images
+user CPU start: 0.000000; end: 0.285243
+kernel CPU start: 0.207632; end: 0.207632
+Max: 13244  kilobytes
+vmsize:1295520; vmrss:10076; vmdata:49800; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000112 seconds
+12, 0.200: 1.601454, 1.605709 avg, 0.007164 rate, 0.227694 seconds, 600 images
+user CPU start: 0.285445; end: 0.539941
+kernel CPU start: 0.207632; end: 0.207632
+Max: 16376  kilobytes
+vmsize:1295520; vmrss:10380; vmdata:49800; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000119 seconds
+13, 0.217: 1.602604, 1.605398 avg, 0.006959 rate, 0.227832 seconds, 650 images
+user CPU start: 0.540177; end: 0.798823
+kernel CPU start: 0.207632; end: 0.207632
+Max: 16580  kilobytes
+vmsize:1295520; vmrss:10532; vmdata:49864; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000133 seconds
+14, 0.233: 1.604151, 1.605273 avg, 0.006758 rate, 0.227639 seconds, 700 images
+user CPU start: 0.799016; end: 1.054936
+kernel CPU start: 0.207632; end: 0.207632
+Max: 16864  kilobytes
+vmsize:1295520; vmrss:10620; vmdata:49912; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000134 seconds
+15, 0.250: 1.603802, 1.605126 avg, 0.006561 rate, 0.227564 seconds, 750 images
+user CPU start: 1.055133; end: 1.309119
+kernel CPU start: 0.207632; end: 0.207632
+Max: 16864  kilobytes
+vmsize:1295520; vmrss:10656; vmdata:49920; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000135 seconds
+16, 0.267: 1.595051, 1.604119 avg, 0.006369 rate, 0.227746 seconds, 800 images
+user CPU start: 1.309313; end: 1.566951
+kernel CPU start: 0.207632; end: 0.207632
+Max: 16864  kilobytes
+vmsize:1295520; vmrss:10704; vmdata:49924; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000117 seconds
+17, 0.283: 1.604992, 1.604206 avg, 0.006181 rate, 0.227774 seconds, 850 images
+user CPU start: 1.567165; end: 1.821271
+kernel CPU start: 0.207632; end: 0.207632
+Max: 16932  kilobytes
+vmsize:1295520; vmrss:10788; vmdata:49940; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000128 seconds
+18, 0.300: 1.589888, 1.602774 avg, 0.005997 rate, 0.227715 seconds, 900 images
+user CPU start: 1.821494; end: 2.072654
+kernel CPU start: 0.207632; end: 0.210993
+Max: 17008  kilobytes
+vmsize:1295520; vmrss:10828; vmdata:49948; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000122 seconds
+19, 0.317: 1.592152, 1.601712 avg, 0.005817 rate, 0.227636 seconds, 950 images
+user CPU start: 2.072856; end: 2.311606
+kernel CPU start: 0.211014; end: 0.228913
+Max: 17008  kilobytes
+vmsize:1295520; vmrss:10824; vmdata:49948; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000137 seconds
+20, 0.333: 1.606593, 1.602200 avg, 0.005642 rate, 0.227782 seconds, 1000 images
+user CPU start: 2.311782; end: 2.552089
+kernel CPU start: 0.228931; end: 0.246979
+Max: 17032  kilobytes
+vmsize:1295520; vmrss:10888; vmdata:49976; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000136 seconds
+21, 0.350: 1.578848, 1.599865 avg, 0.005470 rate, 0.227659 seconds, 1050 images
+user CPU start: 2.552266; end: 2.793480
+kernel CPU start: 0.246996; end: 0.261850
+Max: 17032  kilobytes
+vmsize:1295520; vmrss:10908; vmdata:49988; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000124 seconds
+22, 0.367: 1.590761, 1.598954 avg, 0.005302 rate, 0.227790 seconds, 1100 images
+user CPU start: 2.793678; end: 3.037958
+kernel CPU start: 0.261868; end: 0.275705
+Max: 17032  kilobytes
+vmsize:1295520; vmrss:10984; vmdata:50052; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000136 seconds
+23, 0.383: 1.583739, 1.597433 avg, 0.005139 rate, 0.227678 seconds, 1150 images
+user CPU start: 3.038131; end: 3.271579
+kernel CPU start: 0.275720; end: 0.298178
+Max: 17184  kilobytes
+vmsize:1295520; vmrss:10996; vmdata:50064; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000137 seconds
+24, 0.400: 1.593692, 1.597059 avg, 0.004979 rate, 0.227669 seconds, 1200 images
+user CPU start: 3.271757; end: 3.515654
+kernel CPU start: 0.298195; end: 0.308208
+Max: 17196  kilobytes
+vmsize:1295520; vmrss:11004; vmdata:50064; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000121 seconds
+25, 0.417: 1.581694, 1.595522 avg, 0.004823 rate, 0.227664 seconds, 1250 images
+user CPU start: 3.515865; end: 3.756222
+kernel CPU start: 0.308226; end: 0.322906
+Max: 17216  kilobytes
+vmsize:1295520; vmrss:11072; vmdata:50088; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000124 seconds
+26, 0.433: 1.598401, 1.595810 avg, 0.004670 rate, 0.227590 seconds, 1300 images
+user CPU start: 3.756437; end: 3.992722
+kernel CPU start: 0.322924; end: 0.342240
+Max: 17216  kilobytes
+vmsize:1295520; vmrss:11052; vmdata:50112; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000132 seconds
+27, 0.450: 1.585831, 1.594812 avg, 0.004521 rate, 0.227754 seconds, 1350 images
+user CPU start: 3.992922; end: 4.239234
+kernel CPU start: 0.342257; end: 0.352338
+Max: 17216  kilobytes
+vmsize:1295520; vmrss:11092; vmdata:50140; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000136 seconds
+28, 0.467: 1.591976, 1.594529 avg, 0.004376 rate, 0.227850 seconds, 1400 images
+user CPU start: 4.239413; end: 4.471217
+kernel CPU start: 0.352352; end: 0.376691
+Max: 17300  kilobytes
+vmsize:1295520; vmrss:11128; vmdata:50180; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000122 seconds
+29, 0.483: 1.578825, 1.592958 avg, 0.004234 rate, 0.227768 seconds, 1450 images
+user CPU start: 4.471421; end: 4.719685
+kernel CPU start: 0.376708; end: 0.386893
+Max: 17364  kilobytes
+vmsize:1295520; vmrss:11172; vmdata:50228; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000139 seconds
+30, 0.500: 1.571504, 1.590813 avg, 0.004096 rate, 0.227800 seconds, 1500 images
+user CPU start: 4.719860; end: 4.966183
+kernel CPU start: 0.386908; end: 0.397273
+Max: 17372  kilobytes
+vmsize:1295520; vmrss:11180; vmdata:50240; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000137 seconds
+31, 0.517: 1.565443, 1.588276 avg, 0.003961 rate, 0.227752 seconds, 1550 images
+user CPU start: 4.966363; end: 5.210987
+kernel CPU start: 0.397287; end: 0.407835
+Max: 17380  kilobytes
+vmsize:1295520; vmrss:11196; vmdata:50240; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000134 seconds
+32, 0.533: 1.589629, 1.588411 avg, 0.003830 rate, 0.227685 seconds, 1600 images
+user CPU start: 5.211159; end: 5.455672
+kernel CPU start: 0.407848; end: 0.418316
+Max: 17432  kilobytes
+vmsize:1295520; vmrss:11192; vmdata:50248; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000152 seconds
+33, 0.550: 1.591493, 1.588719 avg, 0.003702 rate, 0.227571 seconds, 1650 images
+user CPU start: 5.455871; end: 5.690385
+kernel CPU start: 0.418331; end: 0.437788
+Max: 17432  kilobytes
+vmsize:1295520; vmrss:11172; vmdata:50248; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000122 seconds
+34, 0.567: 1.568571, 1.586704 avg, 0.003577 rate, 0.227752 seconds, 1700 images
+user CPU start: 5.690582; end: 5.934577
+kernel CPU start: 0.437804; end: 0.448205
+Max: 17432  kilobytes
+vmsize:1295520; vmrss:11232; vmdata:50308; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000164 seconds
+35, 0.583: 1.590297, 1.587064 avg, 0.003455 rate, 0.227750 seconds, 1750 images
+user CPU start: 5.934771; end: 6.176556
+kernel CPU start: 0.448220; end: 0.461729
+Max: 17588  kilobytes
+vmsize:1295520; vmrss:11260; vmdata:50352; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000109 seconds
+36, 0.600: 1.573838, 1.585741 avg, 0.003336 rate, 0.227393 seconds, 1800 images
+user CPU start: 6.176556; end: 6.416444
+kernel CPU start: 0.461946; end: 0.477222
+Max: 17588  kilobytes
+vmsize:1295520; vmrss:11252; vmdata:50384; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000164 seconds
+37, 0.617: 1.560734, 1.583240 avg, 0.003221 rate, 0.227701 seconds, 1850 images
+user CPU start: 6.416620; end: 6.657022
+kernel CPU start: 0.477235; end: 0.491691
+Max: 17588  kilobytes
+vmsize:1295520; vmrss:11264; vmdata:50384; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000175 seconds
+38, 0.633: 1.574821, 1.582399 avg, 0.003108 rate, 0.227910 seconds, 1900 images
+user CPU start: 6.657204; end: 6.894205
+kernel CPU start: 0.491704; end: 0.510304
+Max: 17588  kilobytes
+vmsize:1295520; vmrss:11364; vmdata:50448; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000128 seconds
+39, 0.650: 1.543316, 1.578490 avg, 0.002999 rate, 0.227723 seconds, 1950 images
+user CPU start: 6.894407; end: 7.134919
+kernel CPU start: 0.510319; end: 0.524441
+Max: 17588  kilobytes
+vmsize:1295520; vmrss:11292; vmdata:50448; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000108 seconds
+40, 0.667: 1.569428, 1.577584 avg, 0.002892 rate, 0.227622 seconds, 2000 images
+user CPU start: 7.135113; end: 7.369291
+kernel CPU start: 0.524455; end: 0.544253
+Max: 17588  kilobytes
+vmsize:1295520; vmrss:11288; vmdata:50468; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000126 seconds
+41, 0.683: 1.548604, 1.574686 avg, 0.002788 rate, 0.227706 seconds, 2050 images
+user CPU start: 7.369461; end: 7.597939
+kernel CPU start: 0.544265; end: 0.572434
+Max: 17652  kilobytes
+vmsize:1295520; vmrss:11328; vmdata:50508; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000116 seconds
+42, 0.700: 1.562928, 1.573510 avg, 0.002687 rate, 0.227615 seconds, 2100 images
+user CPU start: 7.598157; end: 7.838471
+kernel CPU start: 0.572451; end: 0.586201
+Max: 17652  kilobytes
+vmsize:1295520; vmrss:11376; vmdata:50596; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000127 seconds
+43, 0.717: 1.563964, 1.572556 avg, 0.002589 rate, 0.227563 seconds, 2150 images
+user CPU start: 7.838673; end: 8.078113
+kernel CPU start: 0.586216; end: 0.604656
+Max: 17652  kilobytes
+vmsize:1295520; vmrss:11340; vmdata:50616; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000126 seconds
+44, 0.733: 1.565135, 1.571814 avg, 0.002494 rate, 0.227614 seconds, 2200 images
+user CPU start: 8.078283; end: 8.314940
+kernel CPU start: 0.604669; end: 0.623958
+Max: 17652  kilobytes
+vmsize:1295520; vmrss:11340; vmdata:50616; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000118 seconds
+45, 0.750: 1.560310, 1.570663 avg, 0.002401 rate, 0.227900 seconds, 2250 images
+user CPU start: 8.315146; end: 8.550858
+kernel CPU start: 0.623973; end: 0.643507
+Max: 17652  kilobytes
+vmsize:1295520; vmrss:11308; vmdata:50636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000118 seconds
+46, 0.767: 1.546504, 1.568247 avg, 0.002311 rate, 0.227601 seconds, 2300 images
+user CPU start: 8.551091; end: 8.792588
+kernel CPU start: 0.643524; end: 0.657719
+Max: 17652  kilobytes
+vmsize:1295520; vmrss:11272; vmdata:50664; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000123 seconds
+47, 0.783: 1.550386, 1.566461 avg, 0.002223 rate, 0.227889 seconds, 2350 images
+user CPU start: 8.792763; end: 9.028953
+kernel CPU start: 0.657732; end: 0.676265
+Max: 17652  kilobytes
+vmsize:1295520; vmrss:11296; vmdata:50664; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000123 seconds
+48, 0.800: 1.552992, 1.565114 avg, 0.002138 rate, 0.227831 seconds, 2400 images
+user CPU start: 9.029177; end: 9.273274
+kernel CPU start: 0.676282; end: 0.685579
+Max: 17652  kilobytes
+vmsize:1295520; vmrss:11244; vmdata:50676; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000129 seconds
+49, 0.817: 1.563094, 1.564912 avg, 0.002056 rate, 0.227680 seconds, 2450 images
+user CPU start: 9.273456; end: 9.514502
+kernel CPU start: 0.685592; end: 0.699084
+Max: 17652  kilobytes
+vmsize:1295520; vmrss:11248; vmdata:50676; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000116 seconds
+50, 0.833: 1.554074, 1.563828 avg, 0.001975 rate, 0.227893 seconds, 2500 images
+user CPU start: 9.514705; end: 9.764334
+kernel CPU start: 0.699099; end: 0.704436
+Max: 17652  kilobytes
+vmsize:1295520; vmrss:11256; vmdata:50676; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000136 seconds
+51, 0.850: 1.552077, 1.562653 avg, 0.001897 rate, 0.227749 seconds, 2550 images
+user CPU start: 9.764516; end: 10.002970
+kernel CPU start: 0.704449; end: 0.721449
+Max: 17652  kilobytes
+vmsize:1295520; vmrss:11300; vmdata:50680; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000135 seconds
+52, 0.867: 1.531530, 1.559541 avg, 0.001822 rate, 0.227925 seconds, 2600 images
+user CPU start: 10.003176; end: 10.245306
+kernel CPU start: 0.721464; end: 0.734388
+Max: 17652  kilobytes
+vmsize:1295520; vmrss:11360; vmdata:50688; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000116 seconds
+53, 0.883: 1.515584, 1.555145 avg, 0.001749 rate, 0.227641 seconds, 2650 images
+user CPU start: 10.245494; end: 10.479869
+kernel CPU start: 0.734402; end: 0.756866
+Max: 17656  kilobytes
+vmsize:1295520; vmrss:11428; vmdata:50756; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000105 seconds
+54, 0.900: 1.538197, 1.553450 avg, 0.001678 rate, 0.227808 seconds, 2700 images
+user CPU start: 10.480110; end: 10.729559
+kernel CPU start: 0.756884; end: 0.764634
+Max: 17656  kilobytes
+vmsize:1295520; vmrss:11352; vmdata:50780; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000137 seconds
+55, 0.917: 1.524698, 1.550575 avg, 0.001609 rate, 0.227825 seconds, 2750 images
+user CPU start: 10.729733; end: 10.969775
+kernel CPU start: 0.764646; end: 0.782484
+Max: 17656  kilobytes
+vmsize:1295520; vmrss:11420; vmdata:50804; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000133 seconds
+56, 0.933: 1.540264, 1.549544 avg, 0.001542 rate, 0.227595 seconds, 2800 images
+user CPU start: 10.969985; end: 11.219202
+kernel CPU start: 0.782499; end: 0.790256
+Max: 17688  kilobytes
+vmsize:1295520; vmrss:11508; vmdata:50848; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000136 seconds
+57, 0.950: 1.518492, 1.546439 avg, 0.001478 rate, 0.227912 seconds, 2850 images
+user CPU start: 11.219376; end: 11.458812
+kernel CPU start: 0.790268; end: 0.807711
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11560; vmdata:50864; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000118 seconds
+58, 0.967: 1.530463, 1.544841 avg, 0.001415 rate, 0.227728 seconds, 2900 images
+user CPU start: 11.459001; end: 11.699713
+kernel CPU start: 0.807724; end: 0.824947
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11604; vmdata:50864; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000136 seconds
+59, 0.983: 1.543280, 1.544685 avg, 0.001355 rate, 0.228082 seconds, 2950 images
+user CPU start: 11.699886; end: 11.944846
+kernel CPU start: 0.824959; end: 0.837476
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11556; vmdata:50864; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000131 seconds
+60, 1.000: 1.523495, 1.542566 avg, 0.001296 rate, 0.228011 seconds, 3000 images
+user CPU start: 11.945025; end: 12.184856
+kernel CPU start: 0.837488; end: 0.852259
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11556; vmdata:50864; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000119 seconds
+61, 1.017: 1.494967, 1.537806 avg, 0.001239 rate, 0.227697 seconds, 3050 images
+user CPU start: 12.185101; end: 12.413702
+kernel CPU start: 0.852276; end: 0.879927
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11364; vmdata:50864; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000131 seconds
+62, 1.033: 1.537201, 1.537746 avg, 0.001185 rate, 0.228003 seconds, 3100 images
+user CPU start: 12.413889; end: 12.660490
+kernel CPU start: 0.879941; end: 0.889530
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11380; vmdata:50864; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000119 seconds
+63, 1.050: 1.503744, 1.534346 avg, 0.001132 rate, 0.227674 seconds, 3150 images
+user CPU start: 12.660738; end: 12.906835
+kernel CPU start: 0.889547; end: 0.899101
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11292; vmdata:50864; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000154 seconds
+64, 1.067: 1.516268, 1.532538 avg, 0.001081 rate, 0.227687 seconds, 3200 images
+user CPU start: 12.907012; end: 13.148676
+kernel CPU start: 0.899114; end: 0.913679
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11300; vmdata:50864; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000185 seconds
+65, 1.083: 1.494249, 1.528709 avg, 0.001031 rate, 0.227766 seconds, 3250 images
+user CPU start: 13.148884; end: 13.384418
+kernel CPU start: 0.913694; end: 0.932820
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11256; vmdata:50864; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000127 seconds
+66, 1.100: 1.502798, 1.526118 avg, 0.000983 rate, 0.227842 seconds, 3300 images
+user CPU start: 13.384418; end: 13.621482
+kernel CPU start: 0.933011; end: 0.951069
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11288; vmdata:50896; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000106 seconds
+67, 1.117: 1.507584, 1.524264 avg, 0.000937 rate, 0.227640 seconds, 3350 images
+user CPU start: 13.621681; end: 13.859097
+kernel CPU start: 0.951083; end: 0.969351
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11180; vmdata:50916; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000118 seconds
+68, 1.133: 1.516143, 1.523452 avg, 0.000893 rate, 0.227778 seconds, 3400 images
+user CPU start: 13.859291; end: 14.100356
+kernel CPU start: 0.969365; end: 0.983575
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11220; vmdata:50932; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000123 seconds
+69, 1.150: 1.475095, 1.518617 avg, 0.000850 rate, 0.228008 seconds, 3450 images
+user CPU start: 14.100552; end: 14.330557
+kernel CPU start: 0.983588; end: 1.007004
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11328; vmdata:50960; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000127 seconds
+70, 1.167: 1.468160, 1.513571 avg, 0.000809 rate, 0.227660 seconds, 3500 images
+user CPU start: 14.330728; end: 14.569089
+kernel CPU start: 1.007017; end: 1.025032
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11404; vmdata:51000; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000125 seconds
+71, 1.183: 1.512989, 1.513513 avg, 0.000769 rate, 0.227830 seconds, 3550 images
+user CPU start: 14.569266; end: 14.809329
+kernel CPU start: 1.025045; end: 1.039182
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11404; vmdata:51000; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000112 seconds
+72, 1.200: 1.501815, 1.512343 avg, 0.000731 rate, 0.228001 seconds, 3600 images
+user CPU start: 14.809521; end: 15.049613
+kernel CPU start: 1.039196; end: 1.055996
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11396; vmdata:51000; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000125 seconds
+73, 1.217: 1.516471, 1.512756 avg, 0.000694 rate, 0.227927 seconds, 3650 images
+user CPU start: 15.049829; end: 15.293938
+kernel CPU start: 1.056012; end: 1.068806
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11368; vmdata:51036; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000133 seconds
+74, 1.233: 1.490502, 1.510530 avg, 0.000659 rate, 0.227803 seconds, 3700 images
+user CPU start: 15.294142; end: 15.531949
+kernel CPU start: 1.068820; end: 1.087146
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11388; vmdata:51036; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000118 seconds
+75, 1.250: 1.502592, 1.509736 avg, 0.000625 rate, 0.227655 seconds, 3750 images
+user CPU start: 15.532150; end: 15.765128
+kernel CPU start: 1.087160; end: 1.109817
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11372; vmdata:51036; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000125 seconds
+76, 1.267: 1.484015, 1.507164 avg, 0.000592 rate, 0.227713 seconds, 3800 images
+user CPU start: 15.765352; end: 15.996905
+kernel CPU start: 1.109832; end: 1.132704
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11412; vmdata:51052; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000132 seconds
+77, 1.283: 1.494065, 1.505854 avg, 0.000561 rate, 0.227895 seconds, 3850 images
+user CPU start: 15.997138; end: 16.232663
+kernel CPU start: 1.132720; end: 1.150527
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11364; vmdata:51092; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000137 seconds
+78, 1.300: 1.493094, 1.504578 avg, 0.000531 rate, 0.227887 seconds, 3900 images
+user CPU start: 16.232836; end: 16.472121
+kernel CPU start: 1.150540; end: 1.167928
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11364; vmdata:51092; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000119 seconds
+79, 1.317: 1.498914, 1.504012 avg, 0.000502 rate, 0.227700 seconds, 3950 images
+user CPU start: 16.472331; end: 16.713364
+kernel CPU start: 1.167943; end: 1.181851
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11284; vmdata:51092; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000127 seconds
+80, 1.333: 1.458425, 1.499453 avg, 0.000474 rate, 0.227808 seconds, 4000 images
+user CPU start: 16.713589; end: 16.950564
+kernel CPU start: 1.181867; end: 1.199757
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11248; vmdata:51092; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000135 seconds
+81, 1.350: 1.493325, 1.498840 avg, 0.000448 rate, 0.227804 seconds, 4050 images
+user CPU start: 16.950778; end: 17.189210
+kernel CPU start: 1.199772; end: 1.219108
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11212; vmdata:51092; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000120 seconds
+82, 1.367: 1.501617, 1.499118 avg, 0.000422 rate, 0.227699 seconds, 4100 images
+user CPU start: 17.189411; end: 17.435819
+kernel CPU start: 1.219123; end: 1.229079
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11204; vmdata:51092; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000107 seconds
+83, 1.383: 1.489200, 1.498126 avg, 0.000398 rate, 0.227787 seconds, 4150 images
+user CPU start: 17.436019; end: 17.682411
+kernel CPU start: 1.229093; end: 1.239377
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11176; vmdata:51092; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000136 seconds
+84, 1.400: 1.464005, 1.494714 avg, 0.000375 rate, 0.227613 seconds, 4200 images
+user CPU start: 17.682588; end: 17.928837
+kernel CPU start: 1.239389; end: 1.249315
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11240; vmdata:51112; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000127 seconds
+85, 1.417: 1.450802, 1.490323 avg, 0.000353 rate, 0.227892 seconds, 4250 images
+user CPU start: 17.929042; end: 18.175553
+kernel CPU start: 1.249330; end: 1.259252
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11244; vmdata:51112; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000149 seconds
+86, 1.433: 1.461150, 1.487406 avg, 0.000331 rate, 0.227832 seconds, 4300 images
+user CPU start: 18.175727; end: 18.413743
+kernel CPU start: 1.259264; end: 1.274543
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11244; vmdata:51112; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000121 seconds
+87, 1.450: 1.454842, 1.484149 avg, 0.000311 rate, 0.227644 seconds, 4350 images
+user CPU start: 18.413969; end: 18.658381
+kernel CPU start: 1.274559; end: 1.284966
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11256; vmdata:51112; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000131 seconds
+88, 1.467: 1.468067, 1.482541 avg, 0.000292 rate, 0.227733 seconds, 4400 images
+user CPU start: 18.658555; end: 18.900175
+kernel CPU start: 1.284978; end: 1.299223
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11388; vmdata:51140; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000153 seconds
+89, 1.483: 1.462219, 1.480509 avg, 0.000273 rate, 0.227847 seconds, 4450 images
+user CPU start: 18.900387; end: 19.138160
+kernel CPU start: 1.299238; end: 1.314501
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11328; vmdata:51140; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000119 seconds
+90, 1.500: 1.425614, 1.475019 avg, 0.000256 rate, 0.227873 seconds, 4500 images
+user CPU start: 19.138160; end: 19.366653
+kernel CPU start: 1.314717; end: 1.341836
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11336; vmdata:51140; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000121 seconds
+91, 1.517: 1.428474, 1.470365 avg, 0.000239 rate, 0.227835 seconds, 4550 images
+user CPU start: 19.366900; end: 19.608734
+kernel CPU start: 1.341854; end: 1.356111
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11216; vmdata:51140; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000126 seconds
+92, 1.533: 1.467559, 1.470084 avg, 0.000224 rate, 0.227838 seconds, 4600 images
+user CPU start: 19.608906; end: 19.850352
+kernel CPU start: 1.356123; end: 1.370667
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11216; vmdata:51152; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000118 seconds
+93, 1.550: 1.468466, 1.469922 avg, 0.000209 rate, 0.227812 seconds, 4650 images
+user CPU start: 19.850553; end: 20.101647
+kernel CPU start: 1.370681; end: 1.375289
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11208; vmdata:51160; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000130 seconds
+94, 1.567: 1.454376, 1.468368 avg, 0.000194 rate, 0.227859 seconds, 4700 images
+user CPU start: 20.101823; end: 20.334440
+kernel CPU start: 1.375301; end: 1.397927
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11212; vmdata:51160; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000133 seconds
+95, 1.583: 1.523678, 1.473899 avg, 0.000181 rate, 0.227834 seconds, 4750 images
+user CPU start: 20.334623; end: 20.576711
+kernel CPU start: 1.397940; end: 1.411276
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11252; vmdata:51160; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000124 seconds
+96, 1.600: 1.460168, 1.472526 avg, 0.000168 rate, 0.227823 seconds, 4800 images
+user CPU start: 20.576943; end: 20.816951
+kernel CPU start: 1.411292; end: 1.424785
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11228; vmdata:51180; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000119 seconds
+97, 1.617: 1.478171, 1.473090 avg, 0.000156 rate, 0.227715 seconds, 4850 images
+user CPU start: 20.817160; end: 21.068525
+kernel CPU start: 1.424799; end: 1.433791
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11248; vmdata:51180; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000120 seconds
+98, 1.633: 1.459618, 1.471743 avg, 0.000144 rate, 0.227903 seconds, 4900 images
+user CPU start: 21.068722; end: 21.311392
+kernel CPU start: 1.433804; end: 1.447503
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11324; vmdata:51196; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000124 seconds
+99, 1.650: 1.447233, 1.469292 avg, 0.000134 rate, 0.227792 seconds, 4950 images
+user CPU start: 21.311623; end: 21.547002
+kernel CPU start: 1.447519; end: 1.468726
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11276; vmdata:51196; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000131 seconds
+100, 1.667: 1.457668, 1.468130 avg, 0.000123 rate, 0.227824 seconds, 5000 images
+user CPU start: 21.547177; end: 21.791785
+kernel CPU start: 1.468738; end: 1.480671
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11276; vmdata:51196; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000131 seconds
+101, 1.683: 1.462684, 1.467585 avg, 0.000114 rate, 0.227673 seconds, 5050 images
+user CPU start: 21.791970; end: 22.038403
+kernel CPU start: 1.480684; end: 1.493061
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11288; vmdata:51196; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000120 seconds
+102, 1.700: 1.480375, 1.468864 avg, 0.000105 rate, 0.227820 seconds, 5100 images
+user CPU start: 22.038615; end: 22.278851
+kernel CPU start: 1.493076; end: 1.510294
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11228; vmdata:51196; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000136 seconds
+103, 1.717: 1.481494, 1.470127 avg, 0.000096 rate, 0.227876 seconds, 5150 images
+user CPU start: 22.279074; end: 22.517058
+kernel CPU start: 1.510309; end: 1.528944
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11200; vmdata:51196; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000135 seconds
+104, 1.733: 1.425541, 1.465669 avg, 0.000088 rate, 0.227844 seconds, 5200 images
+user CPU start: 22.517233; end: 22.758101
+kernel CPU start: 1.528956; end: 1.543457
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11256; vmdata:51196; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000118 seconds
+105, 1.750: 1.472268, 1.466329 avg, 0.000081 rate, 0.227644 seconds, 5250 images
+user CPU start: 22.758308; end: 23.007506
+kernel CPU start: 1.543472; end: 1.552961
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11284; vmdata:51196; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000140 seconds
+106, 1.767: 1.443983, 1.464094 avg, 0.000074 rate, 0.227789 seconds, 5300 images
+user CPU start: 23.007677; end: 23.255474
+kernel CPU start: 1.552973; end: 1.563302
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11292; vmdata:51196; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000119 seconds
+107, 1.783: 1.432861, 1.460971 avg, 0.000068 rate, 0.227640 seconds, 5350 images
+user CPU start: 23.255677; end: 23.501515
+kernel CPU start: 1.563316; end: 1.573821
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11268; vmdata:51196; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000131 seconds
+108, 1.800: 1.460184, 1.460892 avg, 0.000061 rate, 0.227815 seconds, 5400 images
+user CPU start: 23.501694; end: 23.746867
+kernel CPU start: 1.573833; end: 1.583970
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11332; vmdata:51212; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000135 seconds
+109, 1.817: 1.468367, 1.461639 avg, 0.000056 rate, 0.227701 seconds, 5450 images
+user CPU start: 23.747086; end: 23.993115
+kernel CPU start: 1.583985; end: 1.594171
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11308; vmdata:51212; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000139 seconds
+110, 1.833: 1.436185, 1.459094 avg, 0.000051 rate, 0.228008 seconds, 5500 images
+user CPU start: 23.993289; end: 24.237644
+kernel CPU start: 1.594182; end: 1.604558
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11308; vmdata:51212; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000112 seconds
+111, 1.850: 1.465867, 1.459771 avg, 0.000046 rate, 0.227717 seconds, 5550 images
+user CPU start: 24.237891; end: 24.483196
+kernel CPU start: 1.604558; end: 1.613782
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11344; vmdata:51216; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000111 seconds
+112, 1.867: 1.434326, 1.457227 avg, 0.000041 rate, 0.227780 seconds, 5600 images
+user CPU start: 24.483425; end: 24.730828
+kernel CPU start: 1.613782; end: 1.623736
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11336; vmdata:51240; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000118 seconds
+113, 1.883: 1.435065, 1.455011 avg, 0.000037 rate, 0.227877 seconds, 5650 images
+user CPU start: 24.731000; end: 24.969710
+kernel CPU start: 1.623748; end: 1.638707
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11372; vmdata:51252; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000123 seconds
+114, 1.900: 1.491467, 1.458656 avg, 0.000033 rate, 0.227817 seconds, 5700 images
+user CPU start: 24.969886; end: 25.202034
+kernel CPU start: 1.638719; end: 1.661666
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11376; vmdata:51264; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000136 seconds
+115, 1.917: 1.435961, 1.456387 avg, 0.000030 rate, 0.227848 seconds, 5750 images
+user CPU start: 25.202229; end: 25.425003
+kernel CPU start: 1.661679; end: 1.697881
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11416; vmdata:51264; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000119 seconds
+116, 1.933: 1.478931, 1.458641 avg, 0.000026 rate, 0.228058 seconds, 5800 images
+user CPU start: 25.425199; end: 25.671190
+kernel CPU start: 1.697894; end: 1.707141
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11468; vmdata:51264; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000122 seconds
+117, 1.950: 1.495464, 1.462323 avg, 0.000023 rate, 0.227702 seconds, 5850 images
+user CPU start: 25.671388; end: 25.918330
+kernel CPU start: 1.707155; end: 1.715869
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11412; vmdata:51264; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000129 seconds
+118, 1.967: 1.450241, 1.461115 avg, 0.000021 rate, 0.227809 seconds, 5900 images
+user CPU start: 25.918508; end: 26.165452
+kernel CPU start: 1.715881; end: 1.724300
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11412; vmdata:51264; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000130 seconds
+119, 1.983: 1.424340, 1.457438 avg, 0.000018 rate, 0.227814 seconds, 5950 images
+user CPU start: 26.165662; end: 26.398709
+kernel CPU start: 1.724313; end: 1.746001
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11384; vmdata:51264; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000144 seconds
+120, 2.000: 1.447501, 1.456444 avg, 0.000016 rate, 0.227703 seconds, 6000 images
+user CPU start: 26.398907; end: 26.640012
+kernel CPU start: 1.746014; end: 1.759303
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11408; vmdata:51264; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000115 seconds
+121, 2.017: 1.437083, 1.454508 avg, 0.000014 rate, 0.227942 seconds, 6050 images
+user CPU start: 26.640257; end: 26.887996
+kernel CPU start: 1.759319; end: 1.768104
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11424; vmdata:51264; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000131 seconds
+122, 2.033: 1.473330, 1.456390 avg, 0.000012 rate, 0.227597 seconds, 6100 images
+user CPU start: 26.888167; end: 27.127551
+kernel CPU start: 1.768115; end: 1.785602
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11468; vmdata:51284; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000138 seconds
+123, 2.050: 1.463523, 1.457103 avg, 0.000010 rate, 0.227865 seconds, 6150 images
+user CPU start: 27.127730; end: 27.366822
+kernel CPU start: 1.785614; end: 1.803398
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11528; vmdata:51316; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000132 seconds
+124, 2.067: 1.477336, 1.459127 avg, 0.000009 rate, 0.227653 seconds, 6200 images
+user CPU start: 27.366997; end: 27.610060
+kernel CPU start: 1.803409; end: 1.816224
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11528; vmdata:51316; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000121 seconds
+125, 2.083: 1.375358, 1.450750 avg, 0.000008 rate, 0.227919 seconds, 6250 images
+user CPU start: 27.610270; end: 27.854304
+kernel CPU start: 1.816238; end: 1.829429
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11532; vmdata:51316; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000127 seconds
+126, 2.100: 1.490736, 1.454748 avg, 0.000007 rate, 0.227672 seconds, 6300 images
+user CPU start: 27.854532; end: 28.096392
+kernel CPU start: 1.829444; end: 1.843381
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11368; vmdata:51316; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000121 seconds
+127, 2.117: 1.466847, 1.455958 avg, 0.000006 rate, 0.227783 seconds, 6350 images
+user CPU start: 28.096588; end: 28.338479
+kernel CPU start: 1.843394; end: 1.856405
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11364; vmdata:51316; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000135 seconds
+128, 2.133: 1.422487, 1.452611 avg, 0.000005 rate, 0.227655 seconds, 6400 images
+user CPU start: 28.338668; end: 28.582839
+kernel CPU start: 1.856417; end: 1.870520
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11420; vmdata:51316; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000124 seconds
+129, 2.150: 1.427187, 1.450069 avg, 0.000004 rate, 0.227736 seconds, 6450 images
+user CPU start: 28.583064; end: 28.825533
+kernel CPU start: 1.870535; end: 1.884534
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11488; vmdata:51336; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000127 seconds
+130, 2.167: 1.484126, 1.453475 avg, 0.000003 rate, 0.227979 seconds, 6500 images
+user CPU start: 28.825712; end: 29.073286
+kernel CPU start: 1.884545; end: 1.894525
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11508; vmdata:51336; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000118 seconds
+131, 2.183: 1.457180, 1.453845 avg, 0.000003 rate, 0.227634 seconds, 6550 images
+user CPU start: 29.073478; end: 29.317289
+kernel CPU start: 1.894538; end: 1.904568
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11488; vmdata:51336; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000134 seconds
+132, 2.200: 1.445029, 1.452963 avg, 0.000002 rate, 0.227733 seconds, 6600 images
+user CPU start: 29.317468; end: 29.558424
+kernel CPU start: 1.904580; end: 1.919072
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11520; vmdata:51336; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000128 seconds
+133, 2.217: 1.482796, 1.455947 avg, 0.000002 rate, 0.227828 seconds, 6650 images
+user CPU start: 29.558634; end: 29.807183
+kernel CPU start: 1.919085; end: 1.929720
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11476; vmdata:51336; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000132 seconds
+134, 2.233: 1.476776, 1.458030 avg, 0.000001 rate, 0.227871 seconds, 6700 images
+user CPU start: 29.807361; end: 30.053098
+kernel CPU start: 1.929731; end: 1.939287
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11528; vmdata:51336; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000154 seconds
+135, 2.250: 1.452332, 1.457460 avg, 0.000001 rate, 0.227616 seconds, 6750 images
+user CPU start: 30.053339; end: 30.295857
+kernel CPU start: 1.939302; end: 1.953579
+Max: 17860  kilobytes
+vmsize:1295520; vmrss:11540; vmdata:51336; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000154 seconds
+136, 2.267: 1.425227, 1.454237 avg, 0.000001 rate, 0.227798 seconds, 6800 images
+user CPU start: 30.296055; end: 30.541870
+kernel CPU start: 1.953592; end: 1.963142
+Max: 17908  kilobytes
+vmsize:1295520; vmrss:11580; vmdata:51352; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000114 seconds
+137, 2.283: 1.489882, 1.457801 avg, 0.000001 rate, 0.227584 seconds, 6850 images
+user CPU start: 30.541870; end: 30.782013
+kernel CPU start: 1.963328; end: 1.977873
+Max: 17908  kilobytes
+vmsize:1295520; vmrss:11584; vmdata:51360; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000125 seconds
+138, 2.300: 1.447072, 1.456728 avg, 0.000000 rate, 0.227745 seconds, 6900 images
+user CPU start: 30.782013; end: 31.019052
+kernel CPU start: 1.978084; end: 1.997042
+Max: 17908  kilobytes
+vmsize:1295520; vmrss:11576; vmdata:51360; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000113 seconds
+139, 2.317: 1.453328, 1.456388 avg, 0.000000 rate, 0.228075 seconds, 6950 images
+user CPU start: 31.019246; end: 31.261852
+kernel CPU start: 1.997055; end: 2.011045
+Max: 17908  kilobytes
+vmsize:1295520; vmrss:11560; vmdata:51360; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000107 seconds
+140, 2.333: 1.477708, 1.458520 avg, 0.000000 rate, 0.227735 seconds, 7000 images
+user CPU start: 31.262053; end: 31.499214
+kernel CPU start: 2.011058; end: 2.029656
+Max: 17908  kilobytes
+vmsize:1295520; vmrss:11500; vmdata:51360; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000125 seconds
+141, 2.350: 1.449843, 1.457652 avg, 0.000000 rate, 0.227772 seconds, 7050 images
+user CPU start: 31.499407; end: 31.745862
+kernel CPU start: 2.029669; end: 2.038649
+Max: 17908  kilobytes
+vmsize:1295520; vmrss:11504; vmdata:51360; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000129 seconds
+142, 2.367: 1.492358, 1.461123 avg, 0.000000 rate, 0.227768 seconds, 7100 images
+user CPU start: 31.746088; end: 31.989131
+kernel CPU start: 2.038664; end: 2.052383
+Max: 17908  kilobytes
+vmsize:1295520; vmrss:11508; vmdata:51360; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000132 seconds
+143, 2.383: 1.492325, 1.464243 avg, 0.000000 rate, 0.227763 seconds, 7150 images
+user CPU start: 31.989305; end: 32.232417
+kernel CPU start: 2.052394; end: 2.065819
+Max: 17908  kilobytes
+vmsize:1295520; vmrss:11448; vmdata:51368; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000137 seconds
+144, 2.400: 1.468147, 1.464634 avg, 0.000000 rate, 0.228669 seconds, 7200 images
+user CPU start: 32.232599; end: 32.472041
+kernel CPU start: 2.065831; end: 2.083705
+Max: 17908  kilobytes
+vmsize:1295520; vmrss:11940; vmdata:51368; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000138 seconds
+145, 2.417: 1.501071, 1.468277 avg, 0.000000 rate, 0.228012 seconds, 7250 images
+user CPU start: 32.472262; end: 32.712224
+kernel CPU start: 2.083719; end: 2.101266
+Max: 18180  kilobytes
+vmsize:1295520; vmrss:11608; vmdata:51368; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000122 seconds
+146, 2.433: 1.445977, 1.466047 avg, 0.000000 rate, 0.227618 seconds, 7300 images
+user CPU start: 32.712437; end: 32.948294
+kernel CPU start: 2.101280; end: 2.119497
+Max: 18180  kilobytes
+vmsize:1295520; vmrss:11528; vmdata:51368; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000121 seconds
+147, 2.450: 1.475247, 1.466967 avg, 0.000000 rate, 0.227832 seconds, 7350 images
+user CPU start: 32.948482; end: 33.180073
+kernel CPU start: 2.119509; end: 2.142396
+Max: 18180  kilobytes
+vmsize:1295520; vmrss:11512; vmdata:51368; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000139 seconds
+148, 2.467: 1.465572, 1.466828 avg, 0.000000 rate, 0.227810 seconds, 7400 images
+user CPU start: 33.180294; end: 33.425647
+kernel CPU start: 2.142410; end: 2.152221
+Max: 18180  kilobytes
+vmsize:1295520; vmrss:11484; vmdata:51368; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000120 seconds
+149, 2.483: 1.424942, 1.462639 avg, 0.000000 rate, 0.227945 seconds, 7450 images
+user CPU start: 33.425849; end: 33.671744
+kernel CPU start: 2.152234; end: 2.161789
+Max: 18180  kilobytes
+vmsize:1295520; vmrss:11464; vmdata:51368; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000123 seconds
+150, 2.500: 1.493882, 1.465763 avg, 0.000000 rate, 0.227786 seconds, 7500 images
+user CPU start: 33.671944; end: 33.919690
+kernel CPU start: 2.161802; end: 2.172079
+Max: 18180  kilobytes
+vmsize:1295520; vmrss:11456; vmdata:51368; vmstk:132; vmexe:380; vmlib:2280
+Separately saving weights to models/mnist/mnist_lenet.weights
+
+real	0m32.793s
+user	0m0.011s
+sys	0m0.010s
+============= copy weights client 1 -> server =============
+
+real	0m0.665s
+user	0m0.011s
+sys	0m0.010s
+ree weights: 147068 Bytes
+
+real	0m0.730s
+user	0m0.011s
+sys	0m0.011s
+tee weights: 44076 Bytes
+============= copy weights server -> client 2 =============
+
+real	0m0.427s
+user	0m0.018s
+sys	0m0.006s
+ree weights: 147068 Bytes
+
+real	0m0.403s
+user	0m0.012s
+sys	0m0.009s
+tee weights: 44076 Bytes
+============= ssh to the client and local training =============
+layer     filters    size              input                output
+    0 conv      6  5 x 5 / 1    28 x  28 x   3   ->    28 x  28 x   6  0.001 BFLOPs
+    1 max          2 x 2 / 2    28 x  28 x   6   ->    14 x  14 x   6
+    2 conv      6  5 x 5 / 1    14 x  14 x   6   ->    14 x  14 x   6  0.000 BFLOPs
+    3 max          2 x 2 / 2    14 x  14 x   6   ->     7 x   7 x   6
+    4 connected                             294  ->   120
+    5 dropout       p = 0.20                120  ->   120
+    6 connected_TA                          120  ->    84
+    7 dropout_TA    p = 0.20                 84  ->    84
+    8 connected_TA                           84  ->    10
+Prepare session with the TA
+Begin darknet
+mnist_lenet
+1
+workspace_size=235200
+    9 softmax                                          10
+   10 cost                                             10
+Separately loading weights from /root/models/mnist/mnist_lenet_global.weights...Done!
+Learning Rate: 0.01, Momentum: 0.9, Decay: 5e-05
+3000
+28 28
+output file: /media/results/train_mnist_lenet_pps6_ppe8.txt
+current_batch=10 
+Loaded: 0.008608 seconds
+11, 0.183: 1.604337, 1.604337 avg, 0.007374 rate, 0.230190 seconds, 550 images
+user CPU start: 0.000000; end: 0.285768
+kernel CPU start: 0.207177; end: 0.207177
+Max: 11356  kilobytes
+vmsize:836768; vmrss:9608; vmdata:48936; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000113 seconds
+12, 0.200: 1.604727, 1.604376 avg, 0.007164 rate, 0.227865 seconds, 600 images
+user CPU start: 0.285969; end: 0.543814
+kernel CPU start: 0.207177; end: 0.207177
+Max: 14472  kilobytes
+vmsize:836768; vmrss:9924; vmdata:49044; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000099 seconds
+13, 0.217: 1.605881, 1.604527 avg, 0.006959 rate, 0.227828 seconds, 650 images
+user CPU start: 0.544043; end: 0.802874
+kernel CPU start: 0.207177; end: 0.207177
+Max: 14528  kilobytes
+vmsize:836768; vmrss:9896; vmdata:49068; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000129 seconds
+14, 0.233: 1.606418, 1.604716 avg, 0.006758 rate, 0.227774 seconds, 700 images
+user CPU start: 0.803060; end: 1.060984
+kernel CPU start: 0.207177; end: 0.207177
+Max: 14796  kilobytes
+vmsize:967840; vmrss:10248; vmdata:49368; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000119 seconds
+15, 0.250: 1.609678, 1.605212 avg, 0.006561 rate, 0.227830 seconds, 750 images
+user CPU start: 1.061195; end: 1.316964
+kernel CPU start: 0.207177; end: 0.207177
+Max: 14796  kilobytes
+vmsize:967840; vmrss:10252; vmdata:49388; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000118 seconds
+16, 0.267: 1.583805, 1.603071 avg, 0.006369 rate, 0.227858 seconds, 800 images
+user CPU start: 1.317186; end: 1.579644
+kernel CPU start: 0.207177; end: 0.207177
+Max: 14980  kilobytes
+vmsize:967840; vmrss:10388; vmdata:49448; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000122 seconds
+17, 0.283: 1.587958, 1.601560 avg, 0.006181 rate, 0.227858 seconds, 850 images
+user CPU start: 1.579857; end: 1.839709
+kernel CPU start: 0.207177; end: 0.207177
+Max: 14980  kilobytes
+vmsize:967840; vmrss:10328; vmdata:49496; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000133 seconds
+18, 0.300: 1.605449, 1.601949 avg, 0.005997 rate, 0.227620 seconds, 900 images
+user CPU start: 1.839897; end: 2.094048
+kernel CPU start: 0.207177; end: 0.211549
+Max: 17012  kilobytes
+vmsize:967840; vmrss:10536; vmdata:49584; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000121 seconds
+19, 0.317: 1.589023, 1.600656 avg, 0.005817 rate, 0.227605 seconds, 950 images
+user CPU start: 2.094240; end: 2.333209
+kernel CPU start: 0.211568; end: 0.229437
+Max: 17012  kilobytes
+vmsize:967840; vmrss:10440; vmdata:49620; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000119 seconds
+20, 0.333: 1.585060, 1.599097 avg, 0.005642 rate, 0.227738 seconds, 1000 images
+user CPU start: 2.333409; end: 2.556490
+kernel CPU start: 0.229457; end: 0.262722
+Max: 17012  kilobytes
+vmsize:967840; vmrss:10512; vmdata:49620; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000134 seconds
+21, 0.350: 1.591020, 1.598289 avg, 0.005470 rate, 0.227911 seconds, 1050 images
+user CPU start: 2.556662; end: 2.797388
+kernel CPU start: 0.262740; end: 0.275908
+Max: 17012  kilobytes
+vmsize:967840; vmrss:10424; vmdata:49660; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000150 seconds
+22, 0.367: 1.585211, 1.596981 avg, 0.005302 rate, 0.227590 seconds, 1100 images
+user CPU start: 2.797579; end: 3.037284
+kernel CPU start: 0.275927; end: 0.294490
+Max: 17012  kilobytes
+vmsize:967840; vmrss:10548; vmdata:49668; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000173 seconds
+23, 0.383: 1.591353, 1.596418 avg, 0.005139 rate, 0.227731 seconds, 1150 images
+user CPU start: 3.037460; end: 3.280126
+kernel CPU start: 0.294507; end: 0.308481
+Max: 17012  kilobytes
+vmsize:967840; vmrss:10444; vmdata:49672; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000114 seconds
+24, 0.400: 1.581439, 1.594920 avg, 0.004979 rate, 0.227729 seconds, 1200 images
+user CPU start: 3.280347; end: 3.519369
+kernel CPU start: 0.308481; end: 0.327060
+Max: 17012  kilobytes
+vmsize:967840; vmrss:10552; vmdata:49704; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000119 seconds
+25, 0.417: 1.587599, 1.594188 avg, 0.004823 rate, 0.228072 seconds, 1250 images
+user CPU start: 3.519369; end: 3.761518
+kernel CPU start: 0.327276; end: 0.345512
+Max: 17012  kilobytes
+vmsize:967840; vmrss:10440; vmdata:49704; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000132 seconds
+26, 0.433: 1.588326, 1.593602 avg, 0.004670 rate, 0.227837 seconds, 1300 images
+user CPU start: 3.761692; end: 3.998150
+kernel CPU start: 0.345528; end: 0.364362
+Max: 17012  kilobytes
+vmsize:967840; vmrss:10572; vmdata:49712; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000130 seconds
+27, 0.450: 1.589360, 1.593178 avg, 0.004521 rate, 0.227725 seconds, 1350 images
+user CPU start: 3.998352; end: 4.239940
+kernel CPU start: 0.364381; end: 0.381487
+Max: 17012  kilobytes
+vmsize:967840; vmrss:10484; vmdata:49728; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000117 seconds
+28, 0.467: 1.587662, 1.592626 avg, 0.004376 rate, 0.227666 seconds, 1400 images
+user CPU start: 4.240140; end: 4.489297
+kernel CPU start: 0.381505; end: 0.389707
+Max: 17012  kilobytes
+vmsize:967840; vmrss:10572; vmdata:49728; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000129 seconds
+29, 0.483: 1.573969, 1.590760 avg, 0.004234 rate, 0.227698 seconds, 1450 images
+user CPU start: 4.489473; end: 4.735051
+kernel CPU start: 0.389723; end: 0.402516
+Max: 17012  kilobytes
+vmsize:967840; vmrss:10568; vmdata:49760; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000118 seconds
+30, 0.500: 1.583624, 1.590047 avg, 0.004096 rate, 0.227699 seconds, 1500 images
+user CPU start: 4.735259; end: 4.986098
+kernel CPU start: 0.402533; end: 0.411442
+Max: 17012  kilobytes
+vmsize:967840; vmrss:10588; vmdata:49788; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000150 seconds
+31, 0.517: 1.599709, 1.591013 avg, 0.003961 rate, 0.227630 seconds, 1550 images
+user CPU start: 4.986272; end: 5.219198
+kernel CPU start: 0.411456; end: 0.434448
+Max: 17012  kilobytes
+vmsize:967840; vmrss:10524; vmdata:49824; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000117 seconds
+32, 0.533: 1.580255, 1.589937 avg, 0.003830 rate, 0.227634 seconds, 1600 images
+user CPU start: 5.219414; end: 5.466995
+kernel CPU start: 0.434466; end: 0.443545
+Max: 17152  kilobytes
+vmsize:967840; vmrss:10608; vmdata:49828; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000121 seconds
+33, 0.550: 1.569727, 1.587916 avg, 0.003702 rate, 0.227757 seconds, 1650 images
+user CPU start: 5.467187; end: 5.713732
+kernel CPU start: 0.443561; end: 0.452577
+Max: 17152  kilobytes
+vmsize:967840; vmrss:10436; vmdata:49828; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000119 seconds
+34, 0.567: 1.575076, 1.586632 avg, 0.003577 rate, 0.227699 seconds, 1700 images
+user CPU start: 5.713930; end: 5.954753
+kernel CPU start: 0.452592; end: 0.470322
+Max: 17152  kilobytes
+vmsize:967840; vmrss:10612; vmdata:49840; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000130 seconds
+35, 0.583: 1.579304, 1.585899 avg, 0.003455 rate, 0.227723 seconds, 1750 images
+user CPU start: 5.954972; end: 6.194983
+kernel CPU start: 0.470339; end: 0.488386
+Max: 17152  kilobytes
+vmsize:967840; vmrss:10520; vmdata:49848; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000131 seconds
+36, 0.600: 1.579909, 1.585300 avg, 0.003336 rate, 0.227682 seconds, 1800 images
+user CPU start: 6.195158; end: 6.439039
+kernel CPU start: 0.488400; end: 0.501664
+Max: 17152  kilobytes
+vmsize:967840; vmrss:10604; vmdata:49848; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000131 seconds
+37, 0.617: 1.562220, 1.582992 avg, 0.003221 rate, 0.227828 seconds, 1850 images
+user CPU start: 6.439218; end: 6.681206
+kernel CPU start: 0.501678; end: 0.515169
+Max: 17152  kilobytes
+vmsize:967840; vmrss:10536; vmdata:49848; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000119 seconds
+38, 0.633: 1.565167, 1.581210 avg, 0.003108 rate, 0.238982 seconds, 1900 images
+user CPU start: 6.681410; end: 6.936908
+kernel CPU start: 0.515185; end: 0.529350
+Max: 17152  kilobytes
+vmsize:967840; vmrss:10604; vmdata:49852; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000140 seconds
+39, 0.650: 1.575268, 1.580616 avg, 0.002999 rate, 0.227862 seconds, 1950 images
+user CPU start: 6.937104; end: 7.178026
+kernel CPU start: 0.529365; end: 0.543148
+Max: 17152  kilobytes
+vmsize:967840; vmrss:10476; vmdata:49864; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000109 seconds
+40, 0.667: 1.556862, 1.578240 avg, 0.002892 rate, 0.228095 seconds, 2000 images
+user CPU start: 7.178266; end: 7.411199
+kernel CPU start: 0.543166; end: 0.565083
+Max: 17152  kilobytes
+vmsize:967840; vmrss:10556; vmdata:49864; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000120 seconds
+41, 0.683: 1.581852, 1.578601 avg, 0.002788 rate, 0.227644 seconds, 2050 images
+user CPU start: 7.411394; end: 7.654886
+kernel CPU start: 0.565098; end: 0.578774
+Max: 17152  kilobytes
+vmsize:967840; vmrss:10452; vmdata:49876; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000119 seconds
+42, 0.700: 1.547766, 1.575518 avg, 0.002687 rate, 0.227603 seconds, 2100 images
+user CPU start: 7.655079; end: 7.893841
+kernel CPU start: 0.578789; end: 0.595397
+Max: 17152  kilobytes
+vmsize:967840; vmrss:10572; vmdata:49876; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000126 seconds
+43, 0.717: 1.568771, 1.574843 avg, 0.002589 rate, 0.227700 seconds, 2150 images
+user CPU start: 7.894071; end: 8.135673
+kernel CPU start: 0.595415; end: 0.612240
+Max: 17152  kilobytes
+vmsize:967840; vmrss:10416; vmdata:49876; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000151 seconds
+44, 0.733: 1.551583, 1.572517 avg, 0.002494 rate, 0.241769 seconds, 2200 images
+user CPU start: 8.135853; end: 8.387910
+kernel CPU start: 0.612254; end: 0.629876
+Max: 17152  kilobytes
+vmsize:967840; vmrss:10560; vmdata:49876; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000172 seconds
+45, 0.750: 1.564200, 1.571685 avg, 0.002401 rate, 0.242683 seconds, 2250 images
+user CPU start: 8.388153; end: 8.648894
+kernel CPU start: 0.629876; end: 0.643819
+Max: 17152  kilobytes
+vmsize:967840; vmrss:10480; vmdata:49888; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000156 seconds
+46, 0.767: 1.557153, 1.570232 avg, 0.002311 rate, 0.243015 seconds, 2300 images
+user CPU start: 8.649145; end: 8.910311
+kernel CPU start: 0.643838; end: 0.658163
+Max: 17152  kilobytes
+vmsize:967840; vmrss:10552; vmdata:49904; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000180 seconds
+47, 0.783: 1.582597, 1.571469 avg, 0.002223 rate, 0.230341 seconds, 2350 images
+user CPU start: 8.910526; end: 9.154601
+kernel CPU start: 0.658179; end: 0.676612
+Max: 17152  kilobytes
+vmsize:967840; vmrss:10472; vmdata:49912; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000148 seconds
+48, 0.800: 1.529958, 1.567318 avg, 0.002138 rate, 0.242935 seconds, 2400 images
+user CPU start: 9.154861; end: 9.376392
+kernel CPU start: 0.676631; end: 0.729740
+Max: 17152  kilobytes
+vmsize:967840; vmrss:10596; vmdata:49912; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000165 seconds
+49, 0.817: 1.575751, 1.568161 avg, 0.002056 rate, 0.242713 seconds, 2450 images
+user CPU start: 9.376615; end: 9.638756
+kernel CPU start: 0.729757; end: 0.743067
+Max: 17152  kilobytes
+vmsize:967840; vmrss:10484; vmdata:49912; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000161 seconds
+50, 0.833: 1.569916, 1.568336 avg, 0.001975 rate, 0.230126 seconds, 2500 images
+user CPU start: 9.639035; end: 9.892032
+kernel CPU start: 0.743067; end: 0.757510
+Max: 17152  kilobytes
+vmsize:967840; vmrss:10576; vmdata:49912; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000169 seconds
+51, 0.850: 1.556896, 1.567192 avg, 0.001897 rate, 0.242574 seconds, 2550 images
+user CPU start: 9.892251; end: 10.149615
+kernel CPU start: 0.757527; end: 0.776261
+Max: 17152  kilobytes
+vmsize:967840; vmrss:10504; vmdata:49912; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000153 seconds
+52, 0.867: 1.549414, 1.565414 avg, 0.001822 rate, 0.242624 seconds, 2600 images
+user CPU start: 10.149857; end: 10.400965
+kernel CPU start: 0.776280; end: 0.802735
+Max: 17152  kilobytes
+vmsize:967840; vmrss:10632; vmdata:49924; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000174 seconds
+53, 0.883: 1.533920, 1.562265 avg, 0.001749 rate, 0.231006 seconds, 2650 images
+user CPU start: 10.401178; end: 10.649107
+kernel CPU start: 0.802752; end: 0.817174
+Max: 17152  kilobytes
+vmsize:967840; vmrss:10568; vmdata:49940; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000116 seconds
+54, 0.900: 1.553988, 1.561437 avg, 0.001678 rate, 0.242292 seconds, 2700 images
+user CPU start: 10.649327; end: 10.900644
+kernel CPU start: 0.817174; end: 0.837233
+Max: 17152  kilobytes
+vmsize:967840; vmrss:10628; vmdata:49940; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000168 seconds
+55, 0.917: 1.524684, 1.557762 avg, 0.001609 rate, 0.242707 seconds, 2750 images
+user CPU start: 10.900861; end: 11.162296
+kernel CPU start: 0.837250; end: 0.851270
+Max: 17152  kilobytes
+vmsize:967840; vmrss:10552; vmdata:49940; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000160 seconds
+56, 0.933: 1.549088, 1.556895 avg, 0.001542 rate, 0.242472 seconds, 2800 images
+user CPU start: 11.162550; end: 11.413706
+kernel CPU start: 0.851289; end: 0.876652
+Max: 17152  kilobytes
+vmsize:967840; vmrss:10752; vmdata:49956; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000160 seconds
+57, 0.950: 1.534176, 1.554623 avg, 0.001478 rate, 0.230287 seconds, 2850 images
+user CPU start: 11.413979; end: 11.664953
+kernel CPU start: 0.876673; end: 0.885975
+Max: 17152  kilobytes
+vmsize:967840; vmrss:10604; vmdata:49964; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000180 seconds
+58, 0.967: 1.549648, 1.554125 avg, 0.001415 rate, 0.242807 seconds, 2900 images
+user CPU start: 11.665170; end: 11.925043
+kernel CPU start: 0.885992; end: 0.900572
+Max: 17152  kilobytes
+vmsize:967840; vmrss:10680; vmdata:49976; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000156 seconds
+59, 0.983: 1.551141, 1.553827 avg, 0.001355 rate, 0.242910 seconds, 2950 images
+user CPU start: 11.925334; end: 12.192870
+kernel CPU start: 0.900594; end: 0.909717
+Max: 17152  kilobytes
+vmsize:967840; vmrss:10500; vmdata:49976; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000168 seconds
+60, 1.000: 1.527766, 1.551221 avg, 0.001296 rate, 0.230437 seconds, 3000 images
+user CPU start: 12.193118; end: 12.436260
+kernel CPU start: 0.909736; end: 0.928437
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10684; vmdata:50108; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000155 seconds
+61, 1.017: 1.527355, 1.548834 avg, 0.001239 rate, 0.242935 seconds, 3050 images
+user CPU start: 12.436545; end: 12.688678
+kernel CPU start: 0.928459; end: 0.950061
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10588; vmdata:50108; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000148 seconds
+62, 1.033: 1.518375, 1.545788 avg, 0.001185 rate, 0.242508 seconds, 3100 images
+user CPU start: 12.688996; end: 12.945437
+kernel CPU start: 0.950085; end: 0.967647
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10604; vmdata:50132; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000245 seconds
+63, 1.050: 1.530323, 1.544242 avg, 0.001132 rate, 0.230439 seconds, 3150 images
+user CPU start: 12.945648; end: 13.190773
+kernel CPU start: 0.967663; end: 0.983576
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10500; vmdata:50140; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000120 seconds
+64, 1.067: 1.533442, 1.543162 avg, 0.001081 rate, 0.242536 seconds, 3200 images
+user CPU start: 13.190985; end: 13.458474
+kernel CPU start: 0.983592; end: 0.993438
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10632; vmdata:50152; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000165 seconds
+65, 1.083: 1.524412, 1.541287 avg, 0.001031 rate, 0.242912 seconds, 3250 images
+user CPU start: 13.458692; end: 13.712401
+kernel CPU start: 0.993454; end: 1.015215
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10552; vmdata:50164; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000174 seconds
+66, 1.100: 1.505519, 1.537710 avg, 0.000983 rate, 0.242609 seconds, 3300 images
+user CPU start: 13.712619; end: 13.968404
+kernel CPU start: 1.015231; end: 1.033836
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10712; vmdata:50164; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000138 seconds
+67, 1.117: 1.493534, 1.533292 avg, 0.000937 rate, 0.230102 seconds, 3350 images
+user CPU start: 13.968404; end: 14.213779
+kernel CPU start: 1.034111; end: 1.047711
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10592; vmdata:50200; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000130 seconds
+68, 1.133: 1.497904, 1.529753 avg, 0.000893 rate, 0.242880 seconds, 3400 images
+user CPU start: 14.213959; end: 14.467405
+kernel CPU start: 1.047724; end: 1.070800
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10728; vmdata:50208; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000157 seconds
+69, 1.150: 1.486242, 1.525402 avg, 0.000850 rate, 0.242946 seconds, 3450 images
+user CPU start: 14.467612; end: 14.709818
+kernel CPU start: 1.070816; end: 1.100844
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10648; vmdata:50236; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000182 seconds
+70, 1.167: 1.507374, 1.523600 avg, 0.000809 rate, 0.230300 seconds, 3500 images
+user CPU start: 14.710061; end: 14.957249
+kernel CPU start: 1.100862; end: 1.113845
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10784; vmdata:50264; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000167 seconds
+71, 1.183: 1.511156, 1.522355 avg, 0.000769 rate, 0.242810 seconds, 3550 images
+user CPU start: 14.957249; end: 15.218138
+kernel CPU start: 1.114085; end: 1.128188
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10716; vmdata:50280; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000155 seconds
+72, 1.200: 1.531196, 1.523239 avg, 0.000731 rate, 0.242821 seconds, 3600 images
+user CPU start: 15.218396; end: 15.486391
+kernel CPU start: 1.128208; end: 1.137748
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10888; vmdata:50300; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000179 seconds
+73, 1.217: 1.518283, 1.522744 avg, 0.000694 rate, 0.230448 seconds, 3650 images
+user CPU start: 15.486609; end: 15.736541
+kernel CPU start: 1.137764; end: 1.151970
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10808; vmdata:50332; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000120 seconds
+74, 1.233: 1.481314, 1.518601 avg, 0.000659 rate, 0.227918 seconds, 3700 images
+user CPU start: 15.736735; end: 15.980620
+kernel CPU start: 1.151984; end: 1.164767
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10868; vmdata:50332; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000124 seconds
+75, 1.250: 1.528026, 1.519543 avg, 0.000625 rate, 0.227892 seconds, 3750 images
+user CPU start: 15.980811; end: 16.219806
+kernel CPU start: 1.164781; end: 1.181488
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10752; vmdata:50332; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000137 seconds
+76, 1.267: 1.515295, 1.519118 avg, 0.000592 rate, 0.227788 seconds, 3800 images
+user CPU start: 16.220031; end: 16.459705
+kernel CPU start: 1.181504; end: 1.198904
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10836; vmdata:50332; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000119 seconds
+77, 1.283: 1.508883, 1.518095 avg, 0.000561 rate, 0.227983 seconds, 3850 images
+user CPU start: 16.459914; end: 16.699511
+kernel CPU start: 1.198920; end: 1.215651
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10620; vmdata:50332; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000133 seconds
+78, 1.300: 1.518258, 1.518111 avg, 0.000531 rate, 0.241928 seconds, 3900 images
+user CPU start: 16.699684; end: 16.960173
+kernel CPU start: 1.215663; end: 1.225396
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10756; vmdata:50332; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000187 seconds
+79, 1.317: 1.482184, 1.514518 avg, 0.000502 rate, 0.242648 seconds, 3950 images
+user CPU start: 16.960423; end: 17.216113
+kernel CPU start: 1.225414; end: 1.243365
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10672; vmdata:50352; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000150 seconds
+80, 1.333: 1.497422, 1.512809 avg, 0.000474 rate, 0.242877 seconds, 4000 images
+user CPU start: 17.216381; end: 17.477253
+kernel CPU start: 1.243384; end: 1.257738
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10696; vmdata:50360; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000175 seconds
+81, 1.350: 1.482689, 1.509797 avg, 0.000448 rate, 0.230129 seconds, 4050 images
+user CPU start: 17.477479; end: 17.702359
+kernel CPU start: 1.257755; end: 1.293884
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10580; vmdata:50360; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000169 seconds
+82, 1.367: 1.468650, 1.505682 avg, 0.000422 rate, 0.242627 seconds, 4100 images
+user CPU start: 17.702585; end: 17.968387
+kernel CPU start: 1.293900; end: 1.306265
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10740; vmdata:50384; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000165 seconds
+83, 1.383: 1.462101, 1.501324 avg, 0.000398 rate, 0.243230 seconds, 4150 images
+user CPU start: 17.968634; end: 18.213058
+kernel CPU start: 1.306283; end: 1.336182
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10568; vmdata:50384; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000166 seconds
+84, 1.400: 1.493488, 1.500540 avg, 0.000375 rate, 0.230234 seconds, 4200 images
+user CPU start: 18.213278; end: 18.453626
+kernel CPU start: 1.336198; end: 1.358188
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10700; vmdata:50384; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000167 seconds
+85, 1.417: 1.500108, 1.500497 avg, 0.000353 rate, 0.242677 seconds, 4250 images
+user CPU start: 18.453841; end: 18.715878
+kernel CPU start: 1.358204; end: 1.369422
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10588; vmdata:50384; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000153 seconds
+86, 1.433: 1.476415, 1.498089 avg, 0.000331 rate, 0.242638 seconds, 4300 images
+user CPU start: 18.716124; end: 18.976488
+kernel CPU start: 1.369440; end: 1.383440
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10712; vmdata:50384; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000158 seconds
+87, 1.450: 1.469927, 1.495273 avg, 0.000311 rate, 0.241994 seconds, 4350 images
+user CPU start: 18.976734; end: 19.229899
+kernel CPU start: 1.383458; end: 1.404412
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10608; vmdata:50384; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000110 seconds
+88, 1.467: 1.481378, 1.493883 avg, 0.000292 rate, 0.238929 seconds, 4400 images
+user CPU start: 19.230144; end: 19.485791
+kernel CPU start: 1.404430; end: 1.419092
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10700; vmdata:50412; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000131 seconds
+89, 1.483: 1.478430, 1.492338 avg, 0.000273 rate, 0.239033 seconds, 4450 images
+user CPU start: 19.485965; end: 19.733381
+kernel CPU start: 1.419105; end: 1.437425
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10608; vmdata:50412; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000144 seconds
+90, 1.500: 1.484025, 1.491506 avg, 0.000256 rate, 0.239030 seconds, 4500 images
+user CPU start: 19.733592; end: 19.986403
+kernel CPU start: 1.437440; end: 1.451534
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10756; vmdata:50412; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000122 seconds
+91, 1.517: 1.490381, 1.491394 avg, 0.000239 rate, 0.242319 seconds, 4550 images
+user CPU start: 19.986604; end: 20.241972
+kernel CPU start: 1.451549; end: 1.468477
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10616; vmdata:50412; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000121 seconds
+92, 1.533: 1.456731, 1.487928 avg, 0.000224 rate, 0.242861 seconds, 4600 images
+user CPU start: 20.242171; end: 20.495199
+kernel CPU start: 1.468492; end: 1.490451
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10744; vmdata:50412; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000145 seconds
+93, 1.550: 1.478697, 1.487005 avg, 0.000209 rate, 0.242785 seconds, 4650 images
+user CPU start: 20.495444; end: 20.756513
+kernel CPU start: 1.490469; end: 1.504518
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10664; vmdata:50412; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000157 seconds
+94, 1.567: 1.516425, 1.489946 avg, 0.000194 rate, 0.238988 seconds, 4700 images
+user CPU start: 20.756819; end: 21.022314
+kernel CPU start: 1.504540; end: 1.510061
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10760; vmdata:50420; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000130 seconds
+95, 1.583: 1.459867, 1.486938 avg, 0.000181 rate, 0.238972 seconds, 4750 images
+user CPU start: 21.022486; end: 21.276133
+kernel CPU start: 1.510073; end: 1.524570
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10688; vmdata:50432; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000132 seconds
+96, 1.600: 1.502440, 1.488489 avg, 0.000168 rate, 0.239085 seconds, 4800 images
+user CPU start: 21.276314; end: 21.521993
+kernel CPU start: 1.524583; end: 1.545695
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10764; vmdata:50432; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000128 seconds
+97, 1.617: 1.474250, 1.487065 avg, 0.000156 rate, 0.241660 seconds, 4850 images
+user CPU start: 21.522196; end: 21.761074
+kernel CPU start: 1.545709; end: 1.576516
+Max: 18912  kilobytes
+vmsize:1033376; vmrss:10704; vmdata:50436; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000162 seconds
+98, 1.633: 1.520848, 1.490443 avg, 0.000144 rate, 0.242745 seconds, 4900 images
+user CPU start: 21.761074; end: 22.021073
+kernel CPU start: 1.576813; end: 1.590169
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10824; vmdata:50436; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000157 seconds
+99, 1.650: 1.456912, 1.487090 avg, 0.000134 rate, 0.242981 seconds, 4950 images
+user CPU start: 22.021338; end: 22.286599
+kernel CPU start: 1.590188; end: 1.601276
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10668; vmdata:50440; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000166 seconds
+100, 1.667: 1.460789, 1.484460 avg, 0.000123 rate, 0.230160 seconds, 5000 images
+user CPU start: 22.286826; end: 22.533308
+kernel CPU start: 1.601292; end: 1.618908
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10824; vmdata:50448; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000140 seconds
+101, 1.683: 1.470759, 1.483090 avg, 0.000114 rate, 0.242864 seconds, 5050 images
+user CPU start: 22.533491; end: 22.783373
+kernel CPU start: 1.618921; end: 1.644613
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10724; vmdata:50448; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000164 seconds
+102, 1.700: 1.464836, 1.481264 avg, 0.000105 rate, 0.242892 seconds, 5100 images
+user CPU start: 22.783594; end: 23.042332
+kernel CPU start: 1.644629; end: 1.663104
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10884; vmdata:50448; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000243 seconds
+103, 1.717: 1.441729, 1.477311 avg, 0.000096 rate, 0.230385 seconds, 5150 images
+user CPU start: 23.042550; end: 23.283892
+kernel CPU start: 1.663120; end: 1.681987
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10768; vmdata:50448; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000143 seconds
+104, 1.733: 1.485722, 1.478152 avg, 0.000088 rate, 0.242654 seconds, 5200 images
+user CPU start: 23.284079; end: 23.537922
+kernel CPU start: 1.682000; end: 1.701121
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10932; vmdata:50448; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000156 seconds
+105, 1.750: 1.468102, 1.477147 avg, 0.000081 rate, 0.242774 seconds, 5250 images
+user CPU start: 23.538165; end: 23.796547
+kernel CPU start: 1.701138; end: 1.722814
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10780; vmdata:50452; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000186 seconds
+106, 1.767: 1.476074, 1.477040 avg, 0.000074 rate, 0.242542 seconds, 5300 images
+user CPU start: 23.796792; end: 24.057896
+kernel CPU start: 1.722832; end: 1.735868
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10868; vmdata:50452; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000152 seconds
+107, 1.783: 1.490367, 1.478372 avg, 0.000068 rate, 0.238957 seconds, 5350 images
+user CPU start: 24.057896; end: 24.307366
+kernel CPU start: 1.736098; end: 1.754347
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10768; vmdata:50452; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000124 seconds
+108, 1.800: 1.499493, 1.480484 avg, 0.000061 rate, 0.238989 seconds, 5400 images
+user CPU start: 24.307564; end: 24.567871
+kernel CPU start: 1.754361; end: 1.765091
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10896; vmdata:50452; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000134 seconds
+109, 1.817: 1.444409, 1.476877 avg, 0.000056 rate, 0.239070 seconds, 5450 images
+user CPU start: 24.568048; end: 24.817675
+kernel CPU start: 1.765104; end: 1.783574
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10840; vmdata:50468; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000121 seconds
+110, 1.833: 1.462042, 1.475393 avg, 0.000051 rate, 0.241956 seconds, 5500 images
+user CPU start: 24.817922; end: 25.065334
+kernel CPU start: 1.783591; end: 1.809069
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10852; vmdata:50480; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000157 seconds
+111, 1.850: 1.474751, 1.475329 avg, 0.000046 rate, 0.243064 seconds, 5550 images
+user CPU start: 25.065579; end: 25.318643
+kernel CPU start: 1.809087; end: 1.831423
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10764; vmdata:50480; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000152 seconds
+112, 1.867: 1.476845, 1.475481 avg, 0.000041 rate, 0.242787 seconds, 5600 images
+user CPU start: 25.318853; end: 25.570983
+kernel CPU start: 1.831438; end: 1.854372
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10952; vmdata:50488; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000185 seconds
+113, 1.883: 1.435307, 1.471463 avg, 0.000037 rate, 0.230384 seconds, 5650 images
+user CPU start: 25.571202; end: 25.813136
+kernel CPU start: 1.854388; end: 1.872987
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10880; vmdata:50488; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000167 seconds
+114, 1.900: 1.510453, 1.475362 avg, 0.000033 rate, 0.243044 seconds, 5700 images
+user CPU start: 25.813354; end: 26.072825
+kernel CPU start: 1.873003; end: 1.889531
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:11016; vmdata:50488; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000154 seconds
+115, 1.917: 1.527557, 1.480582 avg, 0.000030 rate, 0.242739 seconds, 5750 images
+user CPU start: 26.073113; end: 26.328912
+kernel CPU start: 1.889552; end: 1.910387
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10880; vmdata:50488; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000156 seconds
+116, 1.933: 1.446640, 1.477188 avg, 0.000026 rate, 0.230074 seconds, 5800 images
+user CPU start: 26.329165; end: 26.570682
+kernel CPU start: 1.910405; end: 1.929271
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:11056; vmdata:50524; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000177 seconds
+117, 1.950: 1.437413, 1.473210 avg, 0.000023 rate, 0.242486 seconds, 5850 images
+user CPU start: 26.570923; end: 26.834725
+kernel CPU start: 1.929288; end: 1.938988
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10916; vmdata:50544; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000184 seconds
+118, 1.967: 1.433596, 1.469249 avg, 0.000021 rate, 0.242395 seconds, 5900 images
+user CPU start: 26.834946; end: 27.096685
+kernel CPU start: 1.939003; end: 1.952463
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:11088; vmdata:50568; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000159 seconds
+119, 1.983: 1.463604, 1.468684 avg, 0.000018 rate, 0.230975 seconds, 5950 images
+user CPU start: 27.096937; end: 27.329729
+kernel CPU start: 1.952482; end: 1.982799
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10952; vmdata:50568; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000125 seconds
+120, 2.000: 1.434416, 1.465257 avg, 0.000016 rate, 0.242063 seconds, 6000 images
+user CPU start: 27.329908; end: 27.593617
+kernel CPU start: 1.982812; end: 1.992180
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:11108; vmdata:50568; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000180 seconds
+121, 2.017: 1.402927, 1.459024 avg, 0.000014 rate, 0.242452 seconds, 6050 images
+user CPU start: 27.593871; end: 27.860559
+kernel CPU start: 1.992199; end: 2.002091
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:11008; vmdata:50568; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000176 seconds
+122, 2.033: 1.494433, 1.462565 avg, 0.000012 rate, 0.242589 seconds, 6100 images
+user CPU start: 27.860838; end: 28.116876
+kernel CPU start: 2.002111; end: 2.022950
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:11080; vmdata:50568; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000164 seconds
+123, 2.050: 1.476864, 1.463995 avg, 0.000010 rate, 0.239428 seconds, 6150 images
+user CPU start: 28.117135; end: 28.378563
+kernel CPU start: 2.022968; end: 2.031518
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10952; vmdata:50580; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000119 seconds
+124, 2.067: 1.479242, 1.465520 avg, 0.000009 rate, 0.238891 seconds, 6200 images
+user CPU start: 28.378758; end: 28.629135
+kernel CPU start: 2.031532; end: 2.049737
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:11064; vmdata:50588; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000121 seconds
+125, 2.083: 1.472857, 1.466254 avg, 0.000008 rate, 0.239092 seconds, 6250 images
+user CPU start: 28.629344; end: 28.884160
+kernel CPU start: 2.049752; end: 2.060757
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10840; vmdata:50588; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000109 seconds
+126, 2.100: 1.459010, 1.465529 avg, 0.000007 rate, 0.241454 seconds, 6300 images
+user CPU start: 28.884382; end: 29.135126
+kernel CPU start: 2.060757; end: 2.079647
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:11020; vmdata:50588; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000170 seconds
+127, 2.117: 1.436463, 1.462623 avg, 0.000006 rate, 0.242769 seconds, 6350 images
+user CPU start: 29.135408; end: 29.388872
+kernel CPU start: 2.079667; end: 2.100708
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10840; vmdata:50588; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000172 seconds
+128, 2.133: 1.417151, 1.458075 avg, 0.000005 rate, 0.242879 seconds, 6400 images
+user CPU start: 29.389093; end: 29.654209
+kernel CPU start: 2.100724; end: 2.109549
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10896; vmdata:50588; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000165 seconds
+129, 2.150: 1.483445, 1.460612 avg, 0.000004 rate, 0.230231 seconds, 6450 images
+user CPU start: 29.654429; end: 29.906502
+kernel CPU start: 2.109564; end: 2.119407
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10784; vmdata:50588; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000162 seconds
+130, 2.167: 1.466792, 1.461230 avg, 0.000003 rate, 0.249172 seconds, 6500 images
+user CPU start: 29.906753; end: 30.175509
+kernel CPU start: 2.119425; end: 2.134384
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10848; vmdata:50588; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000141 seconds
+131, 2.183: 1.463286, 1.461436 avg, 0.000003 rate, 0.238925 seconds, 6550 images
+user CPU start: 30.175708; end: 30.427872
+kernel CPU start: 2.134398; end: 2.148778
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10720; vmdata:50588; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000122 seconds
+132, 2.200: 1.465926, 1.461885 avg, 0.000002 rate, 0.240165 seconds, 6600 images
+user CPU start: 30.427872; end: 30.678255
+kernel CPU start: 2.148973; end: 2.172195
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10844; vmdata:50588; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000146 seconds
+133, 2.217: 1.461886, 1.461885 avg, 0.000002 rate, 0.249006 seconds, 6650 images
+user CPU start: 30.678502; end: 30.952167
+kernel CPU start: 2.172212; end: 2.181609
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10772; vmdata:50596; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000142 seconds
+134, 2.233: 1.484337, 1.464130 avg, 0.000001 rate, 0.239231 seconds, 6700 images
+user CPU start: 30.952379; end: 31.200191
+kernel CPU start: 2.181624; end: 2.202903
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10816; vmdata:50596; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000124 seconds
+135, 2.250: 1.470608, 1.464778 avg, 0.000001 rate, 0.240335 seconds, 6750 images
+user CPU start: 31.200388; end: 31.455105
+kernel CPU start: 2.202917; end: 2.215895
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10708; vmdata:50596; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000133 seconds
+136, 2.267: 1.482628, 1.466563 avg, 0.000001 rate, 0.248722 seconds, 6800 images
+user CPU start: 31.455344; end: 31.714769
+kernel CPU start: 2.215912; end: 2.237698
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10804; vmdata:50596; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000132 seconds
+137, 2.283: 1.469965, 1.466903 avg, 0.000001 rate, 0.238839 seconds, 6850 images
+user CPU start: 31.714971; end: 31.971677
+kernel CPU start: 2.237712; end: 2.247850
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10760; vmdata:50616; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000124 seconds
+138, 2.300: 1.486653, 1.468878 avg, 0.000000 rate, 0.240642 seconds, 6900 images
+user CPU start: 31.971858; end: 32.226888
+kernel CPU start: 2.247863; end: 2.261480
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10880; vmdata:50616; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000166 seconds
+139, 2.317: 1.478904, 1.469881 avg, 0.000000 rate, 0.248693 seconds, 6950 images
+user CPU start: 32.227103; end: 32.487595
+kernel CPU start: 2.261495; end: 2.281044
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10776; vmdata:50616; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000106 seconds
+140, 2.333: 1.435519, 1.466444 avg, 0.000000 rate, 0.239342 seconds, 7000 images
+user CPU start: 32.487786; end: 32.736064
+kernel CPU start: 2.281057; end: 2.299440
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10832; vmdata:50616; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000112 seconds
+141, 2.350: 1.464455, 1.466246 avg, 0.000000 rate, 0.240795 seconds, 7050 images
+user CPU start: 32.736259; end: 32.986409
+kernel CPU start: 2.299453; end: 2.318271
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10708; vmdata:50616; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000156 seconds
+142, 2.367: 1.462402, 1.465861 avg, 0.000000 rate, 0.248547 seconds, 7100 images
+user CPU start: 32.986686; end: 33.241133
+kernel CPU start: 2.318290; end: 2.343986
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10824; vmdata:50616; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000127 seconds
+143, 2.383: 1.428696, 1.462145 avg, 0.000000 rate, 0.239161 seconds, 7150 images
+user CPU start: 33.241308; end: 33.494864
+kernel CPU start: 2.343998; end: 2.357524
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10708; vmdata:50616; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000129 seconds
+144, 2.400: 1.477669, 1.463697 avg, 0.000000 rate, 0.240893 seconds, 7200 images
+user CPU start: 33.495044; end: 33.750537
+kernel CPU start: 2.357536; end: 2.373810
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10824; vmdata:50616; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000162 seconds
+145, 2.417: 1.470939, 1.464421 avg, 0.000000 rate, 0.248354 seconds, 7250 images
+user CPU start: 33.750782; end: 34.017168
+kernel CPU start: 2.373828; end: 2.387910
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10756; vmdata:50616; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000107 seconds
+146, 2.433: 1.462572, 1.464236 avg, 0.000000 rate, 0.238994 seconds, 7300 images
+user CPU start: 34.017361; end: 34.277745
+kernel CPU start: 2.387923; end: 2.398322
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10820; vmdata:50616; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000121 seconds
+147, 2.450: 1.448532, 1.462666 avg, 0.000000 rate, 0.241402 seconds, 7350 images
+user CPU start: 34.277944; end: 34.537171
+kernel CPU start: 2.398336; end: 2.408310
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10704; vmdata:50616; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000167 seconds
+148, 2.467: 1.447416, 1.461141 avg, 0.000000 rate, 0.248311 seconds, 7400 images
+user CPU start: 34.537441; end: 34.800844
+kernel CPU start: 2.408329; end: 2.425506
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10844; vmdata:50616; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000133 seconds
+149, 2.483: 1.421399, 1.457167 avg, 0.000000 rate, 0.239187 seconds, 7450 images
+user CPU start: 34.801028; end: 35.051213
+kernel CPU start: 2.425518; end: 2.442090
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10732; vmdata:50616; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000130 seconds
+150, 2.500: 1.451429, 1.456593 avg, 0.000000 rate, 0.241475 seconds, 7500 images
+user CPU start: 35.051394; end: 35.306542
+kernel CPU start: 2.442103; end: 2.454787
+Max: 21092  kilobytes
+vmsize:1033376; vmrss:10872; vmdata:50616; vmstk:132; vmexe:380; vmlib:2280
+Separately saving weights to models/mnist/mnist_lenet.weights
+
+real	0m33.876s
+user	0m0.020s
+sys	0m0.000s
+============= copy weights client 2 -> server =============
+
+real	0m0.590s
+user	0m0.016s
+sys	0m0.006s
+ree weights: 147068 Bytes
+
+real	0m0.353s
+user	0m0.020s
+sys	0m0.002s
+tee weights: 44076 Bytes
+============= averaging =============
+Number of participants: 2
+layer     filters    size              input                output
+    0 conv      6  5 x 5 / 1    28 x  28 x   3   ->    28 x  28 x   6  0.001 BFLOPs
+    1 max          2 x 2 / 2    28 x  28 x   6   ->    14 x  14 x   6
+    2 conv      6  5 x 5 / 1    14 x  14 x   6   ->    14 x  14 x   6  0.000 BFLOPs
+    3 max          2 x 2 / 2    14 x  14 x   6   ->     7 x   7 x   6
+    4 connected                             294  ->   120
+    5 dropout       p = 0.80                120  ->   120
+    6 connected                             120  ->    84
+    7 dropout       p = 0.80                 84  ->    84
+    8 connected                              84  ->    10
+    9 softmax                                          10
+   10 cost                                             10
+Separately loading weights from ./results/mnist/client_updates_standard_ss/mnist_lenet_c1.weights...Done!
+load weights of p-1: ./results/mnist/client_updates_standard_ss/mnist_lenet_c1.weights
+layer     filters    size              input                output
+    0 conv      6  5 x 5 / 1    28 x  28 x   3   ->    28 x  28 x   6  0.001 BFLOPs
+    1 max          2 x 2 / 2    28 x  28 x   6   ->    14 x  14 x   6
+    2 conv      6  5 x 5 / 1    14 x  14 x   6   ->    14 x  14 x   6  0.000 BFLOPs
+    3 max          2 x 2 / 2    14 x  14 x   6   ->     7 x   7 x   6
+    4 connected                             294  ->   120
+    5 dropout       p = 0.80                120  ->   120
+    6 connected                             120  ->    84
+    7 dropout       p = 0.80                 84  ->    84
+    8 connected                              84  ->    10
+    9 softmax                                          10
+   10 cost                                             10
+Separately loading weights from ./results/mnist/client_updates_standard_ss/mnist_lenet_c2.weights...Done!
+load weights of p-2: ./results/mnist/client_updates_standard_ss/mnist_lenet_c2.weights
+Aggregating layer 0 ... in OS: biases finished...
+net 0: -0.029874, 0.300678, 0.037088, 0.057896, -0.023468, 
+net 1: -0.037222, 0.290769, 0.031389, 0.059668, -0.026396, 
+net a: -0.033548, 0.295724, 0.034239, 0.058782, -0.024932,  weights finished
+Aggregating layer 2 ... in OS: biases finished...
+net 0: -0.089205, -0.153571, 0.006884, -0.050876, -0.017049, 
+net 1: -0.089186, -0.153030, 0.010163, -0.044298, -0.015913, 
+net a: -0.089196, -0.153300, 0.008524, -0.047587, -0.016481,  weights finished
+Aggregating layer 4 ... in OS: biases finished...
+net 0: -0.057891, 0.034195, 0.080097, -0.037214, -0.035868, 
+net 1: -0.057870, 0.034305, 0.079706, -0.037074, -0.034626, 
+net a: -0.057880, 0.034250, 0.079902, -0.037144, -0.035247,  weights finished
+
+tee--- net 0: -0.014496, 0.000123, -0.009056, -0.000853, -0.007569, 
+tee--- net 1: -0.010007, 0.000012, -0.004518, 0.000604, -0.006796, 
+tee--- net a: -0.012252, 0.000068, -0.006787, -0.000125, -0.007182, 
+Aggregating layer 6 ... inside SGX: biases finished...
+tee--- net 0: -0.102818, -0.100010, 0.083322, 0.078853, -0.044358, 
+tee--- net 1: -0.102699, -0.098841, 0.087152, 0.081006, -0.043229, 
+net 0: -0.000000, 6586272431101914017489143216472064.000000, 203.280319, -0.000000, -0.000000, 
+net 1: -1425232340622947376955392000.000000, -3077605782093755800616960.000000, -0.000000, -246722.421875, 0.000000, 
+net a: -0.016950, -505132148480104780820525896171520.000000, 124163001477488443392.000000, 69608650403794147337018313623470080.000000, 7208.845215,  weights finished
+tee--- net a: -0.102759, -0.099426, 0.085237, 0.079929, -0.043794, 
+tee--- net 0: -0.040864, 0.064451, -0.018944, -0.041065, -0.004927, 
+tee--- net 1: -0.028897, 0.052260, -0.023871, -0.043879, -0.003319, 
+tee--- net a: -0.034880, 0.058355, -0.021407, -0.042472, -0.004123, 
+Aggregating layer 8 ... inside SGX: biases finished...
+tee--- net 0: -0.043239, -0.115957, 0.079521, 0.102153, 0.046294, 
+tee--- net 1: -0.050002, -0.115984, 0.078997, 0.102279, 0.041714, 
+net 0: 0.000000, 4.871778, -0.000000, 0.000000, -0.000000, 
+net 1: -3069843161603237899927552.000000, 0.000000, 139851432958375827120564478645347811328.000000, -207096352.000000, -0.000000, 
+net a: -0.000000, -0.000000, -0.000000, -91470782464.000000, 518191919316608347013120.000000,  weights finished
+Separately saving weights to ./results/mnist/client_updates_standard_ss/mnist_lenet_averaged.weights
+
+real	0m0.310s
+user	0m0.228s
+sys	0m0.060s
+============= round 2 =============
+============= copy weights server -> client 1 =============
+
+real	0m0.366s
+user	0m0.009s
+sys	0m0.009s
+ree weights: 147068 Bytes
+
+real	0m0.457s
+user	0m0.012s
+sys	0m0.008s
+tee weights: 44076 Bytes
+============= ssh to the client and local training =============
+layer     filters    size              input                output
+    0 conv      6  5 x 5 / 1    28 x  28 x   3   ->    28 x  28 x   6  0.001 BFLOPs
+    1 max          2 x 2 / 2    28 x  28 x   6   ->    14 x  14 x   6
+    2 conv      6  5 x 5 / 1    14 x  14 x   6   ->    14 x  14 x   6  0.000 BFLOPs
+    3 max          2 x 2 / 2    14 x  14 x   6   ->     7 x   7 x   6
+    4 connected                             294  ->   120
+    5 dropout       p = 0.20                120  ->   120
+    6 connected_TA                          120  ->    84
+    7 dropout_TA    p = 0.20                 84  ->    84
+    8 connected_TA                           84  ->    10
+Prepare session with the TA
+Begin darknet
+mnist_lenet
+1
+workspace_size=235200
+    9 softmax                                          10
+   10 cost                                             10
+Separately loading weights from /root/models/mnist/mnist_lenet_global.weights...Done!
+Learning Rate: 0.01, Momentum: 0.9, Decay: 5e-05
+3000
+28 28
+output file: /media/results/train_mnist_lenet_pps6_ppe8.txt
+current_batch=150 
+Loaded: 0.009208 seconds
+151, 2.517: 1.474493, 1.474493 avg, 0.000608 rate, 0.229099 seconds, 7550 images
+user CPU start: 0.000000; end: 0.283621
+kernel CPU start: 0.207782; end: 0.207782
+Max: 16276  kilobytes
+vmsize:1164448; vmrss:9752; vmdata:49584; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000113 seconds
+152, 2.533: 1.493133, 1.476357 avg, 0.000592 rate, 0.228026 seconds, 7600 images
+user CPU start: 0.283820; end: 0.545053
+kernel CPU start: 0.207782; end: 0.207782
+Max: 16276  kilobytes
+vmsize:1164448; vmrss:10128; vmdata:49592; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000150 seconds
+153, 2.550: 1.459023, 1.474623 avg, 0.000576 rate, 0.227764 seconds, 7650 images
+user CPU start: 0.545283; end: 0.800471
+kernel CPU start: 0.207782; end: 0.207782
+Max: 16276  kilobytes
+vmsize:1164448; vmrss:10164; vmdata:49624; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000119 seconds
+154, 2.567: 1.458500, 1.473011 avg, 0.000561 rate, 0.228029 seconds, 7700 images
+user CPU start: 0.800659; end: 1.058327
+kernel CPU start: 0.207782; end: 0.207782
+Max: 16276  kilobytes
+vmsize:1164448; vmrss:10480; vmdata:49704; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000106 seconds
+155, 2.583: 1.458487, 1.471559 avg, 0.000546 rate, 0.228018 seconds, 7750 images
+user CPU start: 1.058542; end: 1.313739
+kernel CPU start: 0.207782; end: 0.207782
+Max: 16276  kilobytes
+vmsize:1164448; vmrss:10440; vmdata:49808; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000130 seconds
+156, 2.600: 1.471589, 1.471562 avg, 0.000531 rate, 0.227871 seconds, 7800 images
+user CPU start: 1.313923; end: 1.572232
+kernel CPU start: 0.207782; end: 0.207782
+Max: 16276  kilobytes
+vmsize:1164448; vmrss:10596; vmdata:49808; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000116 seconds
+157, 2.617: 1.470870, 1.471493 avg, 0.000516 rate, 0.227665 seconds, 7850 images
+user CPU start: 1.572443; end: 1.830307
+kernel CPU start: 0.207782; end: 0.207782
+Max: 16276  kilobytes
+vmsize:1164448; vmrss:10584; vmdata:49916; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000116 seconds
+158, 2.633: 1.442595, 1.468603 avg, 0.000502 rate, 0.227832 seconds, 7900 images
+user CPU start: 1.830520; end: 2.071657
+kernel CPU start: 0.207782; end: 0.221198
+Max: 16276  kilobytes
+vmsize:1164448; vmrss:10728; vmdata:49964; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000134 seconds
+159, 2.650: 1.482694, 1.470012 avg, 0.000488 rate, 0.228022 seconds, 7950 images
+user CPU start: 2.071829; end: 2.316612
+kernel CPU start: 0.221217; end: 0.232664
+Max: 16276  kilobytes
+vmsize:1164448; vmrss:10612; vmdata:49964; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000126 seconds
+160, 2.667: 1.423951, 1.465406 avg, 0.000474 rate, 0.227882 seconds, 8000 images
+user CPU start: 2.316787; end: 2.556020
+kernel CPU start: 0.232682; end: 0.249526
+Max: 16276  kilobytes
+vmsize:1164448; vmrss:10776; vmdata:50000; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000116 seconds
+161, 2.683: 1.451956, 1.464061 avg, 0.000461 rate, 0.227663 seconds, 8050 images
+user CPU start: 2.556233; end: 2.799850
+kernel CPU start: 0.249547; end: 0.262235
+Max: 16276  kilobytes
+vmsize:1164448; vmrss:10624; vmdata:50056; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000116 seconds
+162, 2.700: 1.436486, 1.461303 avg, 0.000448 rate, 0.227635 seconds, 8100 images
+user CPU start: 2.800042; end: 3.025481
+kernel CPU start: 0.262253; end: 0.291933
+Max: 16276  kilobytes
+vmsize:1164448; vmrss:10700; vmdata:50056; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000130 seconds
+163, 2.717: 1.450189, 1.460192 avg, 0.000435 rate, 0.227652 seconds, 8150 images
+user CPU start: 3.025650; end: 3.264774
+kernel CPU start: 0.291950; end: 0.308139
+Max: 16276  kilobytes
+vmsize:1164448; vmrss:10608; vmdata:50056; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000119 seconds
+164, 2.733: 1.441805, 1.458353 avg, 0.000422 rate, 0.227958 seconds, 8200 images
+user CPU start: 3.264981; end: 3.510895
+kernel CPU start: 0.308159; end: 0.320866
+Max: 16276  kilobytes
+vmsize:1164448; vmrss:10732; vmdata:50080; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000105 seconds
+165, 2.750: 1.495464, 1.462064 avg, 0.000410 rate, 0.228045 seconds, 8250 images
+user CPU start: 3.511118; end: 3.752138
+kernel CPU start: 0.320886; end: 0.337377
+Max: 16276  kilobytes
+vmsize:1164448; vmrss:10576; vmdata:50096; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000118 seconds
+166, 2.767: 1.459296, 1.461787 avg, 0.000398 rate, 0.227906 seconds, 8300 images
+user CPU start: 3.752330; end: 3.989671
+kernel CPU start: 0.337395; end: 0.355208
+Max: 16276  kilobytes
+vmsize:1164448; vmrss:10700; vmdata:50096; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000113 seconds
+167, 2.783: 1.473305, 1.462939 avg, 0.000386 rate, 0.227780 seconds, 8350 images
+user CPU start: 3.989890; end: 4.232612
+kernel CPU start: 0.355227; end: 0.369784
+Max: 16276  kilobytes
+vmsize:1164448; vmrss:10644; vmdata:50112; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000113 seconds
+168, 2.800: 1.461244, 1.462770 avg, 0.000375 rate, 0.227671 seconds, 8400 images
+user CPU start: 4.232808; end: 4.476107
+kernel CPU start: 0.369801; end: 0.384756
+Max: 16276  kilobytes
+vmsize:1164448; vmrss:10784; vmdata:50140; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000130 seconds
+169, 2.817: 1.466369, 1.463130 avg, 0.000364 rate, 0.227815 seconds, 8450 images
+user CPU start: 4.476274; end: 4.722569
+kernel CPU start: 0.384771; end: 0.395349
+Max: 16276  kilobytes
+vmsize:1164448; vmrss:10720; vmdata:50176; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000120 seconds
+170, 2.833: 1.438862, 1.460703 avg, 0.000353 rate, 0.227666 seconds, 8500 images
+user CPU start: 4.722779; end: 4.964202
+kernel CPU start: 0.395367; end: 0.409715
+Max: 16276  kilobytes
+vmsize:1164448; vmrss:10876; vmdata:50208; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000130 seconds
+171, 2.850: 1.433706, 1.458003 avg, 0.000342 rate, 0.227898 seconds, 8550 images
+user CPU start: 4.964372; end: 5.206432
+kernel CPU start: 0.409729; end: 0.424123
+Max: 16276  kilobytes
+vmsize:1164448; vmrss:10792; vmdata:50248; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000133 seconds
+172, 2.867: 1.422076, 1.454410 avg, 0.000331 rate, 0.228087 seconds, 8600 images
+user CPU start: 5.206609; end: 5.450087
+kernel CPU start: 0.424137; end: 0.438630
+Max: 16276  kilobytes
+vmsize:1164448; vmrss:10976; vmdata:50268; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000109 seconds
+173, 2.883: 1.418134, 1.450783 avg, 0.000321 rate, 0.227902 seconds, 8650 images
+user CPU start: 5.450294; end: 5.692512
+kernel CPU start: 0.438630; end: 0.452642
+Max: 16276  kilobytes
+vmsize:1164448; vmrss:10852; vmdata:50268; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000119 seconds
+174, 2.900: 1.406654, 1.446370 avg, 0.000311 rate, 0.227936 seconds, 8700 images
+user CPU start: 5.692682; end: 5.928217
+kernel CPU start: 0.452656; end: 0.472216
+Max: 16276  kilobytes
+vmsize:1164448; vmrss:10968; vmdata:50268; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000114 seconds
+175, 2.917: 1.419902, 1.443723 avg, 0.000301 rate, 0.227813 seconds, 8750 images
+user CPU start: 5.928412; end: 6.172472
+kernel CPU start: 0.472231; end: 0.485986
+Max: 16276  kilobytes
+vmsize:1164448; vmrss:10832; vmdata:50268; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000126 seconds
+176, 2.933: 1.444865, 1.443837 avg, 0.000292 rate, 0.228063 seconds, 8800 images
+user CPU start: 6.172684; end: 6.416939
+kernel CPU start: 0.486003; end: 0.499435
+Max: 16276  kilobytes
+vmsize:1164448; vmrss:10936; vmdata:50268; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000113 seconds
+177, 2.950: 1.416194, 1.441073 avg, 0.000283 rate, 0.227819 seconds, 8850 images
+user CPU start: 6.417145; end: 6.668949
+kernel CPU start: 0.499451; end: 0.503516
+Max: 16276  kilobytes
+vmsize:1164448; vmrss:10760; vmdata:50268; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000123 seconds
+178, 2.967: 1.435987, 1.440564 avg, 0.000273 rate, 0.228125 seconds, 8900 images
+user CPU start: 6.669165; end: 6.919149
+kernel CPU start: 0.503533; end: 0.512129
+Max: 16276  kilobytes
+vmsize:1164448; vmrss:10892; vmdata:50312; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000121 seconds
+179, 2.983: 1.424163, 1.438924 avg, 0.000265 rate, 0.228064 seconds, 8950 images
+user CPU start: 6.919338; end: 7.153651
+kernel CPU start: 0.512143; end: 0.533408
+Max: 16276  kilobytes
+vmsize:1164448; vmrss:10728; vmdata:50320; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000122 seconds
+180, 3.000: 1.448724, 1.439904 avg, 0.000256 rate, 0.227807 seconds, 9000 images
+user CPU start: 7.153825; end: 7.384433
+kernel CPU start: 0.533421; end: 0.560319
+Max: 16276  kilobytes
+vmsize:1164448; vmrss:10948; vmdata:50360; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000132 seconds
+181, 3.017: 1.425966, 1.438510 avg, 0.000248 rate, 0.227847 seconds, 9050 images
+user CPU start: 7.384656; end: 7.629344
+kernel CPU start: 0.560336; end: 0.574544
+Max: 17068  kilobytes
+vmsize:1164448; vmrss:10720; vmdata:50372; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000129 seconds
+182, 3.033: 1.440930, 1.438752 avg, 0.000239 rate, 0.227937 seconds, 9100 images
+user CPU start: 7.629516; end: 7.868217
+kernel CPU start: 0.574557; end: 0.593266
+Max: 17068  kilobytes
+vmsize:1164448; vmrss:10860; vmdata:50400; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000120 seconds
+183, 3.050: 1.486291, 1.443506 avg, 0.000231 rate, 0.227832 seconds, 9150 images
+user CPU start: 7.868444; end: 8.110602
+kernel CPU start: 0.593283; end: 0.611197
+Max: 17068  kilobytes
+vmsize:1164448; vmrss:10712; vmdata:50400; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000135 seconds
+184, 3.067: 1.423704, 1.441526 avg, 0.000224 rate, 0.227877 seconds, 9200 images
+user CPU start: 8.110830; end: 8.357027
+kernel CPU start: 0.611214; end: 0.621262
+Max: 17068  kilobytes
+vmsize:1164448; vmrss:10808; vmdata:50400; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000132 seconds
+185, 3.083: 1.361850, 1.433558 avg, 0.000216 rate, 0.227763 seconds, 9250 images
+user CPU start: 8.357200; end: 8.605544
+kernel CPU start: 0.621274; end: 0.632139
+Max: 17068  kilobytes
+vmsize:1164448; vmrss:10696; vmdata:50400; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000117 seconds
+186, 3.100: 1.416559, 1.431859 avg, 0.000209 rate, 0.227878 seconds, 9300 images
+user CPU start: 8.605741; end: 8.846458
+kernel CPU start: 0.632154; end: 0.646710
+Max: 17068  kilobytes
+vmsize:1164448; vmrss:10832; vmdata:50400; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000169 seconds
+187, 3.117: 1.438720, 1.432545 avg, 0.000201 rate, 0.227781 seconds, 9350 images
+user CPU start: 8.846652; end: 9.088076
+kernel CPU start: 0.646724; end: 0.661332
+Max: 17068  kilobytes
+vmsize:1164448; vmrss:10708; vmdata:50400; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000113 seconds
+188, 3.133: 1.382229, 1.427513 avg, 0.000194 rate, 0.228114 seconds, 9400 images
+user CPU start: 9.088076; end: 9.326718
+kernel CPU start: 0.661530; end: 0.680033
+Max: 17068  kilobytes
+vmsize:1164448; vmrss:10852; vmdata:50400; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000130 seconds
+189, 3.150: 1.378414, 1.422603 avg, 0.000187 rate, 0.227982 seconds, 9450 images
+user CPU start: 9.326924; end: 9.571470
+kernel CPU start: 0.680048; end: 0.690237
+Max: 17068  kilobytes
+vmsize:1164448; vmrss:10816; vmdata:50404; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000145 seconds
+190, 3.167: 1.345438, 1.414887 avg, 0.000181 rate, 0.227977 seconds, 9500 images
+user CPU start: 9.571636; end: 9.813736
+kernel CPU start: 0.690249; end: 0.703877
+Max: 17068  kilobytes
+vmsize:1164448; vmrss:10940; vmdata:50404; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000119 seconds
+191, 3.183: 1.382570, 1.411655 avg, 0.000174 rate, 0.228091 seconds, 9550 images
+user CPU start: 9.813934; end: 10.057754
+kernel CPU start: 0.703891; end: 0.717319
+Max: 17068  kilobytes
+vmsize:1164448; vmrss:10788; vmdata:50404; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000133 seconds
+192, 3.200: 1.388297, 1.409319 avg, 0.000168 rate, 0.227810 seconds, 9600 images
+user CPU start: 10.057933; end: 10.301443
+kernel CPU start: 0.717332; end: 0.730771
+Max: 17068  kilobytes
+vmsize:1164448; vmrss:10920; vmdata:50404; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000121 seconds
+193, 3.217: 1.444815, 1.412869 avg, 0.000162 rate, 0.227728 seconds, 9650 images
+user CPU start: 10.301650; end: 10.553446
+kernel CPU start: 0.730785; end: 0.739531
+Max: 17068  kilobytes
+vmsize:1164448; vmrss:10748; vmdata:50412; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000136 seconds
+194, 3.233: 1.445355, 1.416117 avg, 0.000156 rate, 0.227710 seconds, 9700 images
+user CPU start: 10.553650; end: 10.803403
+kernel CPU start: 0.739545; end: 0.748157
+Max: 17068  kilobytes
+vmsize:1164448; vmrss:10916; vmdata:50432; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000118 seconds
+195, 3.250: 1.470926, 1.421598 avg, 0.000150 rate, 0.227928 seconds, 9750 images
+user CPU start: 10.803608; end: 11.050607
+kernel CPU start: 0.748172; end: 0.756609
+Max: 17068  kilobytes
+vmsize:1164448; vmrss:10820; vmdata:50440; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000122 seconds
+196, 3.267: 1.439894, 1.423428 avg, 0.000144 rate, 0.228040 seconds, 9800 images
+user CPU start: 11.050803; end: 11.291707
+kernel CPU start: 0.756622; end: 0.773854
+Max: 17260  kilobytes
+vmsize:1164448; vmrss:10960; vmdata:50440; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000126 seconds
+197, 3.283: 1.358278, 1.416913 avg, 0.000139 rate, 0.228080 seconds, 9850 images
+user CPU start: 11.291893; end: 11.537189
+kernel CPU start: 0.773867; end: 0.788979
+Max: 17260  kilobytes
+vmsize:1164448; vmrss:10760; vmdata:50440; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000119 seconds
+198, 3.300: 1.440284, 1.419250 avg, 0.000134 rate, 0.227915 seconds, 9900 images
+user CPU start: 11.537385; end: 11.785524
+kernel CPU start: 0.788992; end: 0.799070
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:10928; vmdata:50440; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000132 seconds
+199, 3.317: 1.400613, 1.417386 avg, 0.000128 rate, 0.228265 seconds, 9950 images
+user CPU start: 11.785755; end: 12.025705
+kernel CPU start: 0.799086; end: 0.818469
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:10816; vmdata:50464; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000121 seconds
+200, 3.333: 1.420713, 1.417719 avg, 0.000123 rate, 0.227951 seconds, 10000 images
+user CPU start: 12.025880; end: 12.261179
+kernel CPU start: 0.818481; end: 0.838502
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:10892; vmdata:50464; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000129 seconds
+201, 3.350: 1.438888, 1.419836 avg, 0.000119 rate, 0.227973 seconds, 10050 images
+user CPU start: 12.261352; end: 12.497992
+kernel CPU start: 0.838514; end: 0.857055
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:10808; vmdata:50464; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000116 seconds
+202, 3.367: 1.385174, 1.416370 avg, 0.000114 rate, 0.227859 seconds, 10100 images
+user CPU start: 12.498229; end: 12.736439
+kernel CPU start: 0.857071; end: 0.875365
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:10908; vmdata:50504; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000134 seconds
+203, 3.383: 1.373730, 1.412106 avg, 0.000109 rate, 0.227973 seconds, 10150 images
+user CPU start: 12.736610; end: 12.977267
+kernel CPU start: 0.875376; end: 0.889236
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:10788; vmdata:50504; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000135 seconds
+204, 3.400: 1.355178, 1.406413 avg, 0.000105 rate, 0.227766 seconds, 10200 images
+user CPU start: 12.977451; end: 13.213935
+kernel CPU start: 0.889249; end: 0.910792
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:10920; vmdata:50512; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000132 seconds
+205, 3.417: 1.353320, 1.401104 avg, 0.000101 rate, 0.227903 seconds, 10250 images
+user CPU start: 13.214154; end: 13.454965
+kernel CPU start: 0.910807; end: 0.928389
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:10736; vmdata:50528; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000130 seconds
+206, 3.433: 1.460628, 1.407056 avg, 0.000096 rate, 0.227919 seconds, 10300 images
+user CPU start: 13.455139; end: 13.700941
+kernel CPU start: 0.928401; end: 0.941355
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:10864; vmdata:50540; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000128 seconds
+207, 3.450: 1.389710, 1.405322 avg, 0.000092 rate, 0.227811 seconds, 10350 images
+user CPU start: 13.701120; end: 13.940840
+kernel CPU start: 0.941367; end: 0.957569
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:10812; vmdata:50540; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000112 seconds
+208, 3.467: 1.399365, 1.404726 avg, 0.000088 rate, 0.227838 seconds, 10400 images
+user CPU start: 13.941063; end: 14.171352
+kernel CPU start: 0.957585; end: 0.983311
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:10936; vmdata:50548; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000133 seconds
+209, 3.483: 1.361827, 1.400436 avg, 0.000085 rate, 0.227895 seconds, 10450 images
+user CPU start: 14.171529; end: 14.406732
+kernel CPU start: 0.983323; end: 1.005390
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:10836; vmdata:50548; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000136 seconds
+210, 3.500: 1.389991, 1.399392 avg, 0.000081 rate, 0.228035 seconds, 10500 images
+user CPU start: 14.406940; end: 14.650418
+kernel CPU start: 1.005405; end: 1.019822
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:10932; vmdata:50548; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000121 seconds
+211, 3.517: 1.413802, 1.400833 avg, 0.000077 rate, 0.227969 seconds, 10550 images
+user CPU start: 14.650623; end: 14.898023
+kernel CPU start: 1.019837; end: 1.029914
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:10860; vmdata:50584; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000122 seconds
+212, 3.533: 1.400237, 1.400773 avg, 0.000074 rate, 0.228063 seconds, 10600 images
+user CPU start: 14.898238; end: 15.144136
+kernel CPU start: 1.029929; end: 1.039258
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:10904; vmdata:50584; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000130 seconds
+213, 3.550: 1.413131, 1.402009 avg, 0.000071 rate, 0.227872 seconds, 10650 images
+user CPU start: 15.144327; end: 15.385090
+kernel CPU start: 1.039258; end: 1.054094
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:10792; vmdata:50584; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000128 seconds
+214, 3.567: 1.395374, 1.401345 avg, 0.000068 rate, 0.227968 seconds, 10700 images
+user CPU start: 15.385317; end: 15.627166
+kernel CPU start: 1.054109; end: 1.068082
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:10956; vmdata:50612; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000115 seconds
+215, 3.583: 1.468879, 1.408099 avg, 0.000064 rate, 0.227956 seconds, 10750 images
+user CPU start: 15.627375; end: 15.872613
+kernel CPU start: 1.068096; end: 1.077995
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:10868; vmdata:50612; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000131 seconds
+216, 3.600: 1.360878, 1.403377 avg, 0.000061 rate, 0.228089 seconds, 10800 images
+user CPU start: 15.872793; end: 16.124338
+kernel CPU start: 1.078007; end: 1.082789
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:11024; vmdata:50612; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000138 seconds
+217, 3.617: 1.411900, 1.404229 avg, 0.000059 rate, 0.227770 seconds, 10850 images
+user CPU start: 16.124518; end: 16.355140
+kernel CPU start: 1.082801; end: 1.108274
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:10852; vmdata:50612; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000119 seconds
+218, 3.633: 1.366684, 1.400474 avg, 0.000056 rate, 0.227926 seconds, 10900 images
+user CPU start: 16.355342; end: 16.591269
+kernel CPU start: 1.108288; end: 1.130115
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:10972; vmdata:50612; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000123 seconds
+219, 3.650: 1.361633, 1.396590 avg, 0.000053 rate, 0.228107 seconds, 10950 images
+user CPU start: 16.591466; end: 16.828046
+kernel CPU start: 1.130129; end: 1.151664
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:10884; vmdata:50624; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000150 seconds
+220, 3.667: 1.404583, 1.397390 avg, 0.000051 rate, 0.228015 seconds, 11000 images
+user CPU start: 16.828222; end: 17.072172
+kernel CPU start: 1.151676; end: 1.163929
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:11004; vmdata:50624; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000120 seconds
+221, 3.683: 1.366187, 1.394269 avg, 0.000048 rate, 0.227785 seconds, 11050 images
+user CPU start: 17.072383; end: 17.315875
+kernel CPU start: 1.163943; end: 1.178649
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:10872; vmdata:50624; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000108 seconds
+222, 3.700: 1.335057, 1.388348 avg, 0.000046 rate, 0.228112 seconds, 11100 images
+user CPU start: 17.316102; end: 17.557078
+kernel CPU start: 1.178664; end: 1.197166
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:10940; vmdata:50624; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000126 seconds
+223, 3.717: 1.429295, 1.392443 avg, 0.000043 rate, 0.227902 seconds, 11150 images
+user CPU start: 17.557280; end: 17.798734
+kernel CPU start: 1.197180; end: 1.211759
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:10848; vmdata:50636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000130 seconds
+224, 3.733: 1.373701, 1.390569 avg, 0.000041 rate, 0.228040 seconds, 11200 images
+user CPU start: 17.798957; end: 18.041852
+kernel CPU start: 1.211774; end: 1.226759
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:10932; vmdata:50680; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000121 seconds
+225, 3.750: 1.439663, 1.395478 avg, 0.000039 rate, 0.227959 seconds, 11250 images
+user CPU start: 18.041852; end: 18.280293
+kernel CPU start: 1.226945; end: 1.246039
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:10828; vmdata:50680; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000129 seconds
+226, 3.767: 1.430740, 1.399004 avg, 0.000037 rate, 0.227723 seconds, 11300 images
+user CPU start: 18.280497; end: 18.517787
+kernel CPU start: 1.246053; end: 1.264607
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:10892; vmdata:50680; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000111 seconds
+227, 3.783: 1.382908, 1.397395 avg, 0.000035 rate, 0.227907 seconds, 11350 images
+user CPU start: 18.518003; end: 18.754337
+kernel CPU start: 1.264622; end: 1.283453
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:10724; vmdata:50680; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000116 seconds
+228, 3.800: 1.423292, 1.399984 avg, 0.000033 rate, 0.227957 seconds, 11400 images
+user CPU start: 18.754536; end: 18.989063
+kernel CPU start: 1.283467; end: 1.305532
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:10872; vmdata:50700; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000136 seconds
+229, 3.817: 1.399197, 1.399906 avg, 0.000031 rate, 0.227956 seconds, 11450 images
+user CPU start: 18.989275; end: 19.225799
+kernel CPU start: 1.305546; end: 1.323744
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:10772; vmdata:50700; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000134 seconds
+230, 3.833: 1.354639, 1.395379 avg, 0.000030 rate, 0.227899 seconds, 11500 images
+user CPU start: 19.225968; end: 19.472188
+kernel CPU start: 1.323756; end: 1.332816
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:10940; vmdata:50700; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000119 seconds
+231, 3.850: 1.352695, 1.391111 avg, 0.000028 rate, 0.227756 seconds, 11550 images
+user CPU start: 19.472393; end: 19.714048
+kernel CPU start: 1.332830; end: 1.350097
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:10800; vmdata:50700; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000132 seconds
+232, 3.867: 1.361271, 1.388127 avg, 0.000026 rate, 0.227708 seconds, 11600 images
+user CPU start: 19.714262; end: 19.959077
+kernel CPU start: 1.350112; end: 1.363366
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:10888; vmdata:50700; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000127 seconds
+233, 3.883: 1.388554, 1.388169 avg, 0.000025 rate, 0.227715 seconds, 11650 images
+user CPU start: 19.959254; end: 20.203536
+kernel CPU start: 1.363378; end: 1.375962
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:10800; vmdata:50700; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000130 seconds
+234, 3.900: 1.444240, 1.393776 avg, 0.000023 rate, 0.227968 seconds, 11700 images
+user CPU start: 20.203714; end: 20.440322
+kernel CPU start: 1.375974; end: 1.397795
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:10972; vmdata:50704; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000126 seconds
+235, 3.917: 1.397585, 1.394157 avg, 0.000022 rate, 0.227663 seconds, 11750 images
+user CPU start: 20.440524; end: 20.687245
+kernel CPU start: 1.397809; end: 1.410878
+Max: 17384  kilobytes
+vmsize:1164448; vmrss:10908; vmdata:50716; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000144 seconds
+236, 3.933: 1.344155, 1.389157 avg, 0.000021 rate, 0.227873 seconds, 11800 images
+user CPU start: 20.687449; end: 20.931656
+kernel CPU start: 1.410891; end: 1.424109
+Max: 19480  kilobytes
+vmsize:1164448; vmrss:11024; vmdata:50740; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000142 seconds
+237, 3.950: 1.403838, 1.390625 avg, 0.000019 rate, 0.227719 seconds, 11850 images
+user CPU start: 20.931826; end: 21.168585
+kernel CPU start: 1.424121; end: 1.442970
+Max: 19480  kilobytes
+vmsize:1164448; vmrss:10888; vmdata:50740; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000133 seconds
+238, 3.967: 1.417766, 1.393339 avg, 0.000018 rate, 0.227866 seconds, 11900 images
+user CPU start: 21.168757; end: 21.409648
+kernel CPU start: 1.442982; end: 1.457839
+Max: 19480  kilobytes
+vmsize:1164448; vmrss:11020; vmdata:50740; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000131 seconds
+239, 3.983: 1.366406, 1.390646 avg, 0.000017 rate, 0.229015 seconds, 11950 images
+user CPU start: 21.409845; end: 21.644319
+kernel CPU start: 1.457852; end: 1.480832
+Max: 19480  kilobytes
+vmsize:1164448; vmrss:11188; vmdata:50740; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000110 seconds
+240, 4.000: 1.370112, 1.388592 avg, 0.000016 rate, 0.228031 seconds, 12000 images
+user CPU start: 21.644519; end: 21.880626
+kernel CPU start: 1.480846; end: 1.500285
+Max: 19480  kilobytes
+vmsize:1164448; vmrss:11080; vmdata:50740; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000139 seconds
+241, 4.017: 1.415039, 1.391237 avg, 0.000015 rate, 0.227834 seconds, 12050 images
+user CPU start: 21.880814; end: 22.127366
+kernel CPU start: 1.500298; end: 1.510322
+Max: 19480  kilobytes
+vmsize:1164448; vmrss:10952; vmdata:50740; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000121 seconds
+242, 4.033: 1.380924, 1.390206 avg, 0.000014 rate, 0.227958 seconds, 12100 images
+user CPU start: 22.127575; end: 22.375758
+kernel CPU start: 1.510336; end: 1.519506
+Max: 19480  kilobytes
+vmsize:1164448; vmrss:11084; vmdata:50740; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000119 seconds
+243, 4.050: 1.353333, 1.386518 avg, 0.000013 rate, 0.227620 seconds, 12150 images
+user CPU start: 22.375961; end: 22.618625
+kernel CPU start: 1.519520; end: 1.531982
+Max: 19480  kilobytes
+vmsize:1164448; vmrss:10980; vmdata:50740; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000131 seconds
+244, 4.067: 1.361182, 1.383985 avg, 0.000012 rate, 0.227749 seconds, 12200 images
+user CPU start: 22.618805; end: 22.864496
+kernel CPU start: 1.531994; end: 1.544648
+Max: 19480  kilobytes
+vmsize:1164448; vmrss:11124; vmdata:50740; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000144 seconds
+245, 4.083: 1.392238, 1.384810 avg, 0.000011 rate, 0.227803 seconds, 12250 images
+user CPU start: 22.864698; end: 23.102411
+kernel CPU start: 1.544662; end: 1.562005
+Max: 19480  kilobytes
+vmsize:1164448; vmrss:11032; vmdata:50740; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000132 seconds
+246, 4.100: 1.370101, 1.383339 avg, 0.000010 rate, 0.228117 seconds, 12300 images
+user CPU start: 23.102589; end: 23.341565
+kernel CPU start: 1.562017; end: 1.579442
+Max: 19480  kilobytes
+vmsize:1164448; vmrss:11156; vmdata:50740; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000122 seconds
+247, 4.117: 1.367799, 1.381785 avg, 0.000010 rate, 0.227767 seconds, 12350 images
+user CPU start: 23.341758; end: 23.586867
+kernel CPU start: 1.579455; end: 1.592133
+Max: 19480  kilobytes
+vmsize:1164448; vmrss:11072; vmdata:50740; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000125 seconds
+248, 4.133: 1.344361, 1.378043 avg, 0.000009 rate, 0.227879 seconds, 12400 images
+user CPU start: 23.587090; end: 23.823349
+kernel CPU start: 1.592148; end: 1.613943
+Max: 19480  kilobytes
+vmsize:1164448; vmrss:11180; vmdata:50760; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000133 seconds
+249, 4.150: 1.370921, 1.377331 avg, 0.000008 rate, 0.227826 seconds, 12450 images
+user CPU start: 23.823519; end: 24.066663
+kernel CPU start: 1.613955; end: 1.627396
+Max: 19480  kilobytes
+vmsize:1164448; vmrss:11000; vmdata:50760; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000128 seconds
+250, 4.167: 1.451231, 1.384721 avg, 0.000008 rate, 0.228081 seconds, 12500 images
+user CPU start: 24.066837; end: 24.310861
+kernel CPU start: 1.627408; end: 1.640915
+Max: 19560  kilobytes
+vmsize:1164448; vmrss:11148; vmdata:50760; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000112 seconds
+251, 4.183: 1.370598, 1.383308 avg, 0.000007 rate, 0.227755 seconds, 12550 images
+user CPU start: 24.311085; end: 24.543072
+kernel CPU start: 1.640931; end: 1.664310
+Max: 19560  kilobytes
+vmsize:1164448; vmrss:10988; vmdata:50796; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000135 seconds
+252, 4.200: 1.345283, 1.379506 avg, 0.000007 rate, 0.228008 seconds, 12600 images
+user CPU start: 24.543245; end: 24.772120
+kernel CPU start: 1.664322; end: 1.692098
+Max: 19560  kilobytes
+vmsize:1164448; vmrss:11064; vmdata:50796; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000133 seconds
+253, 4.217: 1.361151, 1.377670 avg, 0.000006 rate, 0.227814 seconds, 12650 images
+user CPU start: 24.772299; end: 25.000913
+kernel CPU start: 1.692110; end: 1.719880
+Max: 19560  kilobytes
+vmsize:1164448; vmrss:10996; vmdata:50808; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000109 seconds
+254, 4.233: 1.367589, 1.376662 avg, 0.000006 rate, 0.227757 seconds, 12700 images
+user CPU start: 25.001156; end: 25.248329
+kernel CPU start: 1.719897; end: 1.729967
+Max: 19560  kilobytes
+vmsize:1164448; vmrss:11032; vmdata:50808; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000173 seconds
+255, 4.250: 1.435727, 1.382569 avg, 0.000005 rate, 0.228074 seconds, 12750 images
+user CPU start: 25.248512; end: 25.485630
+kernel CPU start: 1.729979; end: 1.748848
+Max: 19560  kilobytes
+vmsize:1164448; vmrss:11028; vmdata:50808; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000112 seconds
+256, 4.267: 1.394052, 1.383717 avg, 0.000005 rate, 0.227813 seconds, 12800 images
+user CPU start: 25.485819; end: 25.722110
+kernel CPU start: 1.748861; end: 1.768293
+Max: 19560  kilobytes
+vmsize:1164448; vmrss:11124; vmdata:50844; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000135 seconds
+257, 4.283: 1.347430, 1.380088 avg, 0.000004 rate, 0.227775 seconds, 12850 images
+user CPU start: 25.722279; end: 25.963996
+kernel CPU start: 1.768304; end: 1.782594
+Max: 19560  kilobytes
+vmsize:1164448; vmrss:11052; vmdata:50884; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000134 seconds
+258, 4.300: 1.321482, 1.374228 avg, 0.000004 rate, 0.227739 seconds, 12900 images
+user CPU start: 25.964191; end: 26.202609
+kernel CPU start: 1.782608; end: 1.801222
+Max: 19560  kilobytes
+vmsize:1164448; vmrss:11188; vmdata:50892; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000117 seconds
+259, 4.317: 1.375798, 1.374385 avg, 0.000003 rate, 0.228156 seconds, 12950 images
+user CPU start: 26.202819; end: 26.436993
+kernel CPU start: 1.801236; end: 1.823523
+Max: 19560  kilobytes
+vmsize:1164448; vmrss:11084; vmdata:50896; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000122 seconds
+260, 4.333: 1.377182, 1.374665 avg, 0.000003 rate, 0.228041 seconds, 13000 images
+user CPU start: 26.437193; end: 26.676389
+kernel CPU start: 1.823537; end: 1.840978
+Max: 19560  kilobytes
+vmsize:1164448; vmrss:11204; vmdata:50904; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000142 seconds
+261, 4.350: 1.390933, 1.376291 avg, 0.000003 rate, 0.228032 seconds, 13050 images
+user CPU start: 26.676553; end: 26.907933
+kernel CPU start: 1.840990; end: 1.866441
+Max: 19560  kilobytes
+vmsize:1164448; vmrss:11144; vmdata:50904; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000121 seconds
+262, 4.367: 1.396197, 1.378282 avg, 0.000003 rate, 0.227678 seconds, 13100 images
+user CPU start: 26.908139; end: 27.153446
+kernel CPU start: 1.866455; end: 1.879732
+Max: 19560  kilobytes
+vmsize:1164448; vmrss:11236; vmdata:50904; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000133 seconds
+263, 4.383: 1.415155, 1.381969 avg, 0.000002 rate, 0.227773 seconds, 13150 images
+user CPU start: 27.153625; end: 27.400575
+kernel CPU start: 1.879745; end: 1.892515
+Max: 19560  kilobytes
+vmsize:1164448; vmrss:11172; vmdata:50904; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000131 seconds
+264, 4.400: 1.399479, 1.383720 avg, 0.000002 rate, 0.227832 seconds, 13200 images
+user CPU start: 27.400753; end: 27.642026
+kernel CPU start: 1.892527; end: 1.909775
+Max: 19560  kilobytes
+vmsize:1164448; vmrss:11216; vmdata:50904; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000126 seconds
+265, 4.417: 1.376444, 1.382993 avg, 0.000002 rate, 0.227775 seconds, 13250 images
+user CPU start: 27.642229; end: 27.881888
+kernel CPU start: 1.909789; end: 1.927270
+Max: 19560  kilobytes
+vmsize:1164448; vmrss:11144; vmdata:50940; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000123 seconds
+266, 4.433: 1.356431, 1.380336 avg, 0.000002 rate, 0.227651 seconds, 13300 images
+user CPU start: 27.882093; end: 28.125440
+kernel CPU start: 1.927285; end: 1.941690
+Max: 19560  kilobytes
+vmsize:1164448; vmrss:11256; vmdata:50940; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000133 seconds
+267, 4.450: 1.390177, 1.381320 avg, 0.000001 rate, 0.227830 seconds, 13350 images
+user CPU start: 28.125612; end: 28.367670
+kernel CPU start: 1.941702; end: 1.956651
+Max: 19560  kilobytes
+vmsize:1164448; vmrss:11088; vmdata:50940; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000128 seconds
+268, 4.467: 1.371047, 1.380293 avg, 0.000001 rate, 0.227952 seconds, 13400 images
+user CPU start: 28.367864; end: 28.605496
+kernel CPU start: 1.956664; end: 1.974929
+Max: 19560  kilobytes
+vmsize:1164448; vmrss:11188; vmdata:50940; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000124 seconds
+269, 4.483: 1.386729, 1.380937 avg, 0.000001 rate, 0.227842 seconds, 13450 images
+user CPU start: 28.605712; end: 28.853172
+kernel CPU start: 1.974944; end: 1.984741
+Max: 19560  kilobytes
+vmsize:1164448; vmrss:11084; vmdata:50940; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000124 seconds
+270, 4.500: 1.345095, 1.377353 avg, 0.000001 rate, 0.227820 seconds, 13500 images
+user CPU start: 28.853376; end: 29.098522
+kernel CPU start: 1.984755; end: 1.995335
+Max: 19560  kilobytes
+vmsize:1164448; vmrss:11036; vmdata:50940; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000130 seconds
+271, 4.517: 1.359380, 1.375555 avg, 0.000001 rate, 0.227918 seconds, 13550 images
+user CPU start: 29.098693; end: 29.343434
+kernel CPU start: 1.995347; end: 2.006198
+Max: 19560  kilobytes
+vmsize:1164448; vmrss:10928; vmdata:50940; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000171 seconds
+272, 4.533: 1.418555, 1.379855 avg, 0.000001 rate, 0.227759 seconds, 13600 images
+user CPU start: 29.343651; end: 29.582336
+kernel CPU start: 2.006213; end: 2.024241
+Max: 19560  kilobytes
+vmsize:1164448; vmrss:11072; vmdata:50940; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000104 seconds
+273, 4.550: 1.442076, 1.386077 avg, 0.000001 rate, 0.227894 seconds, 13650 images
+user CPU start: 29.582336; end: 29.818302
+kernel CPU start: 2.024461; end: 2.043328
+Max: 19560  kilobytes
+vmsize:1164448; vmrss:10976; vmdata:50956; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000110 seconds
+274, 4.567: 1.381818, 1.385651 avg, 0.000001 rate, 0.227717 seconds, 13700 images
+user CPU start: 29.818493; end: 30.064928
+kernel CPU start: 2.043341; end: 2.053974
+Max: 19560  kilobytes
+vmsize:1164448; vmrss:11152; vmdata:50956; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000130 seconds
+275, 4.583: 1.432570, 1.390343 avg, 0.000000 rate, 0.227863 seconds, 13750 images
+user CPU start: 30.065110; end: 30.302109
+kernel CPU start: 2.053986; end: 2.073119
+Max: 19560  kilobytes
+vmsize:1164448; vmrss:11104; vmdata:50996; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000135 seconds
+276, 4.600: 1.399463, 1.391255 avg, 0.000000 rate, 0.227979 seconds, 13800 images
+user CPU start: 30.302311; end: 30.546857
+kernel CPU start: 2.073133; end: 2.086015
+Max: 19560  kilobytes
+vmsize:1164448; vmrss:11180; vmdata:50996; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000131 seconds
+277, 4.617: 1.385575, 1.390687 avg, 0.000000 rate, 0.227938 seconds, 13850 images
+user CPU start: 30.547036; end: 30.791415
+kernel CPU start: 2.086027; end: 2.098956
+Max: 19560  kilobytes
+vmsize:1164448; vmrss:11124; vmdata:50996; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000121 seconds
+278, 4.633: 1.356925, 1.387311 avg, 0.000000 rate, 0.228048 seconds, 13900 images
+user CPU start: 30.791616; end: 31.034508
+kernel CPU start: 2.098970; end: 2.112391
+Max: 19560  kilobytes
+vmsize:1164448; vmrss:11256; vmdata:50996; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000127 seconds
+279, 4.650: 1.366793, 1.385259 avg, 0.000000 rate, 0.227654 seconds, 13950 images
+user CPU start: 31.034711; end: 31.266881
+kernel CPU start: 2.112405; end: 2.138213
+Max: 19560  kilobytes
+vmsize:1164448; vmrss:11136; vmdata:50996; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000156 seconds
+280, 4.667: 1.346714, 1.381405 avg, 0.000000 rate, 0.227934 seconds, 14000 images
+user CPU start: 31.267064; end: 31.506011
+kernel CPU start: 2.138225; end: 2.160232
+Max: 19560  kilobytes
+vmsize:1164448; vmrss:11348; vmdata:50996; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000119 seconds
+281, 4.683: 1.334508, 1.376715 avg, 0.000000 rate, 0.227947 seconds, 14050 images
+user CPU start: 31.506233; end: 31.741546
+kernel CPU start: 2.160247; end: 2.181949
+Max: 19560  kilobytes
+vmsize:1164448; vmrss:11164; vmdata:50996; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000121 seconds
+282, 4.700: 1.377889, 1.376832 avg, 0.000000 rate, 0.228073 seconds, 14100 images
+user CPU start: 31.741739; end: 31.987223
+kernel CPU start: 2.181962; end: 2.195249
+Max: 19748  kilobytes
+vmsize:1164448; vmrss:11288; vmdata:50996; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000125 seconds
+283, 4.717: 1.384340, 1.377583 avg, 0.000000 rate, 0.227719 seconds, 14150 images
+user CPU start: 31.987461; end: 32.230321
+kernel CPU start: 2.195266; end: 2.209633
+Max: 19748  kilobytes
+vmsize:1164448; vmrss:11104; vmdata:50996; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000136 seconds
+284, 4.733: 1.408146, 1.380640 avg, 0.000000 rate, 0.228765 seconds, 14200 images
+user CPU start: 32.230495; end: 32.466460
+kernel CPU start: 2.209645; end: 2.233307
+Max: 19748  kilobytes
+vmsize:1164448; vmrss:11276; vmdata:50996; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000121 seconds
+285, 4.750: 1.389044, 1.381480 avg, 0.000000 rate, 0.227900 seconds, 14250 images
+user CPU start: 32.466460; end: 32.698511
+kernel CPU start: 2.233501; end: 2.257343
+Max: 19748  kilobytes
+vmsize:1164448; vmrss:11140; vmdata:50996; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000123 seconds
+286, 4.767: 1.389831, 1.382315 avg, 0.000000 rate, 0.228150 seconds, 14300 images
+user CPU start: 32.698681; end: 32.944341
+kernel CPU start: 2.257354; end: 2.267003
+Max: 19748  kilobytes
+vmsize:1164448; vmrss:11296; vmdata:50996; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000120 seconds
+287, 4.783: 1.356484, 1.379732 avg, 0.000000 rate, 0.227753 seconds, 14350 images
+user CPU start: 32.944582; end: 33.190371
+kernel CPU start: 2.267019; end: 2.276371
+Max: 19748  kilobytes
+vmsize:1164448; vmrss:11132; vmdata:50996; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000132 seconds
+288, 4.800: 1.394602, 1.381219 avg, 0.000000 rate, 0.228008 seconds, 14400 images
+user CPU start: 33.190545; end: 33.422634
+kernel CPU start: 2.276383; end: 2.299505
+Max: 19748  kilobytes
+vmsize:1164448; vmrss:11252; vmdata:50996; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000142 seconds
+289, 4.817: 1.405221, 1.383619 avg, 0.000000 rate, 0.227867 seconds, 14450 images
+user CPU start: 33.422836; end: 33.663267
+kernel CPU start: 2.299519; end: 2.313087
+Max: 19748  kilobytes
+vmsize:1164448; vmrss:11108; vmdata:50996; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000124 seconds
+290, 4.833: 1.355786, 1.380836 avg, 0.000000 rate, 0.228113 seconds, 14500 images
+user CPU start: 33.663466; end: 33.904987
+kernel CPU start: 2.313101; end: 2.326765
+Max: 19748  kilobytes
+vmsize:1164448; vmrss:11228; vmdata:50996; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000136 seconds
+291, 4.850: 1.391288, 1.381881 avg, 0.000000 rate, 0.227954 seconds, 14550 images
+user CPU start: 33.905162; end: 34.144518
+kernel CPU start: 2.326777; end: 2.344214
+Max: 19748  kilobytes
+vmsize:1164448; vmrss:11208; vmdata:50996; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000144 seconds
+292, 4.867: 1.396794, 1.383372 avg, 0.000000 rate, 0.228000 seconds, 14600 images
+user CPU start: 34.144700; end: 34.385980
+kernel CPU start: 2.344226; end: 2.361820
+Max: 19748  kilobytes
+vmsize:1164448; vmrss:11356; vmdata:51004; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000123 seconds
+293, 4.883: 1.356332, 1.380668 avg, 0.000000 rate, 0.227903 seconds, 14650 images
+user CPU start: 34.386179; end: 34.630097
+kernel CPU start: 2.361834; end: 2.376908
+Max: 19748  kilobytes
+vmsize:1164448; vmrss:11204; vmdata:51016; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000116 seconds
+294, 4.900: 1.399108, 1.382512 avg, 0.000000 rate, 0.228068 seconds, 14700 images
+user CPU start: 34.630300; end: 34.877256
+kernel CPU start: 2.376922; end: 2.387600
+Max: 19748  kilobytes
+vmsize:1164448; vmrss:11324; vmdata:51016; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000126 seconds
+295, 4.917: 1.362843, 1.380545 avg, 0.000000 rate, 0.228023 seconds, 14750 images
+user CPU start: 34.877486; end: 35.123257
+kernel CPU start: 2.387615; end: 2.397899
+Max: 19748  kilobytes
+vmsize:1164448; vmrss:11096; vmdata:51016; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000121 seconds
+296, 4.933: 1.395173, 1.382008 avg, 0.000000 rate, 0.228036 seconds, 14800 images
+user CPU start: 35.123456; end: 35.363598
+kernel CPU start: 2.397899; end: 2.412708
+Max: 19748  kilobytes
+vmsize:1164448; vmrss:11216; vmdata:51016; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000114 seconds
+297, 4.950: 1.351021, 1.378909 avg, 0.000000 rate, 0.227972 seconds, 14850 images
+user CPU start: 35.363791; end: 35.582084
+kernel CPU start: 2.412721; end: 2.449626
+Max: 19748  kilobytes
+vmsize:1164448; vmrss:11076; vmdata:51016; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000121 seconds
+298, 4.967: 1.365247, 1.377543 avg, 0.000000 rate, 0.227614 seconds, 14900 images
+user CPU start: 35.582297; end: 35.819982
+kernel CPU start: 2.449640; end: 2.468247
+Max: 19748  kilobytes
+vmsize:1164448; vmrss:11196; vmdata:51016; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000117 seconds
+299, 4.983: 1.421630, 1.381952 avg, 0.000000 rate, 0.227777 seconds, 14950 images
+user CPU start: 35.820186; end: 36.066009
+kernel CPU start: 2.468261; end: 2.477585
+Max: 19748  kilobytes
+vmsize:1164448; vmrss:11048; vmdata:51016; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000132 seconds
+300, 5.000: 1.366312, 1.380388 avg, 0.000000 rate, 0.227750 seconds, 15000 images
+user CPU start: 36.066181; end: 36.312199
+kernel CPU start: 2.477597; end: 2.487264
+Max: 19748  kilobytes
+vmsize:1164448; vmrss:11168; vmdata:51016; vmstk:132; vmexe:380; vmlib:2280
+Separately saving weights to models/mnist/mnist_lenet.weights
+
+real	0m34.823s
+user	0m0.013s
+sys	0m0.007s
+============= copy weights client 1 -> server =============
+
+real	0m0.276s
+user	0m0.022s
+sys	0m0.002s
+ree weights: 147068 Bytes
+
+real	0m0.219s
+user	0m0.015s
+sys	0m0.006s
+tee weights: 44076 Bytes
+============= copy weights server -> client 2 =============
+
+real	0m0.245s
+user	0m0.018s
+sys	0m0.002s
+ree weights: 147068 Bytes
+
+real	0m0.327s
+user	0m0.013s
+sys	0m0.008s
+tee weights: 44076 Bytes
+============= ssh to the client and local training =============
+layer     filters    size              input                output
+    0 conv      6  5 x 5 / 1    28 x  28 x   3   ->    28 x  28 x   6  0.001 BFLOPs
+    1 max          2 x 2 / 2    28 x  28 x   6   ->    14 x  14 x   6
+    2 conv      6  5 x 5 / 1    14 x  14 x   6   ->    14 x  14 x   6  0.000 BFLOPs
+    3 max          2 x 2 / 2    14 x  14 x   6   ->     7 x   7 x   6
+    4 connected                             294  ->   120
+    5 dropout       p = 0.20                120  ->   120
+    6 connected_TA                          120  ->    84
+Prepare session with the TA
+Begin darknet
+mnist_lenet
+1
+workspace_size=235200
+    7 dropout_TA    p = 0.20                 84  ->    84
+    8 connected_TA                           84  ->    10
+    9 softmax                                          10
+   10 cost                                             10
+Separately loading weights from /root/models/mnist/mnist_lenet_global.weights...Done!
+Learning Rate: 0.01, Momentum: 0.9, Decay: 5e-05
+3000
+28 28
+output file: /media/results/train_mnist_lenet_pps6_ppe8.txt
+current_batch=150 
+Loaded: 0.008985 seconds
+151, 2.517: 1.459618, 1.459618 avg, 0.000608 rate, 0.231291 seconds, 7550 images
+user CPU start: 0.044381; end: 0.328005
+kernel CPU start: 0.162292; end: 0.162292
+Max: 11856  kilobytes
+vmsize:1098912; vmrss:9768; vmdata:49484; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000113 seconds
+152, 2.533: 1.441798, 1.457836 avg, 0.000592 rate, 0.227961 seconds, 7600 images
+user CPU start: 0.328220; end: 0.587110
+kernel CPU start: 0.162292; end: 0.162292
+Max: 14688  kilobytes
+vmsize:1098912; vmrss:10240; vmdata:49648; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000117 seconds
+153, 2.550: 1.473826, 1.459435 avg, 0.000576 rate, 0.227764 seconds, 7650 images
+user CPU start: 0.587298; end: 0.845219
+kernel CPU start: 0.162292; end: 0.162292
+Max: 14688  kilobytes
+vmsize:1098912; vmrss:10248; vmdata:49692; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000136 seconds
+154, 2.567: 1.440164, 1.457508 avg, 0.000561 rate, 0.227969 seconds, 7700 images
+user CPU start: 0.845404; end: 1.101899
+kernel CPU start: 0.162292; end: 0.162292
+Max: 15072  kilobytes
+vmsize:1098912; vmrss:10572; vmdata:49728; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000119 seconds
+155, 2.583: 1.468936, 1.458651 avg, 0.000546 rate, 0.227610 seconds, 7750 images
+user CPU start: 1.102139; end: 1.359729
+kernel CPU start: 0.162292; end: 0.162292
+Max: 15072  kilobytes
+vmsize:1492128; vmrss:10692; vmdata:50544; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000122 seconds
+156, 2.600: 1.486150, 1.461401 avg, 0.000531 rate, 0.227669 seconds, 7800 images
+user CPU start: 1.359941; end: 1.619801
+kernel CPU start: 0.162292; end: 0.162292
+Max: 15700  kilobytes
+vmsize:1492128; vmrss:11216; vmdata:50576; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000121 seconds
+157, 2.617: 1.475730, 1.462834 avg, 0.000516 rate, 0.227942 seconds, 7850 images
+user CPU start: 1.620062; end: 1.861049
+kernel CPU start: 0.162292; end: 0.179096
+Max: 15700  kilobytes
+vmsize:1492128; vmrss:11148; vmdata:50704; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000132 seconds
+158, 2.633: 1.494534, 1.466004 avg, 0.000502 rate, 0.227678 seconds, 7900 images
+user CPU start: 1.861219; end: 2.104350
+kernel CPU start: 0.179113; end: 0.191512
+Max: 15804  kilobytes
+vmsize:1492128; vmrss:11448; vmdata:50780; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000133 seconds
+159, 2.650: 1.468959, 1.466299 avg, 0.000488 rate, 0.227814 seconds, 7950 images
+user CPU start: 2.104530; end: 2.346117
+kernel CPU start: 0.191529; end: 0.208699
+Max: 17632  kilobytes
+vmsize:1492128; vmrss:11392; vmdata:50804; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000117 seconds
+160, 2.667: 1.466557, 1.466325 avg, 0.000474 rate, 0.227897 seconds, 8000 images
+user CPU start: 2.346315; end: 2.586887
+kernel CPU start: 0.208717; end: 0.226324
+Max: 18016  kilobytes
+vmsize:1492128; vmrss:11616; vmdata:50900; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000123 seconds
+161, 2.683: 1.492695, 1.468962 avg, 0.000461 rate, 0.227862 seconds, 8050 images
+user CPU start: 2.587112; end: 2.826527
+kernel CPU start: 0.226344; end: 0.241581
+Max: 18016  kilobytes
+vmsize:1492128; vmrss:11448; vmdata:50948; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000135 seconds
+162, 2.700: 1.408319, 1.462898 avg, 0.000448 rate, 0.228058 seconds, 8100 images
+user CPU start: 2.826701; end: 3.072332
+kernel CPU start: 0.241596; end: 0.252533
+Max: 18016  kilobytes
+vmsize:1492128; vmrss:11572; vmdata:50948; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000143 seconds
+163, 2.717: 1.478341, 1.464442 avg, 0.000435 rate, 0.227751 seconds, 8150 images
+user CPU start: 3.072536; end: 3.316619
+kernel CPU start: 0.252550; end: 0.261746
+Max: 18016  kilobytes
+vmsize:1492128; vmrss:11528; vmdata:51040; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000122 seconds
+164, 2.733: 1.454044, 1.463402 avg, 0.000422 rate, 0.228004 seconds, 8200 images
+user CPU start: 3.316835; end: 3.561215
+kernel CPU start: 0.261763; end: 0.272487
+Max: 18016  kilobytes
+vmsize:1492128; vmrss:11648; vmdata:51040; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000107 seconds
+165, 2.750: 1.465080, 1.463570 avg, 0.000410 rate, 0.228047 seconds, 8250 images
+user CPU start: 3.561215; end: 3.792688
+kernel CPU start: 0.272717; end: 0.299825
+Max: 18016  kilobytes
+vmsize:1492128; vmrss:11616; vmdata:51116; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000117 seconds
+166, 2.767: 1.454386, 1.462652 avg, 0.000398 rate, 0.227915 seconds, 8300 images
+user CPU start: 3.792883; end: 4.030297
+kernel CPU start: 0.299840; end: 0.318439
+Max: 18016  kilobytes
+vmsize:1492128; vmrss:11736; vmdata:51116; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000139 seconds
+167, 2.783: 1.419908, 1.458377 avg, 0.000386 rate, 0.227935 seconds, 8350 images
+user CPU start: 4.030495; end: 4.280102
+kernel CPU start: 0.318455; end: 0.327369
+Max: 18016  kilobytes
+vmsize:1492128; vmrss:11644; vmdata:51116; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000119 seconds
+168, 2.800: 1.447520, 1.457292 avg, 0.000375 rate, 0.227841 seconds, 8400 images
+user CPU start: 4.280309; end: 4.524473
+kernel CPU start: 0.327385; end: 0.341010
+Max: 18016  kilobytes
+vmsize:1492128; vmrss:11740; vmdata:51116; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000130 seconds
+169, 2.817: 1.426174, 1.454180 avg, 0.000364 rate, 0.242758 seconds, 8450 images
+user CPU start: 4.524678; end: 4.781130
+kernel CPU start: 0.341026; end: 0.358957
+Max: 18016  kilobytes
+vmsize:1492128; vmrss:11572; vmdata:51116; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000140 seconds
+170, 2.833: 1.413529, 1.450115 avg, 0.000353 rate, 0.242866 seconds, 8500 images
+user CPU start: 4.781382; end: 5.043490
+kernel CPU start: 0.358976; end: 0.372922
+Max: 18016  kilobytes
+vmsize:1492128; vmrss:11664; vmdata:51116; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000217 seconds
+171, 2.850: 1.446588, 1.449762 avg, 0.000342 rate, 0.242319 seconds, 8550 images
+user CPU start: 5.043716; end: 5.292946
+kernel CPU start: 0.372939; end: 0.395773
+Max: 18016  kilobytes
+vmsize:1492128; vmrss:11604; vmdata:51132; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000111 seconds
+172, 2.867: 1.443507, 1.449137 avg, 0.000331 rate, 0.238817 seconds, 8600 images
+user CPU start: 5.293146; end: 5.544325
+kernel CPU start: 0.395788; end: 0.414747
+Max: 18016  kilobytes
+vmsize:1492128; vmrss:11700; vmdata:51156; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000142 seconds
+173, 2.883: 1.476326, 1.451856 avg, 0.000321 rate, 0.238986 seconds, 8650 images
+user CPU start: 5.544523; end: 5.782769
+kernel CPU start: 0.414762; end: 0.445372
+Max: 18016  kilobytes
+vmsize:1492128; vmrss:11600; vmdata:51188; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000120 seconds
+174, 2.900: 1.470859, 1.453756 avg, 0.000311 rate, 0.238914 seconds, 8700 images
+user CPU start: 5.782984; end: 6.031899
+kernel CPU start: 0.445389; end: 0.464134
+Max: 18016  kilobytes
+vmsize:1492128; vmrss:11724; vmdata:51196; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000129 seconds
+175, 2.917: 1.435832, 1.451964 avg, 0.000301 rate, 0.241531 seconds, 8750 images
+user CPU start: 6.032073; end: 6.273361
+kernel CPU start: 0.464147; end: 0.492471
+Max: 18016  kilobytes
+vmsize:1492128; vmrss:11628; vmdata:51204; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000168 seconds
+176, 2.933: 1.401746, 1.446942 avg, 0.000292 rate, 0.242590 seconds, 8800 images
+user CPU start: 6.273601; end: 6.516520
+kernel CPU start: 0.492490; end: 0.523331
+Max: 18240  kilobytes
+vmsize:1492128; vmrss:11752; vmdata:51224; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000158 seconds
+177, 2.950: 1.376402, 1.439888 avg, 0.000283 rate, 0.242819 seconds, 8850 images
+user CPU start: 6.516772; end: 6.769642
+kernel CPU start: 0.523351; end: 0.543746
+Max: 18240  kilobytes
+vmsize:1492128; vmrss:11652; vmdata:51244; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000154 seconds
+178, 2.967: 1.431822, 1.439081 avg, 0.000273 rate, 0.229932 seconds, 8900 images
+user CPU start: 6.769888; end: 7.011408
+kernel CPU start: 0.543766; end: 0.562331
+Max: 18240  kilobytes
+vmsize:1492128; vmrss:11772; vmdata:51244; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000129 seconds
+179, 2.983: 1.417989, 1.436972 avg, 0.000265 rate, 0.242541 seconds, 8950 images
+user CPU start: 7.011592; end: 7.275005
+kernel CPU start: 0.562346; end: 0.572605
+Max: 18240  kilobytes
+vmsize:1492128; vmrss:11652; vmdata:51244; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000157 seconds
+180, 3.000: 1.355167, 1.428792 avg, 0.000256 rate, 0.242861 seconds, 9000 images
+user CPU start: 7.275264; end: 7.536861
+kernel CPU start: 0.572625; end: 0.584491
+Max: 18240  kilobytes
+vmsize:1492128; vmrss:11760; vmdata:51244; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000160 seconds
+181, 3.017: 1.430626, 1.428975 avg, 0.000248 rate, 0.241398 seconds, 9050 images
+user CPU start: 7.537121; end: 7.795813
+kernel CPU start: 0.584511; end: 0.601489
+Max: 18240  kilobytes
+vmsize:1492128; vmrss:11592; vmdata:51252; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000114 seconds
+182, 3.033: 1.381368, 1.424214 avg, 0.000239 rate, 0.239129 seconds, 9100 images
+user CPU start: 7.796008; end: 8.048799
+kernel CPU start: 0.601504; end: 0.615601
+Max: 18240  kilobytes
+vmsize:1492128; vmrss:11664; vmdata:51256; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000140 seconds
+183, 3.050: 1.422693, 1.424062 avg, 0.000231 rate, 0.238823 seconds, 9150 images
+user CPU start: 8.049001; end: 8.305112
+kernel CPU start: 0.615616; end: 0.626030
+Max: 18240  kilobytes
+vmsize:1492128; vmrss:11568; vmdata:51264; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000140 seconds
+184, 3.067: 1.462968, 1.427953 avg, 0.000224 rate, 0.238997 seconds, 9200 images
+user CPU start: 8.305319; end: 8.559980
+kernel CPU start: 0.626045; end: 0.639892
+Max: 18240  kilobytes
+vmsize:1492128; vmrss:11724; vmdata:51264; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000128 seconds
+185, 3.083: 1.425867, 1.427744 avg, 0.000216 rate, 0.242922 seconds, 9250 images
+user CPU start: 8.560165; end: 8.818726
+kernel CPU start: 0.639906; end: 0.657308
+Max: 18240  kilobytes
+vmsize:1492128; vmrss:11604; vmdata:51264; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000153 seconds
+186, 3.100: 1.400554, 1.425025 avg, 0.000209 rate, 0.242838 seconds, 9300 images
+user CPU start: 8.818969; end: 9.081834
+kernel CPU start: 0.657326; end: 0.667172
+Max: 18240  kilobytes
+vmsize:1492128; vmrss:11780; vmdata:51284; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000149 seconds
+187, 3.117: 1.430032, 1.425526 avg, 0.000201 rate, 0.242683 seconds, 9350 images
+user CPU start: 9.082123; end: 9.351430
+kernel CPU start: 0.667172; end: 0.677154
+Max: 18240  kilobytes
+vmsize:1492128; vmrss:11752; vmdata:51348; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000170 seconds
+188, 3.133: 1.418000, 1.424773 avg, 0.000194 rate, 0.239292 seconds, 9400 images
+user CPU start: 9.351676; end: 9.604789
+kernel CPU start: 0.677171; end: 0.692232
+Max: 18240  kilobytes
+vmsize:1492128; vmrss:11872; vmdata:51376; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000147 seconds
+189, 3.150: 1.382888, 1.420585 avg, 0.000187 rate, 0.238777 seconds, 9450 images
+user CPU start: 9.604959; end: 9.858457
+kernel CPU start: 0.692244; end: 0.707025
+Max: 18240  kilobytes
+vmsize:1492128; vmrss:11812; vmdata:51404; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000120 seconds
+190, 3.167: 1.437226, 1.422249 avg, 0.000181 rate, 0.239100 seconds, 9500 images
+user CPU start: 9.858675; end: 10.108091
+kernel CPU start: 0.707040; end: 0.724833
+Max: 18240  kilobytes
+vmsize:1492128; vmrss:11860; vmdata:51432; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000143 seconds
+191, 3.183: 1.371127, 1.417137 avg, 0.000174 rate, 0.241338 seconds, 9550 images
+user CPU start: 10.108284; end: 10.363942
+kernel CPU start: 0.724847; end: 0.738128
+Max: 18240  kilobytes
+vmsize:1492128; vmrss:11744; vmdata:51432; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000119 seconds
+192, 3.200: 1.384797, 1.413903 avg, 0.000168 rate, 0.247635 seconds, 9600 images
+user CPU start: 10.364152; end: 10.632912
+kernel CPU start: 0.738142; end: 0.748664
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11892; vmdata:51432; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000119 seconds
+193, 3.217: 1.359069, 1.408419 avg, 0.000162 rate, 0.239112 seconds, 9650 images
+user CPU start: 10.633109; end: 10.890295
+kernel CPU start: 0.748678; end: 0.759013
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11820; vmdata:51436; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000121 seconds
+194, 3.233: 1.418849, 1.409462 avg, 0.000156 rate, 0.241555 seconds, 9700 images
+user CPU start: 10.890490; end: 11.142909
+kernel CPU start: 0.759027; end: 0.777714
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11860; vmdata:51436; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000119 seconds
+195, 3.250: 1.367483, 1.405264 avg, 0.000150 rate, 0.247755 seconds, 9750 images
+user CPU start: 11.143118; end: 11.401759
+kernel CPU start: 0.777728; end: 0.796863
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11704; vmdata:51436; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000132 seconds
+196, 3.267: 1.407524, 1.405490 avg, 0.000144 rate, 0.239056 seconds, 9800 images
+user CPU start: 11.402004; end: 11.650629
+kernel CPU start: 0.796880; end: 0.815925
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11688; vmdata:51436; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000115 seconds
+197, 3.283: 1.457887, 1.410730 avg, 0.000139 rate, 0.241423 seconds, 9850 images
+user CPU start: 11.650830; end: 11.912725
+kernel CPU start: 0.815939; end: 0.825953
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11564; vmdata:51468; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000166 seconds
+198, 3.300: 1.371497, 1.406807 avg, 0.000134 rate, 0.247929 seconds, 9900 images
+user CPU start: 11.912945; end: 12.171594
+kernel CPU start: 0.825968; end: 0.847478
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11696; vmdata:51468; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000144 seconds
+199, 3.317: 1.377238, 1.403850 avg, 0.000128 rate, 0.238999 seconds, 9950 images
+user CPU start: 12.171775; end: 12.423792
+kernel CPU start: 0.847491; end: 0.865477
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11708; vmdata:51496; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000140 seconds
+200, 3.333: 1.336990, 1.397164 avg, 0.000123 rate, 0.241198 seconds, 10000 images
+user CPU start: 12.423997; end: 12.670433
+kernel CPU start: 0.865491; end: 0.887135
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11800; vmdata:51496; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000145 seconds
+201, 3.350: 1.375663, 1.395014 avg, 0.000119 rate, 0.247784 seconds, 10050 images
+user CPU start: 12.670613; end: 12.940067
+kernel CPU start: 0.887148; end: 0.896746
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11740; vmdata:51540; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000118 seconds
+202, 3.367: 1.369960, 1.392508 avg, 0.000114 rate, 0.238811 seconds, 10100 images
+user CPU start: 12.940268; end: 13.193611
+kernel CPU start: 0.896760; end: 0.911183
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11884; vmdata:51540; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000142 seconds
+203, 3.383: 1.398673, 1.393125 avg, 0.000109 rate, 0.241009 seconds, 10150 images
+user CPU start: 13.193786; end: 13.454471
+kernel CPU start: 0.911196; end: 0.921472
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11680; vmdata:51540; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000157 seconds
+204, 3.400: 1.398983, 1.393711 avg, 0.000105 rate, 0.247791 seconds, 10200 images
+user CPU start: 13.454471; end: 13.720058
+kernel CPU start: 0.921709; end: 0.939788
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11800; vmdata:51540; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000126 seconds
+205, 3.417: 1.429322, 1.397272 avg, 0.000101 rate, 0.239141 seconds, 10250 images
+user CPU start: 13.720233; end: 13.963577
+kernel CPU start: 0.939800; end: 0.964092
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11760; vmdata:51548; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000166 seconds
+206, 3.433: 1.424955, 1.400040 avg, 0.000096 rate, 0.240622 seconds, 10300 images
+user CPU start: 13.963806; end: 14.217305
+kernel CPU start: 0.964108; end: 0.978852
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11824; vmdata:51584; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000161 seconds
+207, 3.450: 1.356875, 1.395724 avg, 0.000092 rate, 0.248201 seconds, 10350 images
+user CPU start: 14.217528; end: 14.485139
+kernel CPU start: 0.978867; end: 0.992327
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11696; vmdata:51584; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000117 seconds
+208, 3.467: 1.433159, 1.399467 avg, 0.000088 rate, 0.249720 seconds, 10400 images
+user CPU start: 14.485362; end: 14.751289
+kernel CPU start: 0.992342; end: 1.010375
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11840; vmdata:51584; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000168 seconds
+209, 3.483: 1.344882, 1.394009 avg, 0.000085 rate, 0.239370 seconds, 10450 images
+user CPU start: 14.751550; end: 15.016719
+kernel CPU start: 1.010393; end: 1.019353
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11680; vmdata:51584; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000117 seconds
+210, 3.500: 1.401783, 1.394786 avg, 0.000081 rate, 0.238923 seconds, 10500 images
+user CPU start: 15.016915; end: 15.269707
+kernel CPU start: 1.019366; end: 1.033706
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11804; vmdata:51584; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000133 seconds
+211, 3.517: 1.380561, 1.393364 avg, 0.000077 rate, 0.238890 seconds, 10550 images
+user CPU start: 15.269888; end: 15.513927
+kernel CPU start: 1.033719; end: 1.057103
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11704; vmdata:51584; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000125 seconds
+212, 3.533: 1.383522, 1.392379 avg, 0.000074 rate, 0.241064 seconds, 10600 images
+user CPU start: 15.514158; end: 15.765314
+kernel CPU start: 1.057119; end: 1.075065
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11856; vmdata:51628; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000169 seconds
+213, 3.550: 1.348874, 1.388029 avg, 0.000071 rate, 0.248287 seconds, 10650 images
+user CPU start: 15.765529; end: 16.030190
+kernel CPU start: 1.075079; end: 1.089933
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11712; vmdata:51628; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000126 seconds
+214, 3.567: 1.397895, 1.389016 avg, 0.000068 rate, 0.249733 seconds, 10700 images
+user CPU start: 16.030393; end: 16.300104
+kernel CPU start: 1.089947; end: 1.100153
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11872; vmdata:51628; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000160 seconds
+215, 3.583: 1.383227, 1.388437 avg, 0.000064 rate, 0.239301 seconds, 10750 images
+user CPU start: 16.300387; end: 16.552143
+kernel CPU start: 1.100172; end: 1.118518
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11668; vmdata:51628; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000126 seconds
+216, 3.600: 1.397771, 1.389370 avg, 0.000061 rate, 0.238988 seconds, 10800 images
+user CPU start: 16.552326; end: 16.803308
+kernel CPU start: 1.118531; end: 1.134904
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11728; vmdata:51628; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000139 seconds
+217, 3.617: 1.357030, 1.386136 avg, 0.000059 rate, 0.249855 seconds, 10850 images
+user CPU start: 16.803488; end: 17.057269
+kernel CPU start: 1.134916; end: 1.161674
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11592; vmdata:51628; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000219 seconds
+218, 3.633: 1.413687, 1.388891 avg, 0.000056 rate, 0.239268 seconds, 10900 images
+user CPU start: 17.057552; end: 17.303415
+kernel CPU start: 1.161693; end: 1.184907
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11708; vmdata:51628; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000131 seconds
+219, 3.650: 1.412436, 1.391246 avg, 0.000053 rate, 0.246233 seconds, 10950 images
+user CPU start: 17.303591; end: 17.568463
+kernel CPU start: 1.184919; end: 1.195135
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11620; vmdata:51628; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000174 seconds
+220, 3.667: 1.352322, 1.387353 avg, 0.000051 rate, 0.242617 seconds, 11000 images
+user CPU start: 17.568685; end: 17.825190
+kernel CPU start: 1.195150; end: 1.212191
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11768; vmdata:51628; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000136 seconds
+221, 3.683: 1.393337, 1.387952 avg, 0.000048 rate, 0.250042 seconds, 11050 images
+user CPU start: 17.825379; end: 18.097143
+kernel CPU start: 1.212204; end: 1.221324
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11704; vmdata:51628; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000111 seconds
+222, 3.700: 1.405959, 1.389752 avg, 0.000046 rate, 0.248389 seconds, 11100 images
+user CPU start: 18.097404; end: 18.353949
+kernel CPU start: 1.221342; end: 1.240927
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11752; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000151 seconds
+223, 3.717: 1.357825, 1.386560 avg, 0.000043 rate, 0.242784 seconds, 11150 images
+user CPU start: 18.354159; end: 18.620624
+kernel CPU start: 1.240941; end: 1.246304
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11640; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000159 seconds
+224, 3.733: 1.411374, 1.389041 avg, 0.000041 rate, 0.248389 seconds, 11200 images
+user CPU start: 18.620851; end: 18.886979
+kernel CPU start: 1.246319; end: 1.261570
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11816; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000134 seconds
+225, 3.750: 1.410139, 1.391151 avg, 0.000039 rate, 0.239206 seconds, 11250 images
+user CPU start: 18.887156; end: 19.139500
+kernel CPU start: 1.261582; end: 1.275935
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11692; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000120 seconds
+226, 3.767: 1.385317, 1.390567 avg, 0.000037 rate, 0.240692 seconds, 11300 images
+user CPU start: 19.139695; end: 19.401099
+kernel CPU start: 1.275935; end: 1.284973
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11824; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000146 seconds
+227, 3.783: 1.384064, 1.389917 avg, 0.000035 rate, 0.248431 seconds, 11350 images
+user CPU start: 19.401374; end: 19.668233
+kernel CPU start: 1.284991; end: 1.298121
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11660; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000128 seconds
+228, 3.800: 1.376696, 1.388595 avg, 0.000033 rate, 0.249479 seconds, 11400 images
+user CPU start: 19.668407; end: 19.933313
+kernel CPU start: 1.298133; end: 1.311744
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11736; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000216 seconds
+229, 3.817: 1.406059, 1.390341 avg, 0.000031 rate, 0.242683 seconds, 11450 images
+user CPU start: 19.933543; end: 20.190678
+kernel CPU start: 1.311759; end: 1.330111
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11688; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000157 seconds
+230, 3.833: 1.375305, 1.388838 avg, 0.000030 rate, 0.270403 seconds, 11500 images
+user CPU start: 20.190950; end: 20.478865
+kernel CPU start: 1.330129; end: 1.345529
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11748; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000165 seconds
+231, 3.850: 1.370354, 1.386989 avg, 0.000028 rate, 0.242744 seconds, 11550 images
+user CPU start: 20.479075; end: 20.736799
+kernel CPU start: 1.345543; end: 1.362146
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11640; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000161 seconds
+232, 3.867: 1.363047, 1.384595 avg, 0.000026 rate, 0.247519 seconds, 11600 images
+user CPU start: 20.737028; end: 20.997752
+kernel CPU start: 1.362161; end: 1.379252
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11820; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000128 seconds
+233, 3.883: 1.373874, 1.383523 avg, 0.000025 rate, 0.239137 seconds, 11650 images
+user CPU start: 20.997935; end: 21.251503
+kernel CPU start: 1.379264; end: 1.393061
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11780; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000126 seconds
+234, 3.900: 1.388184, 1.383989 avg, 0.000023 rate, 0.241583 seconds, 11700 images
+user CPU start: 21.251719; end: 21.510114
+kernel CPU start: 1.393075; end: 1.403147
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:11820; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000118 seconds
+235, 3.917: 1.382645, 1.383855 avg, 0.000022 rate, 0.248384 seconds, 11750 images
+user CPU start: 21.510322; end: 21.770179
+kernel CPU start: 1.403160; end: 1.426981
+Max: 18340  kilobytes
+vmsize:1492128; vmrss:12312; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000129 seconds
+236, 3.933: 1.410251, 1.386495 avg, 0.000021 rate, 0.250140 seconds, 11800 images
+user CPU start: 21.770356; end: 22.041332
+kernel CPU start: 1.426993; end: 1.436667
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11980; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000150 seconds
+237, 3.950: 1.411824, 1.389027 avg, 0.000019 rate, 0.243288 seconds, 11850 images
+user CPU start: 22.041611; end: 22.303265
+kernel CPU start: 1.436685; end: 1.449517
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11900; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000168 seconds
+238, 3.967: 1.385890, 1.388714 avg, 0.000018 rate, 0.270234 seconds, 11900 images
+user CPU start: 22.303486; end: 22.580378
+kernel CPU start: 1.449531; end: 1.476653
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:12080; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000155 seconds
+239, 3.983: 1.391279, 1.388970 avg, 0.000017 rate, 0.250146 seconds, 11950 images
+user CPU start: 22.580583; end: 22.849136
+kernel CPU start: 1.476666; end: 1.491450
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11968; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000129 seconds
+240, 4.000: 1.361125, 1.386186 avg, 0.000016 rate, 0.238988 seconds, 12000 images
+user CPU start: 22.849316; end: 23.107861
+kernel CPU start: 1.491461; end: 1.501251
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:12100; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000122 seconds
+241, 4.017: 1.377496, 1.385317 avg, 0.000015 rate, 0.239066 seconds, 12050 images
+user CPU start: 23.108067; end: 23.361441
+kernel CPU start: 1.501264; end: 1.515030
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11944; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000108 seconds
+242, 4.033: 1.362673, 1.383052 avg, 0.000014 rate, 0.250026 seconds, 12100 images
+user CPU start: 23.361700; end: 23.615656
+kernel CPU start: 1.515047; end: 1.545937
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:12040; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000117 seconds
+243, 4.050: 1.377641, 1.382511 avg, 0.000013 rate, 0.248096 seconds, 12150 images
+user CPU start: 23.615845; end: 23.877480
+kernel CPU start: 1.545937; end: 1.561180
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11960; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000193 seconds
+244, 4.067: 1.341399, 1.378400 avg, 0.000012 rate, 0.242830 seconds, 12200 images
+user CPU start: 23.877700; end: 24.139479
+kernel CPU start: 1.561195; end: 1.571181
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:12080; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000161 seconds
+245, 4.083: 1.375220, 1.378082 avg, 0.000011 rate, 0.248597 seconds, 12250 images
+user CPU start: 24.139791; end: 24.404310
+kernel CPU start: 1.571181; end: 1.585674
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11956; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000117 seconds
+246, 4.100: 1.383090, 1.378583 avg, 0.000010 rate, 0.249308 seconds, 12300 images
+user CPU start: 24.404516; end: 24.662384
+kernel CPU start: 1.585687; end: 1.603802
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:12016; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000161 seconds
+247, 4.117: 1.356832, 1.376408 avg, 0.000010 rate, 0.242936 seconds, 12350 images
+user CPU start: 24.662632; end: 24.918198
+kernel CPU start: 1.603818; end: 1.623019
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11896; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000154 seconds
+248, 4.133: 1.368719, 1.375639 avg, 0.000009 rate, 0.270535 seconds, 12400 images
+user CPU start: 24.918448; end: 25.202964
+kernel CPU start: 1.623035; end: 1.640477
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:12056; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000170 seconds
+249, 4.150: 1.382722, 1.376347 avg, 0.000008 rate, 0.242583 seconds, 12450 images
+user CPU start: 25.203237; end: 25.466602
+kernel CPU start: 1.640495; end: 1.648785
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11932; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000155 seconds
+250, 4.167: 1.413521, 1.380064 avg, 0.000008 rate, 0.247455 seconds, 12500 images
+user CPU start: 25.466820; end: 25.726082
+kernel CPU start: 1.648799; end: 1.668188
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:12064; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000111 seconds
+251, 4.183: 1.365960, 1.378654 avg, 0.000007 rate, 0.239169 seconds, 12550 images
+user CPU start: 25.726082; end: 25.968994
+kernel CPU start: 1.668375; end: 1.691197
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11964; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000137 seconds
+252, 4.200: 1.415986, 1.382387 avg, 0.000007 rate, 0.241710 seconds, 12600 images
+user CPU start: 25.969181; end: 26.225098
+kernel CPU start: 1.691209; end: 1.705169
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:12136; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000150 seconds
+253, 4.217: 1.381639, 1.382312 avg, 0.000006 rate, 0.255255 seconds, 12650 images
+user CPU start: 26.225356; end: 26.490762
+kernel CPU start: 1.705186; end: 1.726629
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11996; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000166 seconds
+254, 4.233: 1.379069, 1.381988 avg, 0.000006 rate, 0.270494 seconds, 12700 images
+user CPU start: 26.491031; end: 26.772569
+kernel CPU start: 1.726646; end: 1.748513
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:12088; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000154 seconds
+255, 4.250: 1.400181, 1.383807 avg, 0.000005 rate, 0.246665 seconds, 12750 images
+user CPU start: 26.772783; end: 27.040986
+kernel CPU start: 1.748526; end: 1.758031
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:12020; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000120 seconds
+256, 4.267: 1.307898, 1.376216 avg, 0.000005 rate, 0.239131 seconds, 12800 images
+user CPU start: 27.041196; end: 27.293631
+kernel CPU start: 1.758044; end: 1.772667
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:12064; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000125 seconds
+257, 4.283: 1.339490, 1.372544 avg, 0.000004 rate, 0.249987 seconds, 12850 images
+user CPU start: 27.293836; end: 27.562577
+kernel CPU start: 1.772680; end: 1.783115
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11932; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000117 seconds
+258, 4.300: 1.391285, 1.374418 avg, 0.000004 rate, 0.247707 seconds, 12900 images
+user CPU start: 27.562820; end: 27.821538
+kernel CPU start: 1.783131; end: 1.800400
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:12084; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000156 seconds
+259, 4.317: 1.383266, 1.375303 avg, 0.000003 rate, 0.270456 seconds, 12950 images
+user CPU start: 27.821780; end: 28.095601
+kernel CPU start: 1.800415; end: 1.827040
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11924; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000156 seconds
+260, 4.333: 1.331780, 1.370950 avg, 0.000003 rate, 0.270152 seconds, 13000 images
+user CPU start: 28.095818; end: 28.384355
+kernel CPU start: 1.827054; end: 1.841614
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:12088; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000171 seconds
+261, 4.350: 1.392581, 1.373114 avg, 0.000003 rate, 0.255254 seconds, 13050 images
+user CPU start: 28.384605; end: 28.668344
+kernel CPU start: 1.841630; end: 1.847506
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11968; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000167 seconds
+262, 4.367: 1.324642, 1.368266 avg, 0.000003 rate, 0.245304 seconds, 13100 images
+user CPU start: 28.668564; end: 28.922381
+kernel CPU start: 1.847521; end: 1.870359
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:12096; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000113 seconds
+263, 4.383: 1.335530, 1.364993 avg, 0.000002 rate, 0.240381 seconds, 13150 images
+user CPU start: 28.922582; end: 29.169469
+kernel CPU start: 1.870372; end: 1.889003
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11976; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000151 seconds
+264, 4.400: 1.411363, 1.369630 avg, 0.000002 rate, 0.248863 seconds, 13200 images
+user CPU start: 29.169770; end: 29.427046
+kernel CPU start: 1.889022; end: 1.911132
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11972; vmdata:51636; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000132 seconds
+265, 4.417: 1.385594, 1.371226 avg, 0.000002 rate, 0.249363 seconds, 13250 images
+user CPU start: 29.427217; end: 29.678568
+kernel CPU start: 1.911143; end: 1.938445
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11920; vmdata:51652; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000138 seconds
+266, 4.433: 1.373478, 1.371451 avg, 0.000002 rate, 0.242701 seconds, 13300 images
+user CPU start: 29.678822; end: 29.940657
+kernel CPU start: 1.938462; end: 1.947870
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:12028; vmdata:51672; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000161 seconds
+267, 4.450: 1.377771, 1.372083 avg, 0.000001 rate, 0.270427 seconds, 13350 images
+user CPU start: 29.940901; end: 30.231939
+kernel CPU start: 1.947886; end: 1.958568
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11920; vmdata:51672; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000162 seconds
+268, 4.467: 1.337462, 1.368621 avg, 0.000001 rate, 0.242950 seconds, 13400 images
+user CPU start: 30.232219; end: 30.483716
+kernel CPU start: 1.958586; end: 1.981237
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11996; vmdata:51672; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000152 seconds
+269, 4.483: 1.435547, 1.375314 avg, 0.000001 rate, 0.247541 seconds, 13450 images
+user CPU start: 30.483964; end: 30.749285
+kernel CPU start: 1.981253; end: 1.994314
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11872; vmdata:51672; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000133 seconds
+270, 4.500: 1.360815, 1.373864 avg, 0.000001 rate, 0.249847 seconds, 13500 images
+user CPU start: 30.749468; end: 31.008625
+kernel CPU start: 1.994326; end: 2.011941
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11996; vmdata:51672; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000135 seconds
+271, 4.517: 1.331445, 1.369622 avg, 0.000001 rate, 0.242687 seconds, 13550 images
+user CPU start: 31.008625; end: 31.264350
+kernel CPU start: 2.012207; end: 2.026799
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11860; vmdata:51672; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000195 seconds
+272, 4.533: 1.425122, 1.375172 avg, 0.000001 rate, 0.270265 seconds, 13600 images
+user CPU start: 31.264576; end: 31.556245
+kernel CPU start: 2.026814; end: 2.037828
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:12096; vmdata:51672; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000156 seconds
+273, 4.550: 1.390207, 1.376676 avg, 0.000001 rate, 0.242590 seconds, 13650 images
+user CPU start: 31.556533; end: 31.817730
+kernel CPU start: 2.037846; end: 2.050348
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:12000; vmdata:51708; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000166 seconds
+274, 4.567: 1.348463, 1.373854 avg, 0.000001 rate, 0.246884 seconds, 13700 images
+user CPU start: 31.817945; end: 32.078033
+kernel CPU start: 2.050362; end: 2.067738
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:12124; vmdata:51708; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000140 seconds
+275, 4.583: 1.433732, 1.379842 avg, 0.000000 rate, 0.238920 seconds, 13750 images
+user CPU start: 32.078211; end: 32.333450
+kernel CPU start: 2.067749; end: 2.077890
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:12008; vmdata:51708; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000118 seconds
+276, 4.600: 1.365857, 1.378444 avg, 0.000000 rate, 0.243231 seconds, 13800 images
+user CPU start: 32.333698; end: 32.587362
+kernel CPU start: 2.077906; end: 2.096373
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:12148; vmdata:51708; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000175 seconds
+277, 4.617: 1.391854, 1.379785 avg, 0.000000 rate, 0.255137 seconds, 13850 images
+user CPU start: 32.587642; end: 32.864781
+kernel CPU start: 2.096391; end: 2.106457
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11904; vmdata:51708; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000154 seconds
+278, 4.633: 1.363129, 1.378119 avg, 0.000000 rate, 0.269999 seconds, 13900 images
+user CPU start: 32.865038; end: 33.144601
+kernel CPU start: 2.106474; end: 2.134672
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11960; vmdata:51708; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000151 seconds
+279, 4.650: 1.404688, 1.380776 avg, 0.000000 rate, 0.270777 seconds, 13950 images
+user CPU start: 33.144854; end: 33.419334
+kernel CPU start: 2.134688; end: 2.161674
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11908; vmdata:51708; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000156 seconds
+280, 4.667: 1.392568, 1.381955 avg, 0.000000 rate, 0.250342 seconds, 14000 images
+user CPU start: 33.419615; end: 33.686387
+kernel CPU start: 2.161692; end: 2.175434
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11992; vmdata:51708; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000118 seconds
+281, 4.683: 1.451166, 1.388876 avg, 0.000000 rate, 0.238812 seconds, 14050 images
+user CPU start: 33.686581; end: 33.939996
+kernel CPU start: 2.175447; end: 2.189539
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11864; vmdata:51708; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000119 seconds
+282, 4.700: 1.404526, 1.390441 avg, 0.000000 rate, 0.239160 seconds, 14100 images
+user CPU start: 33.940194; end: 34.181230
+kernel CPU start: 2.189552; end: 2.217665
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11984; vmdata:51708; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000129 seconds
+283, 4.717: 1.405928, 1.391990 avg, 0.000000 rate, 0.242571 seconds, 14150 images
+user CPU start: 34.181450; end: 34.436639
+kernel CPU start: 2.217679; end: 2.234716
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11844; vmdata:51708; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000147 seconds
+284, 4.733: 1.338798, 1.386671 avg, 0.000000 rate, 0.255060 seconds, 14200 images
+user CPU start: 34.436897; end: 34.701677
+kernel CPU start: 2.234732; end: 2.256125
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11952; vmdata:51708; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000171 seconds
+285, 4.750: 1.360784, 1.384082 avg, 0.000000 rate, 0.270096 seconds, 14250 images
+user CPU start: 34.701892; end: 34.991829
+kernel CPU start: 2.256139; end: 2.270516
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11852; vmdata:51708; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000188 seconds
+286, 4.767: 1.402712, 1.385945 avg, 0.000000 rate, 0.270011 seconds, 14300 images
+user CPU start: 34.992058; end: 35.282025
+kernel CPU start: 2.270531; end: 2.281469
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11976; vmdata:51708; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000172 seconds
+287, 4.783: 1.358899, 1.383240 avg, 0.000000 rate, 0.242287 seconds, 14350 images
+user CPU start: 35.282260; end: 35.538742
+kernel CPU start: 2.281484; end: 2.299242
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11868; vmdata:51708; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000153 seconds
+288, 4.800: 1.345823, 1.379499 avg, 0.000000 rate, 0.246563 seconds, 14400 images
+user CPU start: 35.538995; end: 35.803689
+kernel CPU start: 2.299258; end: 2.312858
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11964; vmdata:51708; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000134 seconds
+289, 4.817: 1.401373, 1.381686 avg, 0.000000 rate, 0.239162 seconds, 14450 images
+user CPU start: 35.803914; end: 36.060859
+kernel CPU start: 2.312873; end: 2.323146
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11860; vmdata:51708; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000134 seconds
+290, 4.833: 1.382313, 1.381749 avg, 0.000000 rate, 0.250087 seconds, 14500 images
+user CPU start: 36.061094; end: 36.334248
+kernel CPU start: 2.323161; end: 2.333582
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11964; vmdata:51708; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000129 seconds
+291, 4.850: 1.365041, 1.380078 avg, 0.000000 rate, 0.247679 seconds, 14550 images
+user CPU start: 36.334422; end: 36.598486
+kernel CPU start: 2.333594; end: 2.347471
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11912; vmdata:51736; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000172 seconds
+292, 4.867: 1.377043, 1.379775 avg, 0.000000 rate, 0.242604 seconds, 14600 images
+user CPU start: 36.598708; end: 36.844886
+kernel CPU start: 2.347485; end: 2.374468
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:12012; vmdata:51736; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000164 seconds
+293, 4.883: 1.352227, 1.377020 avg, 0.000000 rate, 0.255446 seconds, 14650 images
+user CPU start: 36.845132; end: 37.117002
+kernel CPU start: 2.374484; end: 2.388871
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11900; vmdata:51736; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000148 seconds
+294, 4.900: 1.460304, 1.385348 avg, 0.000000 rate, 0.270432 seconds, 14700 images
+user CPU start: 37.117252; end: 37.409082
+kernel CPU start: 2.388887; end: 2.398683
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:12028; vmdata:51736; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000155 seconds
+295, 4.917: 1.383625, 1.385176 avg, 0.000000 rate, 0.270344 seconds, 14750 images
+user CPU start: 37.409335; end: 37.699535
+kernel CPU start: 2.398699; end: 2.413056
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11900; vmdata:51736; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000180 seconds
+296, 4.933: 1.359249, 1.382583 avg, 0.000000 rate, 0.242893 seconds, 14800 images
+user CPU start: 37.699806; end: 37.961442
+kernel CPU start: 2.413074; end: 2.427368
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:12000; vmdata:51736; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000156 seconds
+297, 4.950: 1.420597, 1.386384 avg, 0.000000 rate, 0.248553 seconds, 14850 images
+user CPU start: 37.961699; end: 38.224998
+kernel CPU start: 2.427384; end: 2.444685
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11824; vmdata:51736; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000140 seconds
+298, 4.967: 1.320355, 1.379781 avg, 0.000000 rate, 0.249156 seconds, 14900 images
+user CPU start: 38.225208; end: 38.482895
+kernel CPU start: 2.444698; end: 2.463705
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11944; vmdata:51736; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000178 seconds
+299, 4.983: 1.379580, 1.379761 avg, 0.000000 rate, 0.242678 seconds, 14950 images
+user CPU start: 38.483112; end: 38.742087
+kernel CPU start: 2.463719; end: 2.478467
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11860; vmdata:51736; vmstk:132; vmexe:380; vmlib:2280
+Loaded: 0.000172 seconds
+300, 5.000: 1.342746, 1.376060 avg, 0.000000 rate, 0.270258 seconds, 15000 images
+user CPU start: 38.742314; end: 39.028695
+kernel CPU start: 2.478481; end: 2.493758
+Max: 18984  kilobytes
+vmsize:1492128; vmrss:11968; vmdata:51736; vmstk:132; vmexe:380; vmlib:2280
+Separately saving weights to models/mnist/mnist_lenet.weights
+
+real	0m37.267s
+user	0m0.014s
+sys	0m0.007s
+============= copy weights client 2 -> server =============
+
+real	0m0.315s
+user	0m0.016s
+sys	0m0.007s
+ree weights: 147068 Bytes
+
+real	0m0.384s
+user	0m0.015s
+sys	0m0.007s
+tee weights: 44076 Bytes
+============= averaging =============
+Number of participants: 2
+layer     filters    size              input                output
+    0 conv      6  5 x 5 / 1    28 x  28 x   3   ->    28 x  28 x   6  0.001 BFLOPs
+    1 max          2 x 2 / 2    28 x  28 x   6   ->    14 x  14 x   6
+    2 conv      6  5 x 5 / 1    14 x  14 x   6   ->    14 x  14 x   6  0.000 BFLOPs
+    3 max          2 x 2 / 2    14 x  14 x   6   ->     7 x   7 x   6
+    4 connected                             294  ->   120
+    5 dropout       p = 0.80                120  ->   120
+    6 connected                             120  ->    84
+    7 dropout       p = 0.80                 84  ->    84
+    8 connected                              84  ->    10
+    9 softmax                                          10
+   10 cost                                             10
+Separately loading weights from ./results/mnist/client_updates_standard_ss/mnist_lenet_c1.weights...Done!
+load weights of p-1: ./results/mnist/client_updates_standard_ss/mnist_lenet_c1.weights
+layer     filters    size              input                output
+    0 conv      6  5 x 5 / 1    28 x  28 x   3   ->    28 x  28 x   6  0.001 BFLOPs
+    1 max          2 x 2 / 2    28 x  28 x   6   ->    14 x  14 x   6
+    2 conv      6  5 x 5 / 1    14 x  14 x   6   ->    14 x  14 x   6  0.000 BFLOPs
+    3 max          2 x 2 / 2    14 x  14 x   6   ->     7 x   7 x   6
+    4 connected                             294  ->   120
+    5 dropout       p = 0.80                120  ->   120
+    6 connected                             120  ->    84
+    7 dropout       p = 0.80                 84  ->    84
+    8 connected                              84  ->    10
+    9 softmax                                          10
+   10 cost                                             10
+Separately loading weights from ./results/mnist/client_updates_standard_ss/mnist_lenet_c2.weights...Done!
+load weights of p-2: ./results/mnist/client_updates_standard_ss/mnist_lenet_c2.weights
+Aggregating layer 0 ... in OS: biases finished...
+net 0: -0.024853, 0.308076, 0.048111, 0.071345, -0.015398, 
+net 1: -0.024743, 0.308272, 0.048174, 0.071051, -0.015763, 
+net a: -0.024798, 0.308174, 0.048142, 0.071198, -0.015580,  weights finished
+Aggregating layer 2 ... in OS: biases finished...
+net 0: -0.090803, -0.154357, 0.008114, -0.047623, -0.016241, 
+net 1: -0.090423, -0.154097, 0.008806, -0.046857, -0.015225, 
+net a: -0.090613, -0.154227, 0.008460, -0.047240, -0.015733,  weights finished
+Aggregating layer 4 ... in OS: biases finished...
+net 0: -0.057867, 0.034308, 0.079855, -0.037320, -0.035360, 
+net 1: -0.057867, 0.034332, 0.079965, -0.037240, -0.035517, 
+net a: -0.057867, 0.034320, 0.079910, -0.037280, -0.035438,  weights finished
+
+tee--- net 0: -0.012258, 0.000105, -0.007448, 0.000016, -0.008306, 
+tee--- net 1: -0.012872, 0.000091, -0.007367, 0.000058, -0.008741, 
+tee--- net a: -0.012565, 0.000098, -0.007408, 0.000037, -0.008524, 
+Aggregating layer 6 ... inside SGX: biases finished...
+tee--- net 0: -0.103442, -0.099018, 0.085997, 0.080094, -0.044303, 
+tee--- net 1: -0.103417, -0.100029, 0.085993, 0.079256, -0.044449, 
+net 0: -0.000000, -0.000000, -2102631082424324165992448.000000, -0.000004, 6975472128.000000, 
+net 1: -22569577086976.000000, -49549602899447473242112.000000, -4100882963616422166528.000000, 2305321024002483202031616.000000, -146797584130768896.000000, 
+net a: 0.000000, 157370222276662731887555949312885129216.000000, -144431104.000000, -86905504612531306496.000000, -0.000000,  weights finished
+tee--- net a: -0.103430, -0.099523, 0.085995, 0.079675, -0.044376, 
+tee--- net 0: -0.038224, 0.067057, -0.026183, -0.049021, -0.005903, 
+tee--- net 1: -0.037437, 0.068980, -0.026422, -0.050003, -0.004945, 
+tee--- net a: -0.037831, 0.068018, -0.026303, -0.049512, -0.005424, 
+Aggregating layer 8 ... inside SGX: biases finished...
+tee--- net 0: -0.043451, -0.115982, 0.079181, 0.101620, 0.050595, 
+tee--- net 1: -0.042972, -0.115982, 0.079245, 0.101906, 0.053570, 
+net 0: -297360342751641600.000000, -39.399029, 0.000000, -0.000000, 0.000000, 
+net 1: 0.000000, -0.000000, -0.000000, 0.000000, 0.000000, 
+net a: -0.000000, 0.000000, -14271911468151332812908912362995580928.000000, -0.000000, 0.000000,  weights finished
+Separately saving weights to ./results/mnist/client_updates_standard_ss/mnist_lenet_averaged.weights
+
+real	0m0.285s
+user	0m0.222s
+sys	0m0.060s
