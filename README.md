@@ -1,6 +1,6 @@
 ![PPFL](ppfl_logo.png)
 
-This is an application that runs privacy-preserving federated learning with Trusted Execution Environments. A layer-wise training technique is used for keeping the training layers always inside trusted areas. The application has two parts: 1) the server side with SGX using [OpenEnclave SDK](https://github.com/openenclave/openenclave) for secure aggregation; 2) the client side with TrustZone using [OP-TEE](https://www.op-tee.org/).
+This is an application that runs privacy-preserving federated learning with Trusted Execution Environments. A layer-wise training technique is used for keeping the training layers always inside trusted areas. The application has two parts: 1) the server side with SGX using [OpenEnclave SDK](https://github.com/openenclave/openenclave) for secure aggregation; 2) the client-side with TrustZone using [OP-TEE](https://www.op-tee.org/).
 
 ---------------------------
 Please consider citing the corresponding paper at [MobiSys 2021](https://www.sigmobile.org/mobisys/2021/) if this project is helpful to you:
@@ -10,11 +10,11 @@ Please consider citing the corresponding paper at [MobiSys 2021](https://www.sig
 
 
 # Prerequisites
-To run this application, you will need **one SGX-eabled PC** as the server and **one TrustZone-eabled device** as the client.
+To run this application, you will need **one SGX-enabled PC** as the server and **one TrustZone-enabled device** as the client.
 
 Check [this link](https://github.com/ayeks/SGX-hardware) and make sure your PC has SGX.
 
-Check [this link](https://optee.readthedocs.io/en/latest/general/platforms.html#platforms-supported) for TrustZone-eabled devices with OPTEE supports.
+Check [this link](https://optee.readthedocs.io/en/latest/general/platforms.html#platforms-supported) for TrustZone-enabled devices with OPTEE supports.
 
 
 # Setup
@@ -34,13 +34,13 @@ When everything is ready, you will see output showing that it starts training th
 
 ### Step 1:
 
-You will need *Ubuntu 18.04* PC and first install Open Enclave SDK for supporting use of SGX. Follow [this instruction](https://github.com/openenclave/openenclave/blob/master/docs/GettingStartedDocs/install_oe_sdk-Ubuntu_18.04.md) to do so.
+You will need *Ubuntu 18.04* PC and first install Open Enclave SDK for supporting the use of SGX. Follow [this instruction](https://github.com/openenclave/openenclave/blob/master/docs/GettingStartedDocs/install_oe_sdk-Ubuntu_18.04.md) to do so.
 
 To test whether you are able to run samples/applications, build samples following [BuildSamplesLinux](https://github.com/openenclave/openenclave/blob/master/samples/BuildSamplesLinux.md), and then try to run the `Hello World` sample.
 
 ### Step 2:
 
-First clone the (server-side) codes and compile it using Open Enclave SDK.
+First, clone the (server-side) code and compile it using Open Enclave SDK.
 
 ```
 git clone https://github.com/mofanv/privacy-preserving-federated-learning.git
@@ -63,7 +63,7 @@ set `IP_CLIENT_1`, `PASSWORD_CLIENT1`, `NUM_ROUNDS`. `NUM_CLIENTS`, `PP_START`, 
 
 ### step4:
 
-run `fl_tee*.sh` for FL with TEE protection on training at both server and client side. For example,
+run `fl_tee*.sh` for FL with TEE protection on training at both server and client-side. For example,
 
 ```
 cd fl_script/
