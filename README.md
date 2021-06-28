@@ -8,6 +8,8 @@ Please consider citing the corresponding paper at [MobiSys 2021](https://www.sig
 
 **[PPFL: Privacy-preserving Federated Learning with Trusted Execution Environments](https://arxiv.org/abs/2104.14380)** Fan Mo, Hamed Haddadi, Kleomenis Katevas, Eduard Marin, Diego Perino, Nicolas Kourtellis
 
+Also check our **[Teaser Video](https://www.youtube.com/watch?v=pBtsA0NGDzs)** and **[Video Presentation](https://www.youtube.com/watch?v=r5yxjo5V1L8)**.
+
 
 # Prerequisites
 To run this application, you will need **one SGX-enabled PC** as the server and **one TrustZone-enabled device** as the client.
