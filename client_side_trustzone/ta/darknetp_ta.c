@@ -118,7 +118,7 @@ static TEE_Result make_netowork_TA_params(uint32_t param_types,
                                              TEE_PARAM_TYPE_NONE );
 
   //DMSG("has been called");
-  if (param_types != exp_param_types)
+  if (param_types != exp_param_types || params[0].memref.size < 16 || params[1].memref.size < 15)
   return TEE_ERROR_BAD_PARAMETERS;
 
     int *params0 = params[0].memref.buffer;
@@ -189,7 +189,7 @@ static TEE_Result make_convolutional_layer_TA_params(uint32_t param_types,
                                              TEE_PARAM_TYPE_NONE);
 
   //DMSG("has been called");
-  if (param_types != exp_param_types)
+  if (param_types != exp_param_types || params[0].memref.size < 14)
   return TEE_ERROR_BAD_PARAMETERS;
 
     int *params0 = params[0].memref.buffer;
@@ -232,7 +232,7 @@ static TEE_Result make_depthwise_convolutional_layer_TA_params(uint32_t param_ty
                                              TEE_PARAM_TYPE_NONE);
 
   //DMSG("has been called");
-  if (param_types != exp_param_types)
+  if (param_types != exp_param_types || params[0].memref.size < 9)
   return TEE_ERROR_BAD_PARAMETERS;
 
     int *params0 = params[0].memref.buffer;
@@ -270,7 +270,7 @@ static TEE_Result make_maxpool_layer_TA_params(uint32_t param_types,
                                                TEE_PARAM_TYPE_NONE);
 
     //DMSG("has been called");
-    if (param_types != exp_param_types)
+    if (param_types != exp_param_types || params[0].memref.size < 7)
     return TEE_ERROR_BAD_PARAMETERS;
 
     int *params0 = params[0].memref.buffer;
@@ -300,7 +300,7 @@ static TEE_Result make_avgpool_layer_TA_params(uint32_t param_types,
                                                TEE_PARAM_TYPE_NONE);
 
     //DMSG("has been called");
-    if (param_types != exp_param_types)
+    if (param_types != exp_param_types || params[0].memref.size < 4)
     return TEE_ERROR_BAD_PARAMETERS;
 
     int *params0 = params[0].memref.buffer;
@@ -326,7 +326,7 @@ static TEE_Result make_dropout_layer_TA_params(uint32_t param_types,
                                              TEE_PARAM_TYPE_MEMREF_INPUT);
 
   //DMSG("has been called");
-  if (param_types != exp_param_types)
+  if (param_types != exp_param_types || params[0].memref.size < 5)
   return TEE_ERROR_BAD_PARAMETERS;
 
     int *params0 = params[0].memref.buffer;
@@ -376,7 +376,7 @@ static TEE_Result make_connected_layer_TA_params(uint32_t param_types,
 
     //DMSG("has been called");
 
-    if (param_types != exp_param_types)
+    if (param_types != exp_param_types || params[0].memref.size < 5)
     return TEE_ERROR_BAD_PARAMETERS;
 
     int *passarg;
@@ -408,7 +408,7 @@ static TEE_Result make_softmax_layer_TA_params(uint32_t param_types,
 
     //DMSG("has been called");
 
-    if (param_types != exp_param_types)
+    if (param_types != exp_param_types || params[0].memref.size < 8)
     return TEE_ERROR_BAD_PARAMETERS;
 
     int *params0 = params[0].memref.buffer;
@@ -439,7 +439,7 @@ static TEE_Result make_cost_layer_TA_params(uint32_t param_types,
 
     //DMSG("has been called");
 
-    if (param_types != exp_param_types)
+    if (param_types != exp_param_types || params[0].memref.size < 2 || params[1].memref.size < 4)
     return TEE_ERROR_BAD_PARAMETERS;
 
     int *params0 = params[0].memref.buffer;
@@ -479,7 +479,7 @@ static TEE_Result transfer_weights_TA_params(uint32_t param_types,
 
     //DMSG("has been called");
 
-    if (param_types != exp_param_types)
+    if (param_types != exp_param_types || params[1].memref.size < 3)
         return TEE_ERROR_BAD_PARAMETERS;
 
     float *vec = params[0].memref.buffer;
@@ -506,7 +506,7 @@ static TEE_Result save_weights_TA_params(uint32_t param_types,
 
     //DMSG("has been called");
 
-    if (param_types != exp_param_types)
+    if (param_types != exp_param_types || params[1].memref.size < 2)
         return TEE_ERROR_BAD_PARAMETERS;
 
     float *vec = params[0].memref.buffer;
@@ -807,7 +807,7 @@ static TEE_Result update_network_TA_params(uint32_t param_types,
 
     //DMSG("has been called");
 
-    if (param_types != exp_param_types)
+    if (param_types != exp_param_types || params[0].memref.size < 3 || params[1].memref.size < 6)
     return TEE_ERROR_BAD_PARAMETERS;
 
     int *params0 = params[0].memref.buffer;
@@ -862,6 +862,9 @@ static TEE_Result calc_network_loss_TA_params(uint32_t param_types,
                                              TEE_PARAM_TYPE_NONE,
                                              TEE_PARAM_TYPE_NONE,
                                              TEE_PARAM_TYPE_NONE);
+    
+    if (param_types != exp_param_types || params[0].memref.size < 2)
+    return TEE_ERROR_BAD_PARAMETERS;
 
     int *params0 = params[0].memref.buffer;
     int n = params0[0];
